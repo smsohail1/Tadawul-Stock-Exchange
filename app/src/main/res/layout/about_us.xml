@@ -1,0 +1,262 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/adLayout">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            >
+
+            <RelativeLayout
+                android:id="@+id/powered_by"
+
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/back_gr22"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/powered_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Powered by:"
+                    android:textColor="#000000"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/logo_appxone"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/powered_by"
+                android:background="@drawable/logo_bg"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/logo" />
+            </RelativeLayout>
+
+            <ImageView
+
+                android:id="@+id/divider"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/logo_appxone"
+                android:src="@drawable/divider_1" />
+
+            <RelativeLayout
+                android:id="@+id/version_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/divider"
+                android:background="@drawable/icon_bg">
+
+                <ImageButton
+                    android:id="@+id/version_logo1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:background="#ffffff"
+                    android:src="@drawable/logo_version" />
+
+                <TextView
+                    android:id="@+id/version_app"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/version_logo1"
+                    android:text="1.0"
+                    android:textColor="#000000" />
+
+                <TextView
+
+                    android:id="@+id/app_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:text="Pakistan Stock Exchange"
+                    android:textColor="#000000" />
+            </RelativeLayout>
+
+
+            <TextView
+
+                android:id="@+id/Development_title"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/version_1"
+                android:background="@drawable/back_gr22"
+                android:padding="10dp"
+                android:text="Development Team:"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:id="@+id/whole_team"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Development_title"
+
+                android:layout_margin="5dp"
+                android:background="@drawable/developer"
+                android:gravity="center">
+
+                <RelativeLayout
+                    android:id="@+id/Designer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/designer_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="5dp"
+                        android:text="Mohammad Farooq"
+                        android:textColor="#000000"
+
+                        />
+
+                    <TextView
+android:id="@+id/designer_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="5dp"
+                        android:text="Designer"
+                        android:textColor="#000000"
+
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/developer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/Designer"
+                    android:layout_marginTop="5dp">
+
+
+                    <TextView
+
+                        android:id="@+id/developer_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="5dp"
+                        android:text="Syed Mohammad Sohail"
+                        android:textColor="#000000"
+
+                        />
+
+                    <TextView
+                        android:id="@+id/supervisor_name1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="5dp"
+                        android:text="Developer"
+                        android:textColor="#000000"
+                        android:textStyle="bold" />
+
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/supervisor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/developer"
+                    android:layout_marginTop="5dp">
+
+
+                    <TextView
+                        android:id="@+id/supervisor_name11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="5dp"
+                        android:text="Fahad Akhtar"
+                        android:textColor="#000000"
+
+                        />
+
+                    <TextView
+                        android:id="@+id/supervisor_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="5dp"
+                        android:text="Supervisor"
+                        android:textColor="#000000"
+                        android:textStyle="bold" />
+
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+
+            <TextView
+
+                android:id="@+id/rate_share"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/whole_team"
+                android:layout_centerVertical="true"
+                android:background="@drawable/back_gr22"
+                android:padding="10dp"
+                android:text="Rate &amp; Share:"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rate_share"
+                android:background="@drawable/share_app"
+                android:gravity="center">
+
+                <ImageButton
+                    android:id="@+id/share_about1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/share_about_scr"
+
+                    />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+    <LinearLayout
+        android:id="@+id/adLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="gone"></LinearLayout>
+</RelativeLayout>

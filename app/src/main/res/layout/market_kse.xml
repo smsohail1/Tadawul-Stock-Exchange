@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffff"
+    android:padding="10dp">
+
+    <RelativeLayout
+        android:id="@+id/top_header"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/kse_index11"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="kse 100 index"
+            android:textColor="#000000" />
+
+        <ImageView
+            android:id="@+id/icon_updown_market"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center_vertical"
+
+
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/combine_box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/top_header"
+        android:layout_marginBottom="13dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/volume_bg">
+
+        <RelativeLayout
+
+            android:layout_marginRight="20dp"
+            android:layout_centerVertical="true"
+            android:id="@+id/first"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/high_stock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:text="The Last Price"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/high_value_stock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/high_stock"
+                android:layout_centerHorizontal="true"
+                android:text="3"
+                android:textColor="#000000" />
+        </RelativeLayout>
+        <ImageView
+            android:layout_marginRight="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/yellow_divider"
+            android:layout_toLeftOf="@+id/second"
+            android:layout_centerVertical="true"/>
+
+        <RelativeLayout
+            android:id="@+id/second"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+            <TextView
+                android:id="@+id/low_stock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:text="Net Change"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/low_value_stock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/low_stock"
+                android:layout_centerHorizontal="true"
+                android:text="1"
+                android:textColor="#000000" />
+        </RelativeLayout>
+
+
+        <ImageView
+            android:layout_toLeftOf="@+id/third"
+            android:layout_marginRight="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/yellow_divider"
+            android:layout_toRightOf="@+id/second"
+            android:layout_centerVertical="true"/>
+        <RelativeLayout
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:id="@+id/third"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/high_stock_percentage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:text="Percantage\nChange"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/high_value_stock_percentage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/high_stock_percentage"
+                android:layout_centerHorizontal="true"
+                android:text="3"
+                android:textColor="#000000" />
+
+        </RelativeLayout>
+
+        <!--<RelativeLayout
+
+            android:id="@+id/high_layout"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true">
+
+            <RelativeLayout
+                android:id="@+id/left_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginRight="10dp">
+
+                <TextView
+                    android:id="@+id/high_stock"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center"
+                    android:text="The Last \nPrice"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:id="@+id/high_value_stock"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/high_stock"
+                    android:layout_centerHorizontal="true"
+                    android:text="3"
+                    android:textColor="#000000" />
+            </RelativeLayout>
+
+
+            <ImageView
+                android:id="@+id/first_pipe"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/left_layout"
+                android:src="@drawable/yellow_divider" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/low_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/high_layout"
+            android:layout_centerHorizontal="true">
+
+            <RelativeLayout
+                android:id="@+id/mid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+
+                    android:id="@+id/low_stock"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center"
+                    android:text="Net\n Change"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:id="@+id/low_value_stock"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/low_stock"
+                    android:layout_centerHorizontal="true"
+                    android:text="1"
+                    android:textColor="#000000" />
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/second_pipe"
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/mid"
+                android:src="@drawable/yellow_divider" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/left_layout_percentage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/low_layout">
+
+            <TextView
+                android:id="@+id/high_stock_percentage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:text="Percantage\nChange"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/high_value_stock_percentage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/high_stock_percentage"
+                android:layout_centerHorizontal="true"
+                android:text="3"
+                android:textColor="#000000" />
+        </RelativeLayout>-->
+
+
+    </RelativeLayout>
+
+</RelativeLayout>
+
+
+
