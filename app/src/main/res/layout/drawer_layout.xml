@@ -33,30 +33,32 @@
         <!--android:padding="10dp"-->
         <!--android:src="@drawable/logo_drawer" />-->
         <RelativeLayout
+
             android:id="@+id/left_drawer"
             android:layout_width="wrap_content"
             android:layout_height="fill_parent"
             android:layout_gravity="start"
             android:background="#FFF"
+
             >
 
             <ImageView
-                android:layout_marginTop="10dp"
                 android:id="@+id/image_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
                 android:layout_centerHorizontal="true"
+
+                android:layout_marginTop="10dp"
 
                 android:background="@drawable/logo_drawer" />
 
             <ListView
-
                 android:id="@+id/list_slidermenu"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/image_view"
                 android:layout_gravity="left|top"
+                android:layout_marginTop="10dp"
                 android:background="@color/list_background"
                 android:choiceMode="singleChoice"
                 android:divider="#a1a1a1"

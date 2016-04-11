@@ -204,9 +204,9 @@ public class NavDrawerListAdapter extends BaseAdapter {
         navDrawerItems.get(6).setIcon(R.drawable.icon_about_us);
 
 
-      //   navDrawerItems.get(0).setIcon_right(R.drawable.icon_forward);
+        //   navDrawerItems.get(0).setIcon_right(R.drawable.icon_forward);
 
-         navDrawerItems.get(0).setIcon_right(R.drawable.icon_forward);
+        navDrawerItems.get(0).setIcon_right(R.drawable.icon_forward);
         navDrawerItems.get(1).setIcon_right(R.drawable.icon_forward_gray);
         navDrawerItems.get(2).setIcon_right(R.drawable.icon_forward_gray);
         navDrawerItems.get(3).setIcon_right(R.drawable.icon_forward_gray);
@@ -228,7 +228,7 @@ public class NavDrawerListAdapter extends BaseAdapter {
         navDrawerItems.get(0).setIcon_right(R.drawable.icon_forward_gray);
         navDrawerItems.get(1).setIcon_right(R.drawable.icon_forward);
 
-      //  navDrawerItems.get(1).setIcon_right(R.drawable.icon_forward_pressed);
+        //  navDrawerItems.get(1).setIcon_right(R.drawable.icon_forward_pressed);
         navDrawerItems.get(2).setIcon_right(R.drawable.icon_forward_gray);
         navDrawerItems.get(3).setIcon_right(R.drawable.icon_forward_gray);
         navDrawerItems.get(4).setIcon_right(R.drawable.icon_forward_gray);
@@ -271,7 +271,7 @@ public class NavDrawerListAdapter extends BaseAdapter {
         navDrawerItems.get(2).setIcon_right(R.drawable.icon_forward_gray);
         navDrawerItems.get(3).setIcon_right(R.drawable.icon_forward);
 
-       // navDrawerItems.get(3).setIcon_right(R.drawable.icon_forward_pressed);
+        // navDrawerItems.get(3).setIcon_right(R.drawable.icon_forward_pressed);
         navDrawerItems.get(4).setIcon_right(R.drawable.icon_forward_gray);
         navDrawerItems.get(5).setIcon_right(R.drawable.icon_forward_gray);
         navDrawerItems.get(6).setIcon_right(R.drawable.icon_forward_gray);
@@ -293,7 +293,7 @@ public class NavDrawerListAdapter extends BaseAdapter {
         navDrawerItems.get(3).setIcon_right(R.drawable.icon_forward_gray);
         navDrawerItems.get(4).setIcon_right(R.drawable.icon_forward);
 
-      //  navDrawerItems.get(4).setIcon_right(R.drawable.icon_forward_pressed);
+        //  navDrawerItems.get(4).setIcon_right(R.drawable.icon_forward_pressed);
         navDrawerItems.get(5).setIcon_right(R.drawable.icon_forward_gray);
         navDrawerItems.get(6).setIcon_right(R.drawable.icon_forward_gray);
     }

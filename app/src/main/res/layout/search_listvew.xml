@@ -429,7 +429,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/info1"
-            android:src="@drawable/watch_button_status"
+            android:src="@drawable/watch_button_stocks"
 
             />
 

@@ -286,7 +286,7 @@ public class stock_list extends BaseAdapter {
 //        Cursor c = db.selectQuery(q);
 
 
-        viewHolder.im.setImageResource(R.drawable.watch_button_status);
+        viewHolder.im.setImageResource(R.drawable.watch_button_stocks);
         fav_list.clear();
         query = "SELECT * FROM '" + AppSettings.DATABASE_TABLE + "'";
         Log.e("SELECT QUERY", query);
@@ -462,7 +462,7 @@ public class stock_list extends BaseAdapter {
 //                                    finalViewHolder.im.setImageResource(R.drawable.watch_button_status);
 //                                    navDrawerItems11.remove((Integer) v.getTag());
 
-                                    ((ImageView) v).setImageResource(R.drawable.watch_button_status);
+                                    ((ImageView) v).setImageResource(R.drawable.watch_button_stocks);
 
                                     // pos = watclist_adapter.navDrawerItems111.get(ir).get_id();
 

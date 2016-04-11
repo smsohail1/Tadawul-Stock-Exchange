@@ -17,8 +17,8 @@
 
             android:id="@+id/detail"
             android:padding="10dp"
-            android:textColor="#c0392b"
-            android:textColorHint="#c0392b"
+            android:textColor="#1992ce"
+            android:textColorHint="#1992ce"
             android:hint="Give your feedback here..."
             android:gravity="top"/>
 
