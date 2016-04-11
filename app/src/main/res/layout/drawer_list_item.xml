@@ -44,7 +44,7 @@
             android:layout_centerVertical="true"
             android:layout_marginRight="10dp"
 
-            android:src="@drawable/icon_forward" />
+            android:src="@drawable/icon_forward_gray" />
     </RelativeLayout>
 
 </RelativeLayout>

@@ -55,8 +55,8 @@
                 android:maxLength="30"
                 android:padding="10dp"
                 android:singleLine="true"
-                android:textColor="#c0392b"
-                android:textColorHint="#c0392b"
+                android:textColor="#1992ce"
+                android:textColorHint="#1992ce"
 
                 />
         </RelativeLayout>

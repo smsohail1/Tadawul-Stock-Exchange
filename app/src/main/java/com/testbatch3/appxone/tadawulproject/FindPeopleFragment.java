@@ -23,7 +23,7 @@ import com.google.android.gms.ads.AdView;
 public class FindPeopleFragment extends Fragment {
 
 
-    String publisherId = "ca-app-pub-9381472359687969/1657257730";
+    String publisherId = "ca-app-pub-9381472359687969/3170354534";
     String testingDeviceId = "359918043312594";
 TextView devlopment_team,designer_name,developer_name,supervisor_name,designer_title,developer_title,supervisor_title,rate_share,version,app_name1,powered_by;
     ImageButton  share_about;

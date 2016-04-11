@@ -96,7 +96,7 @@ public class NavDrawerListAdapter extends BaseAdapter {
 
         if (drawer_pos == position) {
 
-            txtTitle.setTextColor(Color.parseColor("#c0392b"));
+            txtTitle.setTextColor(Color.parseColor("#1992ce"));
         } else {
             txtTitle.setTextColor(Color.parseColor("#a1a1a1"));
         }
@@ -164,7 +164,7 @@ public class NavDrawerListAdapter extends BaseAdapter {
                     // int aa=color_pressed.getResourceId(position, -1);
 
 
-                    txtTitle.setTextColor(Color.parseColor("#c0392b"));
+                    txtTitle.setTextColor(Color.parseColor("#1992ce"));
 
                     imgIcon.setImageResource(navMenuIcons.getResourceId(position, -1));
                     imgIcon_right.setImageResource(navMenuIcons_right.getResourceId(position, -1));
@@ -195,146 +195,146 @@ public class NavDrawerListAdapter extends BaseAdapter {
     }
 
     void setIconsFor0(int position) {
-        navDrawerItems.get(0).setIcon(R.drawable.icon_home);
-        navDrawerItems.get(1).setIcon(R.drawable.market_information);
+        navDrawerItems.get(0).setIcon(R.drawable.icon_home_pressed);
+        navDrawerItems.get(1).setIcon(R.drawable.icon_market);
         navDrawerItems.get(2).setIcon(R.drawable.icon_magnify_glass);
-        navDrawerItems.get(3).setIcon(R.drawable.watch_icon);
+        navDrawerItems.get(3).setIcon(R.drawable.gray_watch);
         navDrawerItems.get(4).setIcon(R.drawable.icon_feedback);
         navDrawerItems.get(5).setIcon(R.drawable.icon_share);
-        navDrawerItems.get(6).setIcon(R.drawable.about_us);
+        navDrawerItems.get(6).setIcon(R.drawable.icon_about_us);
 
+
+      //   navDrawerItems.get(0).setIcon_right(R.drawable.icon_forward);
 
          navDrawerItems.get(0).setIcon_right(R.drawable.icon_forward);
-
-        // navDrawerItems.get(0).setIcon_right(R.drawable.icon_forward_pressed);
-        navDrawerItems.get(1).setIcon_right(R.drawable.icon_forward);
-        navDrawerItems.get(2).setIcon_right(R.drawable.icon_forward);
-        navDrawerItems.get(3).setIcon_right(R.drawable.icon_forward);
-        navDrawerItems.get(4).setIcon_right(R.drawable.icon_forward);
-        navDrawerItems.get(5).setIcon_right(R.drawable.icon_forward);
-        navDrawerItems.get(6).setIcon_right(R.drawable.icon_forward);
+        navDrawerItems.get(1).setIcon_right(R.drawable.icon_forward_gray);
+        navDrawerItems.get(2).setIcon_right(R.drawable.icon_forward_gray);
+        navDrawerItems.get(3).setIcon_right(R.drawable.icon_forward_gray);
+        navDrawerItems.get(4).setIcon_right(R.drawable.icon_forward_gray);
+        navDrawerItems.get(5).setIcon_right(R.drawable.icon_forward_gray);
+        navDrawerItems.get(6).setIcon_right(R.drawable.icon_forward_gray);
     }
 
     void setIconsFor1(int position) {
         navDrawerItems.get(0).setIcon(R.drawable.icon_home);
-        navDrawerItems.get(1).setIcon(R.drawable.market_information);
+        navDrawerItems.get(1).setIcon(R.drawable.icon_market_pressed);
         navDrawerItems.get(2).setIcon(R.drawable.icon_magnify_glass);
-        navDrawerItems.get(3).setIcon(R.drawable.watch_icon);
+        navDrawerItems.get(3).setIcon(R.drawable.gray_watch);
         navDrawerItems.get(4).setIcon(R.drawable.icon_feedback);
         navDrawerItems.get(5).setIcon(R.drawable.icon_share);
-        navDrawerItems.get(6).setIcon(R.drawable.about_us);
+        navDrawerItems.get(6).setIcon(R.drawable.icon_about_us);
 
 
-        navDrawerItems.get(0).setIcon_right(R.drawable.icon_forward);
+        navDrawerItems.get(0).setIcon_right(R.drawable.icon_forward_gray);
         navDrawerItems.get(1).setIcon_right(R.drawable.icon_forward);
 
       //  navDrawerItems.get(1).setIcon_right(R.drawable.icon_forward_pressed);
-        navDrawerItems.get(2).setIcon_right(R.drawable.icon_forward);
-        navDrawerItems.get(3).setIcon_right(R.drawable.icon_forward);
-        navDrawerItems.get(4).setIcon_right(R.drawable.icon_forward);
-        navDrawerItems.get(5).setIcon_right(R.drawable.icon_forward);
-        navDrawerItems.get(6).setIcon_right(R.drawable.icon_forward);
+        navDrawerItems.get(2).setIcon_right(R.drawable.icon_forward_gray);
+        navDrawerItems.get(3).setIcon_right(R.drawable.icon_forward_gray);
+        navDrawerItems.get(4).setIcon_right(R.drawable.icon_forward_gray);
+        navDrawerItems.get(5).setIcon_right(R.drawable.icon_forward_gray);
+        navDrawerItems.get(6).setIcon_right(R.drawable.icon_forward_gray);
     }
 
     void setIconsFor2(int position) {
         navDrawerItems.get(0).setIcon(R.drawable.icon_home);
-        navDrawerItems.get(1).setIcon(R.drawable.market_information);
-        navDrawerItems.get(2).setIcon(R.drawable.icon_magnify_glass);
-        navDrawerItems.get(3).setIcon(R.drawable.watch_icon);
+        navDrawerItems.get(1).setIcon(R.drawable.icon_market);
+        navDrawerItems.get(2).setIcon(R.drawable.icon_magnify_glass_pressed);
+        navDrawerItems.get(3).setIcon(R.drawable.gray_watch);
         navDrawerItems.get(4).setIcon(R.drawable.icon_feedback);
         navDrawerItems.get(5).setIcon(R.drawable.icon_share);
-        navDrawerItems.get(6).setIcon(R.drawable.about_us);
+        navDrawerItems.get(6).setIcon(R.drawable.icon_about_us);
 
 
-        navDrawerItems.get(0).setIcon_right(R.drawable.icon_forward);
-        navDrawerItems.get(1).setIcon_right(R.drawable.icon_forward);
+        navDrawerItems.get(0).setIcon_right(R.drawable.icon_forward_gray);
+        navDrawerItems.get(1).setIcon_right(R.drawable.icon_forward_gray);
         navDrawerItems.get(2).setIcon_right(R.drawable.icon_forward);
 //        navDrawerItems.get(2).setIcon_right(R.drawable.icon_forward_pressed);
-        navDrawerItems.get(3).setIcon_right(R.drawable.icon_forward);
-        navDrawerItems.get(4).setIcon_right(R.drawable.icon_forward);
-        navDrawerItems.get(5).setIcon_right(R.drawable.icon_forward);
-        navDrawerItems.get(6).setIcon_right(R.drawable.icon_forward);
+        navDrawerItems.get(3).setIcon_right(R.drawable.icon_forward_gray);
+        navDrawerItems.get(4).setIcon_right(R.drawable.icon_forward_gray);
+        navDrawerItems.get(5).setIcon_right(R.drawable.icon_forward_gray);
+        navDrawerItems.get(6).setIcon_right(R.drawable.icon_forward_gray);
     }
 
     void setIconsFor3(int position) {
         navDrawerItems.get(0).setIcon(R.drawable.icon_home);
-        navDrawerItems.get(1).setIcon(R.drawable.market_information);
+        navDrawerItems.get(1).setIcon(R.drawable.icon_market);
         navDrawerItems.get(2).setIcon(R.drawable.icon_magnify_glass);
-        navDrawerItems.get(3).setIcon(R.drawable.watch_icon_pressed);
+        navDrawerItems.get(3).setIcon(R.drawable.blue_watch);
         navDrawerItems.get(4).setIcon(R.drawable.icon_feedback);
         navDrawerItems.get(5).setIcon(R.drawable.icon_share);
-        navDrawerItems.get(6).setIcon(R.drawable.about_us);
+        navDrawerItems.get(6).setIcon(R.drawable.icon_about_us);
 
 
-        navDrawerItems.get(0).setIcon_right(R.drawable.icon_forward);
-        navDrawerItems.get(1).setIcon_right(R.drawable.icon_forward);
-        navDrawerItems.get(2).setIcon_right(R.drawable.icon_forward);
+        navDrawerItems.get(0).setIcon_right(R.drawable.icon_forward_gray);
+        navDrawerItems.get(1).setIcon_right(R.drawable.icon_forward_gray);
+        navDrawerItems.get(2).setIcon_right(R.drawable.icon_forward_gray);
         navDrawerItems.get(3).setIcon_right(R.drawable.icon_forward);
 
        // navDrawerItems.get(3).setIcon_right(R.drawable.icon_forward_pressed);
-        navDrawerItems.get(4).setIcon_right(R.drawable.icon_forward);
-        navDrawerItems.get(5).setIcon_right(R.drawable.icon_forward);
-        navDrawerItems.get(6).setIcon_right(R.drawable.icon_forward);
+        navDrawerItems.get(4).setIcon_right(R.drawable.icon_forward_gray);
+        navDrawerItems.get(5).setIcon_right(R.drawable.icon_forward_gray);
+        navDrawerItems.get(6).setIcon_right(R.drawable.icon_forward_gray);
     }
 
     void setIconsFor4(int position) {
         navDrawerItems.get(0).setIcon(R.drawable.icon_home);
-        navDrawerItems.get(1).setIcon(R.drawable.market_information);
+        navDrawerItems.get(1).setIcon(R.drawable.icon_market);
         navDrawerItems.get(2).setIcon(R.drawable.icon_magnify_glass);
-        navDrawerItems.get(3).setIcon(R.drawable.watch_icon);
+        navDrawerItems.get(3).setIcon(R.drawable.gray_watch);
         navDrawerItems.get(4).setIcon(R.drawable.icon_feedback_pressed);
         navDrawerItems.get(5).setIcon(R.drawable.icon_share);
-        navDrawerItems.get(6).setIcon(R.drawable.about_us);
+        navDrawerItems.get(6).setIcon(R.drawable.icon_about_us);
 
 
-        navDrawerItems.get(0).setIcon_right(R.drawable.icon_forward);
-        navDrawerItems.get(1).setIcon_right(R.drawable.icon_forward);
-        navDrawerItems.get(2).setIcon_right(R.drawable.icon_forward);
-        navDrawerItems.get(3).setIcon_right(R.drawable.icon_forward);
+        navDrawerItems.get(0).setIcon_right(R.drawable.icon_forward_gray);
+        navDrawerItems.get(1).setIcon_right(R.drawable.icon_forward_gray);
+        navDrawerItems.get(2).setIcon_right(R.drawable.icon_forward_gray);
+        navDrawerItems.get(3).setIcon_right(R.drawable.icon_forward_gray);
         navDrawerItems.get(4).setIcon_right(R.drawable.icon_forward);
 
       //  navDrawerItems.get(4).setIcon_right(R.drawable.icon_forward_pressed);
-        navDrawerItems.get(5).setIcon_right(R.drawable.icon_forward);
-        navDrawerItems.get(6).setIcon_right(R.drawable.icon_forward);
+        navDrawerItems.get(5).setIcon_right(R.drawable.icon_forward_gray);
+        navDrawerItems.get(6).setIcon_right(R.drawable.icon_forward_gray);
     }
 
     void setIconsFor5(int position) {
         navDrawerItems.get(0).setIcon(R.drawable.icon_home);
-        navDrawerItems.get(1).setIcon(R.drawable.market_information);
+        navDrawerItems.get(1).setIcon(R.drawable.icon_market);
         navDrawerItems.get(2).setIcon(R.drawable.icon_magnify_glass);
-        navDrawerItems.get(3).setIcon(R.drawable.watch_icon);
+        navDrawerItems.get(3).setIcon(R.drawable.gray_watch);
         navDrawerItems.get(4).setIcon(R.drawable.icon_feedback);
         navDrawerItems.get(5).setIcon(R.drawable.icon_share_pressed);
-        navDrawerItems.get(6).setIcon(R.drawable.about_us);
+        navDrawerItems.get(6).setIcon(R.drawable.icon_about_us);
 
 
-        navDrawerItems.get(0).setIcon_right(R.drawable.icon_forward);
-        navDrawerItems.get(1).setIcon_right(R.drawable.icon_forward);
-        navDrawerItems.get(2).setIcon_right(R.drawable.icon_forward);
-        navDrawerItems.get(3).setIcon_right(R.drawable.icon_forward);
-        navDrawerItems.get(4).setIcon_right(R.drawable.icon_forward);
+        navDrawerItems.get(0).setIcon_right(R.drawable.icon_forward_gray);
+        navDrawerItems.get(1).setIcon_right(R.drawable.icon_forward_gray);
+        navDrawerItems.get(2).setIcon_right(R.drawable.icon_forward_gray);
+        navDrawerItems.get(3).setIcon_right(R.drawable.icon_forward_gray);
+        navDrawerItems.get(4).setIcon_right(R.drawable.icon_forward_gray);
         navDrawerItems.get(5).setIcon_right(R.drawable.icon_forward);
 
         // navDrawerItems.get(5).setIcon_right(R.drawable.icon_forward_pressed);
-        navDrawerItems.get(6).setIcon_right(R.drawable.icon_forward);
+        navDrawerItems.get(6).setIcon_right(R.drawable.icon_forward_gray);
     }
 
     void setIconsFor6(int position) {
         navDrawerItems.get(0).setIcon(R.drawable.icon_home);
-        navDrawerItems.get(1).setIcon(R.drawable.market_information);
+        navDrawerItems.get(1).setIcon(R.drawable.icon_market);
         navDrawerItems.get(2).setIcon(R.drawable.icon_magnify_glass);
-        navDrawerItems.get(3).setIcon(R.drawable.watch_icon);
+        navDrawerItems.get(3).setIcon(R.drawable.gray_watch);
         navDrawerItems.get(4).setIcon(R.drawable.icon_feedback);
         navDrawerItems.get(5).setIcon(R.drawable.icon_share);
-        navDrawerItems.get(6).setIcon(R.drawable.about_us);
+        navDrawerItems.get(6).setIcon(R.drawable.icon_about_us_pressed);
 
 
-        navDrawerItems.get(0).setIcon_right(R.drawable.icon_forward);
-        navDrawerItems.get(1).setIcon_right(R.drawable.icon_forward);
-        navDrawerItems.get(2).setIcon_right(R.drawable.icon_forward);
-        navDrawerItems.get(3).setIcon_right(R.drawable.icon_forward);
-        navDrawerItems.get(4).setIcon_right(R.drawable.icon_forward);
-        navDrawerItems.get(5).setIcon_right(R.drawable.icon_forward);
+        navDrawerItems.get(0).setIcon_right(R.drawable.icon_forward_gray);
+        navDrawerItems.get(1).setIcon_right(R.drawable.icon_forward_gray);
+        navDrawerItems.get(2).setIcon_right(R.drawable.icon_forward_gray);
+        navDrawerItems.get(3).setIcon_right(R.drawable.icon_forward_gray);
+        navDrawerItems.get(4).setIcon_right(R.drawable.icon_forward_gray);
+        navDrawerItems.get(5).setIcon_right(R.drawable.icon_forward_gray);
         navDrawerItems.get(6).setIcon_right(R.drawable.icon_forward);
 
 //        navDrawerItems.get(6).setIcon_right(R.drawable.icon_forward_pressed);

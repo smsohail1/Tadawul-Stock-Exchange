@@ -41,7 +41,7 @@ import retrofit.client.Response;
 public class TopRatedFragment extends Fragment {
 
 
-    String publisherId = "ca-app-pub-9381472359687969/1657257730";
+    String publisherId = "ca-app-pub-9381472359687969/3170354534";
     String testingDeviceId = "359918043312594";
 
     TextView openOrClose;

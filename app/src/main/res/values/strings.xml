@@ -25,12 +25,12 @@
     <array name="nav_drawer_icons">
 
         <item>@drawable/icon_home</item>
-        <item>@drawable/market_information</item>
+        <item>@drawable/icon_market</item>
         <item>@drawable/icon_magnify_glass</item>
-        <item>@drawable/watch_icon</item>
+        <item>@drawable/gray_watch</item>
         <item>@drawable/icon_feedback</item>
         <item>@drawable/icon_share</item>
-        <item>@drawable/about_us</item>
+        <item>@drawable/icon_about_us</item>
 
     </array>
 
@@ -39,7 +39,7 @@
         <item>@drawable/icon_home_pressed</item>
         <item>@drawable/icon_market_pressed</item>
         <item>@drawable/icon_magnify_glass_pressed</item>
-        <item>@drawable/watch_icon_pressed</item>
+        <item>@drawable/blue_watch</item>
         <item>@drawable/icon_feedback_pressed</item>
         <item>@drawable/icon_share_pressed</item>
         <item>@drawable/icon_about_us_pressed</item>
@@ -49,26 +49,26 @@
 
     <array name="nav_drawer_right">
 
-        <item>@drawable/icon_forward</item>
-        <item>@drawable/icon_forward</item>
-        <item>@drawable/icon_forward</item>
-        <item>@drawable/icon_forward</item>
-        <item>@drawable/icon_forward</item>
-        <item>@drawable/icon_forward</item>
-        <item>@drawable/icon_forward</item>
+        <item>@drawable/icon_forward_gray</item>
+        <item>@drawable/icon_forward_gray</item>
+        <item>@drawable/icon_forward_gray</item>
+        <item>@drawable/icon_forward_gray</item>
+        <item>@drawable/icon_forward_gray</item>
+        <item>@drawable/icon_forward_gray</item>
+        <item>@drawable/icon_forward_gray</item>
 
     </array>
 
 
     <array name="nav_drawer_right_pressed">
 
-        <item>@drawable/icon_forward_pressed</item>
-        <item>@drawable/icon_forward_pressed</item>
-        <item>@drawable/icon_forward_pressed</item>
-        <item>@drawable/icon_forward_pressed</item>
-        <item>@drawable/icon_forward_pressed</item>
-        <item>@drawable/icon_forward_pressed</item>
-        <item>@drawable/icon_forward_pressed</item>
+        <item>@drawable/icon_forward</item>
+        <item>@drawable/icon_forward</item>
+        <item>@drawable/icon_forward</item>
+        <item>@drawable/icon_forward</item>
+        <item>@drawable/icon_forward</item>
+        <item>@drawable/icon_forward</item>
+        <item>@drawable/icon_forward</item>
 
     </array>
 

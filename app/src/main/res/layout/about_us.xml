@@ -69,7 +69,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="10dp"
                     android:background="#ffffff"
-                    android:src="@drawable/logo_version" />
+                    android:src="@drawable/app_icon" />
 
                 <TextView
                     android:id="@+id/version_app"

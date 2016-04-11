@@ -41,7 +41,7 @@ public class MainActivity extends ActionBarActivity {
 
     // private String[] tabs = {"Top Rated", "Games", "Movies"};
 //
-   String publisherId = "ca-app-pub-9381472359687969/1657257730";
+   String publisherId = "ca-app-pub-9381472359687969/3170354534";
 //    String testingDeviceId = "359918043312594";
 //
 //    AdRequest request;
@@ -80,7 +80,7 @@ public class MainActivity extends ActionBarActivity {
     ActionBar actionBar;
     SharedPreferences pref;
     SharedPreferences.Editor edit;
-    private RelativeLayout mDrawerRelativeLayout;
+    RelativeLayout mDrawerRelativeLayout;
     private int[] tabs = {R.drawable.market_button, R.drawable.stocks_button};
     // Tab titles
     // private String[] tabs = {"Top Rated", "Games", "Movies"};
@@ -248,6 +248,8 @@ Log.e("load","111");
         navMenuIcons_right.recycle();
 
 
+        mDrawerList.setOnItemClickListener(new SlideMenuClickListener());
+
         // setting the nav drawer list adapter
         adapter = new NavDrawerListAdapter(getApplicationContext(), navDrawerItems);
         mDrawerList.setAdapter(adapter);
@@ -305,11 +307,14 @@ Log.e("load","111");
                                 .replace(R.id.frame_container, fragment).commit();
 
                         // update selected item and title, then close the drawer
+
                         mDrawerList.setItemChecked(0, true);
                         mDrawerList.setSelection(0);
                         setTitle(navMenuTitles[0]);
                        // mDrawerLayout.closeDrawers();
-                        mDrawerLayout.closeDrawer(mDrawerList);
+
+                        mDrawerLayout.closeDrawer(mDrawerRelativeLayout);
+
                      //   mDrawerLayout.closeDrawer(mDrawerList);
                     } else {
                         // error in creating fragment
@@ -330,7 +335,9 @@ Log.e("load","111");
                         mDrawerList.setSelection(2);
                         setTitle(navMenuTitles[2]);
                        // mDrawerLayout.closeDrawers();
-                        mDrawerLayout.closeDrawer(mDrawerList);
+                        mDrawerLayout.closeDrawer(mDrawerRelativeLayout);
+
+
                         //mDrawerLayout.closeDrawer(mDrawerList);
                     } else {
                         // error in creating fragment
@@ -352,7 +359,8 @@ Log.e("load","111");
                         mDrawerList.setSelection(1);
                         setTitle(navMenuTitles[1]);
                        // mDrawerLayout.closeDrawers();
-                        mDrawerLayout.closeDrawer(mDrawerList);
+                        mDrawerLayout.closeDrawer(mDrawerRelativeLayout);
+
                        // mDrawerLayout.closeDrawer(mDrawerList);
                     } else {
                         // error in creating fragment
@@ -426,7 +434,7 @@ Log.e("load","111");
         }
 
 
-        mDrawerList.setOnItemClickListener(new SlideMenuClickListener());
+//        mDrawerList.setOnItemClickListener(new SlideMenuClickListener());
 
 
 //        viewPager = (ViewPager) findViewById(R.id.pager);
@@ -507,7 +515,7 @@ Log.e("load","111");
                     mDrawerList.setSelection(4);
                     setTitle(navMenuTitles[4]);
                   //  mDrawerLayout.closeDrawers();
-                    mDrawerLayout.closeDrawer(mDrawerList);
+                    mDrawerLayout.closeDrawer(mDrawerRelativeLayout);
                 } else {
                     // error in creating fragment
                     Log.e("MainActivity", "Error in creating fragment");

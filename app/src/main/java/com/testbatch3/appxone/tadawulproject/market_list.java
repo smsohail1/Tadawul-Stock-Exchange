@@ -21,7 +21,8 @@ public class market_list extends BaseAdapter {
     private ArrayList<marketlistitem> navDrawerItemss;
     private String current_value1 = "", chge_vle = "", hign_vl = "", low_vle1 = "", percent_market = "", high_value_3 = "";
     String current_vle, change_vle, hign_vle = "", low_vle = "", high_vle = "";
-    double change_value = 0.0,percange_double=0.0;
+    double change_value = 0.0, percange_double = 0.0;
+    String imga_value = "", img_out_space = "";
 
     public market_list(Context context, ArrayList<marketlistitem> navDrawerItems) {
         this.context = context;
@@ -54,39 +55,29 @@ public class market_list extends BaseAdapter {
         ImageView imgIcon = (ImageView) convertView.findViewById(R.id.icon_updown_market);
         TextView txtTitleindex = (TextView) convertView.findViewById(R.id.kse_index11);
 
-
-        //TextView percantage_market1 = (TextView) convertView.findViewById(R.id.percantage_market);
-        // TextView whole1 = (TextView) convertView.findViewById(R.id.whole);
-
-
         TextView high_value11 = (TextView) convertView.findViewById(R.id.high_value_stock);
         TextView low_value11 = (TextView) convertView.findViewById(R.id.low_value_stock);
 
-        //    TextView change_market = (TextView) convertView.findViewById(R.id.change_market);
 
         TextView high_value1_3 = (TextView) convertView.findViewById(R.id.high_value_stock_percentage);
 
 
         Typeface tf = Typeface.createFromAsset(this.context.getAssets(), "fonts/AvenirLTStd-Roman.otf");
         txtTitleindex.setTypeface(tf);
-        //whole1.setTypeface(tf);
         high_value11.setTypeface(tf);
         low_value11.setTypeface(tf);
-        //percantage_market1.setTypeface(tf);
-        // change_market.setTypeface(tf);
         high_value1_3.setTypeface(tf);
 
 
-        //  TextView  volume_value11 = (TextView) convertView.findViewById(R.id.volume_value1);
-        // TextView  previous_value11 = (TextView) convertView.findViewById(R.id.previous_value1);
+        change_value = Double.valueOf(navDrawerItemss.get(position).getplusgloat());
+        hign_vle = navDrawerItemss.get(position).gethigh1();
+        imga_value = navDrawerItemss.get(position).gethigh1();
 
-
-        //  imgIcon.setImageResource(navDrawerItems.get(position).getIcon());
-
-        change_value= Double.valueOf(navDrawerItemss.get(position).getplusgloat());
-        hign_vle=  navDrawerItemss.get(position).gethigh1();
-      //  percange_double = Double.valueOf(navDrawerItemss.get(position).gethigh1());
-
+        for (int i = 0; i < imga_value.length(); i++) {
+            if (imga_value != "") {
+                img_out_space += imga_value;
+            }
+        }
 
 
         txtTitleindex.setText(navDrawerItemss.get(position).getTitle());
@@ -96,41 +87,26 @@ public class market_list extends BaseAdapter {
         high_value_3 = navDrawerItemss.get(position).gethigh1();
         //      current_vle=current_vle.substring(0, 1);
         change_vle = navDrawerItemss.get(position).getplusgloat();
-//change_vle=change_vle.substring(0,1);
 
-
-
-        //    hign_vle=hign_vle.substring(0,1);
-
-
-        //
-        //  low_vle = navDrawerItemss.get(position).getlow();
-
-
-//        percent_market="";
-//        percent_market = navDrawerItemss.get(position).getpercent11();
-
-        //low_vle=low_vle.substring(0,1);
 
         if (current_vle.equalsIgnoreCase("")) {
             current_value1 = "N/A";
         } else {
-//            for (int i = 7; i < navDrawerItemss.get(position).getwhole().length(); i++) {
-//                current_value1 += String.valueOf(current_vle.charAt(i));
             current_value1 = navDrawerItemss.get(position).getwhole();
-//            }
         }
 
 
         if (high_value_3.equalsIgnoreCase("")) {
             high_vle = "N/A";
         } else {
-//            for (int i = 7; i < navDrawerItemss.get(position).getwhole().length(); i++) {
-//                current_value1 += String.valueOf(current_vle.charAt(i));
-            high_vle = navDrawerItemss.get(position).gethigh1();
-//            }
-        }
+            for (int i = 0; i < high_value_3.length(); i++) {
+                if (high_value_3 != "") {
+                    high_vle += high_value_3;
+                }
+                //  high_vle = navDrawerItemss.get(position).gethigh1();
 
+            }
+        }
 
 //        if (change_vle.equalsIgnoreCase("")) {
 //            chge_vle = "N/A";
@@ -145,8 +121,14 @@ public class market_list extends BaseAdapter {
 //            }
 //        }
         if (hign_vle.equalsIgnoreCase("")) {
-            hign_vl = "N/A";
+            hign_vle = "N/A";
         } else {
+            for (int i = 0; i < hign_vle.length(); i++) {
+                if (hign_vle != "") {
+                    hign_vle += hign_vle;
+                }
+            }
+
 //            for (int i1i = 4; i1i < navDrawerItemss.get(position).gethigh1().length(); i1i++) {
 //                hign_vl += String.valueOf(hign_vle.charAt(i1i));
 //            }
@@ -175,23 +157,28 @@ public class market_list extends BaseAdapter {
 
         //  percentage1.setText(navDrawerItems.get(position).getpercent());
 
-//        percange_double= Double.valueOf(hign_vle);
-//        if(percange_double>=0.0)
-//        {
-          imgIcon.setImageResource(R.drawable.green_trangle);
-//
-//
-//        }
-//        else {
-//            imgIcon.setImageResource(R.drawable.red_trangle);
-//
-//        }
+        percange_double = Double.valueOf(img_out_space);
+        if (percange_double >= 0.0) {
+            imgIcon.setImageResource(R.drawable.green_trangle);
+
+
+        } else {
+            imgIcon.setImageResource(R.drawable.red_trangle);
+
+        }
+
+        img_out_space = "";
 
         high_value11.setText(hign_vl);
+
+
         //  hign_vl = "";
         low_value11.setText(low_vle1);
+
+
         //percantage_market1.setText(percent_market+"%");
         high_value1_3.setText(high_vle.toString());
+        high_vle = "";
         // low_vle1 = "";
         //  volume_value11.setText(navDrawerItems.get(position).getvolume());
 
