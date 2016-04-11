@@ -62,6 +62,7 @@ public class watchlist extends Fragment {
 
 
         format = new DecimalFormat("0.00");
+
         AdView mAdView = new AdView(getActivity(), null);
         String ad_Id = publisherId;
         final LinearLayout linearLayout = (LinearLayout) root_View.findViewById(R.id.adLayout);

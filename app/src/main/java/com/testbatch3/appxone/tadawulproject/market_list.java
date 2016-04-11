@@ -98,8 +98,9 @@ public class market_list extends BaseAdapter {
         //      current_vle=current_vle.substring(0, 1);
         change_vle = navDrawerItemss.get(position).getplusgloat();
 
-        img_out_space = "";
+        // img_out_space = "";
         imga_value = navDrawerItemss.get(position).gethigh1();
+
         imga_value = imga_value.charAt(9) + "" + imga_value.charAt(10) + "" + imga_value.charAt(11) + "" + imga_value.charAt(12);
 
 //        for (int i = imga_value.length(); i >0; i--) {
@@ -110,8 +111,9 @@ public class market_list extends BaseAdapter {
 //            }
 
 
-        Log.e("value_high", imga_value.length() + "  " + imga_value.charAt(9) + imga_value.charAt(10) + imga_value.charAt(11) + imga_value.charAt(12));
-        img_out_space = "";
+        // Log.e("value_high", imga_value.length() + "  " + imga_value.charAt(9) + imga_value.charAt(10) + imga_value.charAt(11) + imga_value.charAt(12));
+
+        //  img_out_space = "";
 
         if (current_vle.equalsIgnoreCase("")) {
             current_value1 = "N/A";
@@ -123,11 +125,8 @@ public class market_list extends BaseAdapter {
         if (hign_vle.equalsIgnoreCase("")) {
             high_vle = "N/A";
         } else {
-            for (int i = 4; i < hign_vle.length(); i++) {
-//                if (hign_vle != "") {
-                high_vle += hign_vle.charAt(i);
-                //}
-            }
+
+            high_vle = high_value_3.charAt(9) + "" + high_value_3.charAt(10) + "" + high_value_3.charAt(11) + "" + high_value_3.charAt(12);
 
 
         }
@@ -135,29 +134,28 @@ public class market_list extends BaseAdapter {
 
         if (change_vle.equalsIgnoreCase("")) {
             low_vle1 = "N/A";
-            high_value1_3.setText(high_vle.toString());
-            high_vle = "";
+
         } else {
             low_vle1 = navDrawerItemss.get(position).getplusgloat();
-            high_value1_3.setText(high_vle.toString());
-            high_vle = "";
+
 //            }
         }
 
-//        percange_double = Double.valueOf(img_out_space);
-//
-//        if (percange_double >= 0.0) {
-//            imgIcon.setImageResource(R.drawable.green_trangle);
-//
-//
-//        } else {
-//            imgIcon.setImageResource(R.drawable.red_trangle);
-//
-//        }
+        percange_double = Double.valueOf(imga_value);
+
+        if (percange_double >= 0.0) {
+            imgIcon.setImageResource(R.drawable.green_trangle);
+
+
+        } else {
+            imgIcon.setImageResource(R.drawable.red_trangle);
+
+        }
 
 
         high_value11.setText(hign_vl);
-
+        high_value1_3.setText(high_vle.toString());
+        high_vle = "";
 
         //  hign_vl = "";
         low_value11.setText(low_vle1);

@@ -85,8 +85,8 @@ android:background="#ffffff"
         android:layout_gravity="left|top"
 
         android:choiceMode="singleChoice"
-        android:divider="#c0392b"
-        android:dividerHeight="1dp" />
+        android:divider="#1992ce"
+        android:dividerHeight="0.5dp" />
 
 
 

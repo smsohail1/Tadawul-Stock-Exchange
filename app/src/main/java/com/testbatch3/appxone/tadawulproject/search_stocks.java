@@ -83,7 +83,7 @@ public class search_stocks extends Fragment {
         search_icon = (ImageView) rootView1.findViewById(R.id.search_icon);
 
 
-        AdView mAdView = new AdView(getActivity(), null);
+          AdView mAdView = new AdView(getActivity(), null);
         String ad_Id = publisherId;
         final LinearLayout linearLayout = (LinearLayout) rootView1.findViewById(R.id.adLayout1);
         linearLayout.addView(mAdView);

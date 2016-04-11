@@ -36,8 +36,7 @@ public class FB_Fragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle saveinstanceinstate) {
 
-         rootView = inflater.inflate(R.layout.fb_fragment, container, false);
-
+        rootView = inflater.inflate(R.layout.fb_fragment, container, false);
 
 
         AdView mAdView = new AdView(getActivity(), null);
@@ -65,42 +64,25 @@ public class FB_Fragment extends Fragment {
         });
 
 
-        send_button= (ImageButton) rootView.findViewById(R.id.send_button);
-        comment= (EditText) rootView.findViewById(R.id.detail);
+        send_button = (ImageButton) rootView.findViewById(R.id.send_button);
+        comment = (EditText) rootView.findViewById(R.id.detail);
 //
         send_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                if(comment.getText().toString().equalsIgnoreCase(""))
-                {
-y=Toast.makeText(getActivity(),"Please write your feedback",Toast.LENGTH_SHORT);
+                if (comment.getText().toString().equalsIgnoreCase("")) {
+                    y = Toast.makeText(getActivity(), "Please write your feedback", Toast.LENGTH_SHORT);
                     y.show();
 
-                }
-                else
-                {
+                } else {
                     comment.setText("");
                     comment.setHint("");
-                    y=Toast.makeText(getActivity(),"Thanks for your feedback",Toast.LENGTH_SHORT);
+                    y = Toast.makeText(getActivity(), "Thanks for your feedback", Toast.LENGTH_SHORT);
                     y.show();
                 }
             }
         });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 //        hint_txt = (TextView) rootView.findViewById(R.id.hint_text);
@@ -133,8 +115,6 @@ y=Toast.makeText(getActivity(),"Please write your feedback",Toast.LENGTH_SHORT);
 
 
     }
-
-
 
 
 //    private void setDynamicHeightWidths() {

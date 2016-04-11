@@ -161,7 +161,7 @@ public class search_adapter extends BaseAdapter  {
 
 
 
-        viewHolder.im.setImageResource(R.drawable.watch_button_status);
+        viewHolder.im.setImageResource(R.drawable.watch_button_stocks);
         fav_list.clear();
         query = "SELECT * FROM '" + AppSettings.DATABASE_TABLE + "'";
         Log.e("SELECT QUERY", query);

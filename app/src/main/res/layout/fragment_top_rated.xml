@@ -103,7 +103,7 @@
         android:background="#ffffff"
 
         android:choiceMode="singleChoice"
-        android:divider="#c0392b"
+        android:divider="#1992ce"
         android:dividerHeight="0.5dp" />
 
 

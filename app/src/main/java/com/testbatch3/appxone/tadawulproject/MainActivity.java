@@ -170,31 +170,43 @@ public class MainActivity extends ActionBarActivity {
 
 
 //
-        AdView mAdView = new AdView(getApplicationContext(),null);
-        String ad_Id = publisherId;
-        final LinearLayout linearLayout = (LinearLayout) findViewById(R.id.adLayout);
-        linearLayout.addView(mAdView);
-        mAdView.setAdUnitId(ad_Id);
-        mAdView.setAdSize(AdSize.SMART_BANNER);
-        AdRequest adRequest = new AdRequest.Builder()
-                .build();
-        mAdView.loadAd(adRequest);
-
-        mAdView.setAdListener(new AdListener() {
-            @Override
-            public void onAdLoaded() {
 
 
-                linearLayout.setVisibility(View.VISIBLE);
-Log.e("load","111");
-            }
 
-            @Override
-            public void onAdFailedToLoad(int errorCode) {
-              //  linearLayout.setVisibility(View.GONE);
-                Log.e("failed","111");
-            }
-        });
+
+
+
+
+
+
+
+
+
+//        AdView mAdView = new AdView(getApplicationContext(),null);
+//        String ad_Id = publisherId;
+//        final LinearLayout linearLayout = (LinearLayout) findViewById(R.id.adLayout);
+//        linearLayout.addView(mAdView);
+//        mAdView.setAdUnitId(ad_Id);
+//        mAdView.setAdSize(AdSize.SMART_BANNER);
+//        AdRequest adRequest = new AdRequest.Builder()
+//                .build();
+//        mAdView.loadAd(adRequest);
+//
+//        mAdView.setAdListener(new AdListener() {
+//            @Override
+//            public void onAdLoaded() {
+//
+//
+//                linearLayout.setVisibility(View.VISIBLE);
+//Log.e("load","111");
+//            }
+//
+//            @Override
+//            public void onAdFailedToLoad(int errorCode) {
+//              //  linearLayout.setVisibility(View.GONE);
+//                Log.e("failed","111");
+//            }
+//        });
 
 
         mTitle = mDrawerTitle = getTitle();
@@ -661,7 +673,7 @@ Log.e("load","111");
 
                 Intent share_data_drawer = new Intent(Intent.ACTION_SEND);
                 share_data_drawer.setType("text/plain");
-                share_data_drawer.putExtra(Intent.EXTRA_TEXT, "I am using this app.\n https://play.google.com/store/apps/details?id=com.appinhand.karachistockexchange");
+                share_data_drawer.putExtra(Intent.EXTRA_TEXT, "I am using this app.\n https://play.google.com/store/apps/details?id=com.appinhand.tadawulstockexchange");
                 Intent share_via = Intent.createChooser(share_data_drawer, "Share Via");
                 startActivity(share_via);
                 break;

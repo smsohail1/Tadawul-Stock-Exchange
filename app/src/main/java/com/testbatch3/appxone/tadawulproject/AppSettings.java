@@ -10,7 +10,7 @@ public class AppSettings {
     public static final String DATABASE_NAME = "stocks";
 //	public static final String DB_Path = Environment.getDataDirectory()
   //          .getAbsolutePath() + "/databases/";
-    public static final String DB_Path =  "/data/data/com.testbatch3.appxone.tadawulproject/databases/";
+    public static final String DB_Path =  "/data/data/com.appinhand.tadawulstockexchange/databases/";
 //    public static final String DATABASE_NAME = "test_db";
 	public static final String DATABASE_TABLE = "stocks_kse";
 	public static final int DATABASE_VERSION = 1;
