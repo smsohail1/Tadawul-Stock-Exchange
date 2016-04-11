@@ -288,19 +288,16 @@ String loop_inc="";
     dateTime.setText(loop_inc.toString());
 
 
-    String json_last= pref.getString("last", "");
-String che="";
-    for (int loop_format1 = 8; loop_format1 < json_last.length()-1; loop_format1++) {
-      che+=json_last.charAt(loop_format1);
-        //openOrNot.setText(String.valueOf(json_last.charAt(loop_format1)));
+//    String json_last= pref.getString("last", "");
+//String che="";
+//    for (int loop_format1 = 8; loop_format1 < json_last.length()-1; loop_format1++) {
+//      che+=json_last.charAt(loop_format1);
+//        //openOrNot.setText(String.valueOf(json_last.charAt(loop_format1)));
+//
+//    }
+//    openOrNot.setText(che.toString());
 
-    }
-    openOrNot.setText(che.toString());
-   // openOrNot.setText(json_last);
 
-   // edit = pref.edit();
-    //edit.putInt("drawer_pos", position);
-    //edit.apply();
 }
     public static int getVersionNumber(Context context) {
         int versionName = 0;
@@ -421,7 +418,7 @@ String che="";
 
 
         RestAdapter restAdapter = new RestAdapter.Builder()
-                .setEndpoint("http://appinhand.net/LiveApplications/psx").build();
+                .setEndpoint("http://appinhand.net/LiveApplications/tadawul").build();
         gitapi git = restAdapter.create(gitapi.class);
 
         git.kse2_fatch(new Callback<kse2_fatch>() {
@@ -439,15 +436,16 @@ String che="";
 //                                true);
 
                 if (model1.getStatus().equalsIgnoreCase("true")) {
-                    for (int i = 0; i < model1.getMarket().size(); i++) {
+                    for (int i = 0; i < model1.getMerketSummary().size(); i++) {
 
-                        stockItems.add(new stocklistitem(model1.getMarket().get(i).getSymbol(), model1.getMarket().get(i).getChanges(), model1.getMarket().get(i).getHigh(), model1.getMarket().get(i).getLow(), model1.getMarket().get(i).getVolume(), model1.getMarket().get(i).getLdcp(),i+""));
+                        stockItems.add(new stocklistitem(model1.getMerketSummary().get(i).getCompany(), model1.getMerketSummary().get(i).getChangevalue(), model1.getMerketSummary().get(i).getHigh(), model1.getMerketSummary().get(i).getLow(), model1.getMerketSummary().get(i).getVol(), model1.getMerketSummary().get(i).getOpen(),i+""));
                         Log.i("correct", "correct");
 
                     }
 
-                    date_time1 = model1.getStoke().get(0).getValue();
-                    close_not1 = model1.getStoke().get(1).getValue();
+                    date_time1 = model1.getTime();
+
+                   // close_not1 = model1.getStoke().get(1).getValue();
 
                     SimpleDateFormat srcDf = new SimpleDateFormat(
                             "yyyy-MM-dd hh:mm:ss");
@@ -462,14 +460,14 @@ String che="";
 
 
                     dateTime.setText(mydate);
-
-String gg="";
-                    for (int loop_format1 = 8; loop_format1 < close_not1.length(); loop_format1++) {
-                        gg+=close_not1.charAt(loop_format1);
-
-                        // openOrNot.append(String.valueOf(close_not1.charAt(loop_format1)));
-                    }
-                    openOrNot.setText(gg);
+//
+//String gg="";
+//                    for (int loop_format1 = 8; loop_format1 < close_not1.length(); loop_format1++) {
+//                        gg+=close_not1.charAt(loop_format1);
+//
+//
+//                    }
+//                    openOrNot.setText(gg);
 
                     SharedPreferences sharedpreferences = getActivity().getSharedPreferences("dateTime", Context.MODE_PRIVATE);
                     SharedPreferences.Editor editor = sharedpreferences.edit();
@@ -535,12 +533,14 @@ String gg="";
                     String json_last_update = new Gson().toJson(mydate);
                     edit.putString("status",json_last_update).apply();
 
-                    String json_status = new Gson().toJson(close_not1);
-                    edit.putString("last",json_status).apply();
+//                    String json_status = new Gson().toJson(close_not1);
+//                    edit.putString("last",json_status).apply();
 
-//                    for (stocklistitem item : stockItems) {
-//                        addCacheContact(item);
-//                    }
+
+
+
+
+
 
 
 

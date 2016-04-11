@@ -11,7 +11,7 @@ public interface gitapi {
     @GET("/Indices_fetch.php")
     public void kse1_fatch(Callback<kse1_fetch> response);
 
-    @GET("/psx_marketsummary.php")
+    @GET("/tadawul_fetch.php")
     public void kse2_fatch(Callback<kse2_fatch> response);
 
 

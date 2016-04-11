@@ -388,7 +388,7 @@ public class watchlist extends Fragment {
 
 
         RestAdapter restAdapter = new RestAdapter.Builder()
-                .setEndpoint("http://appinhand.net/LiveApplications/psx").build();
+                .setEndpoint("http://appinhand.net/LiveApplications/tadawul").build();
         gitapi git = restAdapter.create(gitapi.class);
 
         git.kse2_fatch(new Callback<kse2_fatch>() {
@@ -450,10 +450,10 @@ public class watchlist extends Fragment {
 
                                 //greater_str1 = navDrawerItems11.get(position).getwhole();
                                 //  greater_not1 = Double.parseDouble(greater_str1);
-                                String changes = model1.getMarket().get(pos_int).getChanges();
+                                String changes = model1.getMerketSummary().get(pos_int).getChangevalue();
                                 double greater_not1 = Double.parseDouble(changes);
 
-                                String prevoius = model1.getMarket().get(pos_int).getLdcp();
+                                String prevoius = model1.getMerketSummary().get(pos_int).getOpen();
                                 double get_int_prevoous = Double.parseDouble(prevoius);
 
                                 //  get_previous_lcdp = navDrawerItems11.get(position).getprevious();
@@ -506,7 +506,7 @@ public class watchlist extends Fragment {
                                 }
 
 
-                                watch_item.add(new watchlist_model(id_stock1, model1.getMarket().get(pos_int).getSymbol(), model1.getMarket().get(pos_int).getChanges(), string_changes, img_drawable, percantage_string, model1.getMarket().get(pos_int).getHigh(), model1.getMarket().get(pos_int).getLow(), model1.getMarket().get(pos_int).getVolume(), model1.getMarket().get(pos_int).getLdcp()));
+                                watch_item.add(new watchlist_model(id_stock1, model1.getMerketSummary().get(pos_int).getCompany(), model1.getMerketSummary().get(pos_int).getChangevalue(), string_changes, img_drawable, percantage_string, model1.getMerketSummary().get(pos_int).getHigh(), model1.getMerketSummary().get(pos_int).getLow(), model1.getMerketSummary().get(pos_int).getVol(), model1.getMerketSummary().get(pos_int).getOpen()));
 
                                 //  watch_item.add(new watchlist_model(id_stock1, name1, changes1, ratio1, icon1, percantage1, high1, low1, volume1, previous1));
 

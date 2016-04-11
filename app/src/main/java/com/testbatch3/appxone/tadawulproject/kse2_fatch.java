@@ -8,23 +8,28 @@ package com.testbatch3.appxone.tadawulproject;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class kse2_fatch {
+
 
     @SerializedName("status")
     @Expose
     private String status;
     @SerializedName("time")
     @Expose
-    private Integer time;
-    @SerializedName("stoke")
+    private String time;
+    @SerializedName("merket summary")
     @Expose
-    private List<Stoke> stoke = new ArrayList<Stoke>();
-    @SerializedName("market")
-    @Expose
-    private List<Market> market = new ArrayList<Market>();
+    private List<MerketSummary> merketSummary = new ArrayList<MerketSummary>();
 
     /**
      * @return The status
@@ -43,54 +48,49 @@ public class kse2_fatch {
     /**
      * @return The time
      */
-    public Integer getTime() {
+    public String getTime() {
         return time;
     }
 
     /**
      * @param time The time
      */
-    public void setTime(Integer time) {
+    public void setTime(String time) {
         this.time = time;
     }
 
     /**
-     * @return The stoke
+     * @return The merketSummary
      */
-    public List<Stoke> getStoke() {
-        return stoke;
+    public List<MerketSummary> getMerketSummary() {
+        return merketSummary;
     }
 
     /**
-     * @param stoke The stoke
+     * @param merketSummary The merket summary
      */
-    public void setStoke(List<Stoke> stoke) {
-        this.stoke = stoke;
-    }
-
-    /**
-     * @return The market
-     */
-    public List<Market> getMarket() {
-        return market;
-    }
-
-    /**
-     * @param market The market
-     */
-    public void setMarket(List<Market> market) {
-        this.market = market;
+    public void setMerketSummary(List<MerketSummary> merketSummary) {
+        this.merketSummary = merketSummary;
     }
 
 
-    public class Market {
+    public class MerketSummary {
 
-        @SerializedName("symbol")
+        @SerializedName("Company")
         @Expose
-        private String symbol;
-        @SerializedName("ldcp")
+        private String Company;
+        @SerializedName("Price")
         @Expose
-        private String ldcp;
+        private String Price;
+        @SerializedName("vol")
+        @Expose
+        private String vol;
+        @SerializedName("changevalue")
+        @Expose
+        private String changevalue;
+        @SerializedName("change_percent")
+        @Expose
+        private String changePercent;
         @SerializedName("open")
         @Expose
         private String open;
@@ -100,45 +100,78 @@ public class kse2_fatch {
         @SerializedName("low")
         @Expose
         private String low;
-        @SerializedName("current")
-        @Expose
-        private String current;
-        @SerializedName("changes")
-        @Expose
-        private String changes;
-        @SerializedName("volume")
-        @Expose
-        private String volume;
         @SerializedName("sector")
         @Expose
         private String sector;
 
         /**
-         * @return The symbol
+         * @return The Company
          */
-        public String getSymbol() {
-            return symbol;
+        public String getCompany() {
+            return Company;
         }
 
         /**
-         * @param symbol The symbol
+         * @param Company The Company
          */
-        public void setSymbol(String symbol) {
-            this.symbol = symbol;
+        public void setCompany(String Company) {
+            this.Company = Company;
         }
 
         /**
-         * @return The ldcp
+         * @return The Price
          */
-        public String getLdcp() {
-            return ldcp;
+        public String getPrice() {
+            return Price;
         }
 
         /**
-         * @param ldcp The ldcp
+         * @param Price The Price
          */
-        public void setLdcp(String ldcp) {
-            this.ldcp = ldcp;
+        public void setPrice(String Price) {
+            this.Price = Price;
+        }
+
+        /**
+         * @return The vol
+         */
+        public String getVol() {
+            return vol;
+        }
+
+        /**
+         * @param vol The vol
+         */
+        public void setVol(String vol) {
+            this.vol = vol;
+        }
+
+        /**
+         * @return The changevalue
+         */
+        public String getChangevalue() {
+            return changevalue;
+        }
+
+        /**
+         * @param changevalue The changevalue
+         */
+        public void setChangevalue(String changevalue) {
+            this.changevalue = changevalue;
+        }
+
+        /**
+         * @return The changePercent
+         */
+        public String getChangePercent() {
+            return changePercent;
+        }
+
+        /**
+         * @param changePercent The change_percent
+         */
+        public void setChangePercent(String changePercent) {
+            this.changePercent = changePercent;
         }
 
         /**
@@ -184,48 +217,6 @@ public class kse2_fatch {
         }
 
         /**
-         * @return The current
-         */
-        public String getCurrent() {
-            return current;
-        }
-
-        /**
-         * @param current The current
-         */
-        public void setCurrent(String current) {
-            this.current = current;
-        }
-
-        /**
-         * @return The changes
-         */
-        public String getChanges() {
-            return changes;
-        }
-
-        /**
-         * @param changes The changes
-         */
-        public void setChanges(String changes) {
-            this.changes = changes;
-        }
-
-        /**
-         * @return The volume
-         */
-        public String getVolume() {
-            return volume;
-        }
-
-        /**
-         * @param volume The volume
-         */
-        public void setVolume(String volume) {
-            this.volume = volume;
-        }
-
-        /**
          * @return The sector
          */
         public String getSector() {
@@ -237,63 +228,6 @@ public class kse2_fatch {
          */
         public void setSector(String sector) {
             this.sector = sector;
-        }
-
-    }
-
-
-    public class Stoke {
-
-        @SerializedName("id")
-        @Expose
-        private String id;
-        @SerializedName("constant")
-        @Expose
-        private String constant;
-        @SerializedName("value")
-        @Expose
-        private String value;
-
-        /**
-         * @return The id
-         */
-        public String getId() {
-            return id;
-        }
-
-        /**
-         * @param id The id
-         */
-        public void setId(String id) {
-            this.id = id;
-        }
-
-        /**
-         * @return The constant
-         */
-        public String getConstant() {
-            return constant;
-        }
-
-        /**
-         * @param constant The constant
-         */
-        public void setConstant(String constant) {
-            this.constant = constant;
-        }
-
-        /**
-         * @return The value
-         */
-        public String getValue() {
-            return value;
-        }
-
-        /**
-         * @param value The value
-         */
-        public void setValue(String value) {
-            this.value = value;
         }
 
     }

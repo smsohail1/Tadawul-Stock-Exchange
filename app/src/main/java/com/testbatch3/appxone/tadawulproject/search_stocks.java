@@ -83,7 +83,7 @@ public class search_stocks extends Fragment {
         search_icon = (ImageView) rootView1.findViewById(R.id.search_icon);
 
 
-          AdView mAdView = new AdView(getActivity(), null);
+        AdView mAdView = new AdView(getActivity(), null);
         String ad_Id = publisherId;
         final LinearLayout linearLayout = (LinearLayout) rootView1.findViewById(R.id.adLayout1);
         linearLayout.addView(mAdView);
@@ -329,7 +329,7 @@ public class search_stocks extends Fragment {
 
 
         RestAdapter restAdapter = new RestAdapter.Builder()
-                .setEndpoint("http://appinhand.net/LiveApplications/psx").build();
+                .setEndpoint("http://appinhand.net/LiveApplications/tadawul").build();
         gitapi git = restAdapter.create(gitapi.class);
 
         git.kse2_fatch(new Callback<kse2_fatch>() {
@@ -341,9 +341,9 @@ public class search_stocks extends Fragment {
 
                 marketItems1.clear();
                 if (model1.getStatus().equalsIgnoreCase("true")) {
-                    for (int i = 0; i < model1.getMarket().size(); i++) {
+                    for (int i = 0; i < model1.getMerketSummary().size(); i++) {
 
-                        marketItems1.add(new search_model(model1.getMarket().get(i).getSymbol(), model1.getMarket().get(i).getChanges(), model1.getMarket().get(i).getHigh(), model1.getMarket().get(i).getLow(), model1.getMarket().get(i).getVolume(), model1.getMarket().get(i).getLdcp(),i+""));
+                        marketItems1.add(new search_model(model1.getMerketSummary().get(i).getCompany(), model1.getMerketSummary().get(i).getChangevalue(), model1.getMerketSummary().get(i).getHigh(), model1.getMerketSummary().get(i).getLow(), model1.getMerketSummary().get(i).getVol(), model1.getMerketSummary().get(i).getOpen(), i + ""));
                         Log.i("correct", "correct");
 
                     }
