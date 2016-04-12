@@ -28,12 +28,20 @@ import com.vincentbrison.openlibraries.android.dualcache.lib.DualCacheBuilder;
 import com.vincentbrison.openlibraries.android.dualcache.lib.DualCacheContextUtils;
 
 import java.lang.reflect.Type;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 import retrofit.Callback;
 import retrofit.RestAdapter;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
+
+
+import java.lang.reflect.Type;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * Created by APPXONE on 12/31/2015.
@@ -101,16 +109,18 @@ public class TopRatedFragment extends Fragment {
         });
 
         marketList = (ListView) rootView.findViewById(R.id.ist_market);
-        openOrClose = (TextView) rootView.findViewById(R.id.open_not);
+        //   openOrClose = (TextView) rootView.findViewById(R.id.open_not);
         date = (TextView) rootView.findViewById(R.id.date);
-        status1 = (TextView) rootView.findViewById(R.id.status1);
+
+        //  status1 = (TextView) rootView.findViewById(R.id.status1);
+
         last_updated1 = (TextView) rootView.findViewById(R.id.Last_update1);
 
 
         Typeface tf = Typeface.createFromAsset(getActivity().getAssets(), "fonts/AvenirLTStd-Roman.otf");
-        openOrClose.setTypeface(tf);
+        // openOrClose.setTypeface(tf);
         date.setTypeface(tf);
-        status1.setTypeface(tf);
+        //   status1.setTypeface(tf);
         last_updated1.setTypeface(tf);
 
 
@@ -211,7 +221,7 @@ public class TopRatedFragment extends Fragment {
             //openOrNot.setText(String.valueOf(json_last.charAt(loop_format1)));
 
         }
-        date.setText(json_data.toString());
+        date.setText(loop_inc.toString());
 
 
 //        String json_last = pref.getString("last_market", "");
@@ -369,18 +379,18 @@ public class TopRatedFragment extends Fragment {
                     //  close_not = model.getStock().get(1).getValue();
 
 
-//                    SimpleDateFormat srcDf = new SimpleDateFormat(
-//                            "dd/MMyyyy/ hh:mm:ss am");
-//
-//                    try {
-//                        Date date = srcDf.parse(date__time);
-//                        SimpleDateFormat destDf = new SimpleDateFormat("dd MMM,yy HH:mm");
-//                        mydate = destDf.format(date);
-//                    } catch (ParseException e) {
-//                        e.printStackTrace();
-//                    }
+                    SimpleDateFormat srcDf = new SimpleDateFormat(
+                            "MM/dd/yyyy hh:mm:ss aa");
 
-                    date.setText(date__time);
+                    try {
+                        Date date = srcDf.parse(date__time);
+                        SimpleDateFormat destDf = new SimpleDateFormat("dd MMM,yy HH:mm");
+                        mydate = destDf.format(date);
+                    } catch (ParseException e) {
+                        e.printStackTrace();
+                    }
+
+                    date.setText(mydate);
 
 
 //                    String gg="";

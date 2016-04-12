@@ -1,7 +1,10 @@
 package com.testbatch3.appxone.tadawulproject;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.database.Cursor;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBar;
@@ -49,6 +52,7 @@ public class watchlist extends Fragment {
     String string_changes = "", percantage_string = "";
     int img_drawable;
     ArrayList<Integer> list;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -87,11 +91,16 @@ public class watchlist extends Fragment {
             }
         });
 
-        list=new ArrayList<Integer>();
+        list = new ArrayList<Integer>();
         watch_list_data = (SwipeMenuListView) root_View.findViewById(R.id.list_watchlist);
         watch_item = new ArrayList<watchlist_model>();
-        load_database();
-       // hitWebservice_kse2();
+        if (isConnectingToInternet()) {
+            load_database();
+        } else {
+            load_database_internet_error();
+        }
+
+        // hitWebservice_kse2();
 
         watch_list_data.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -186,6 +195,169 @@ public class watchlist extends Fragment {
 
     }
 
+
+    public boolean isConnectingToInternet() {
+        ConnectivityManager connectivity = (ConnectivityManager) getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
+        if (connectivity != null) {
+            NetworkInfo[] info = connectivity.getAllNetworkInfo();
+            if (info != null)
+                for (int i = 0; i < info.length; i++)
+                    if (info[i].getState() == NetworkInfo.State.CONNECTED) {
+                        return true;
+                    }
+
+        }
+        return false;
+    }
+
+    public void load_database_internet_error() {
+
+        watch_item.clear();
+
+        stock_list.query = "SELECT * FROM '" + AppSettings.DATABASE_TABLE + "'";
+        Log.e("SELECT QUERY", stock_list.query);
+
+        final Cursor c1 = dbm.selectQuery(stock_list.query);
+
+        try {
+            if (c1 != null && c1.moveToLast()) {
+                do {
+                    // int id = c.getInt(c.getColumnIndex(AppSettings.KEY_ICON));
+
+
+                    // String POS = c1.getString(c1
+                    //       .getColumnIndex(AppSettings.KEY_POSITION));
+                    //  int pos_int = Integer.parseInt(POS);
+
+
+                    //  String name1 = c1.getString(c1.getColumnIndex(AppSettings.KEY_NAME));
+
+
+                    //  String company_name = c1.getString(c1.getColumnIndex(AppSettings.KEY_NAME));
+
+                    //if (company_name == name1) {
+
+
+                    // if(name1==)
+//int pos_int=Integer.parseInt(POS);
+
+                    int id_stock1 = c1.getInt(c1.getColumnIndex(AppSettings.KEY_ID));
+//
+                    String low1 = c1.getString(c1
+                            .getColumnIndex(AppSettings.KEY_LOW));
+                    String name1 = c1.getString(c1.getColumnIndex(AppSettings.KEY_NAME));
+
+                    String high1 = c1.getString(c1
+                            .getColumnIndex(AppSettings.KEY_HIGH));
+                    String changes1 = c1.getString(c1
+                            .getColumnIndex(AppSettings.KEY_CHANGES));
+
+
+                    String ratio1 = c1.getString(c1
+                            .getColumnIndex(AppSettings.KEY_RATIO));
+                    //   int icon1 = c1.getInt(c1.getColumnIndex(AppSettings.KEY_ICON));
+                    String percantage1 = c1.getString(c1
+                            .getColumnIndex(AppSettings.KEY_PERCANTAGE));
+
+                    String volume1 = c1.getString(c1
+                            .getColumnIndex(AppSettings.KEY_VOLUME));
+                    String previous1 = c1.getString(c1
+                            .getColumnIndex(AppSettings.KEY_PREVIOUS));
+
+
+                    //  String ratio1 = c1.getString(c1
+                    //         .getColumnIndex(AppSettings.KEY_RATIO));
+                    // int icon1 = c1.getInt(c1.getColumnIndex(AppSettings.KEY_ICON));
+                    //String percantage1 = c1.getString(c1
+                    //      .getColumnIndex(AppSettings.KEY_PERCANTAGE));
+//
+//                    String volume1 = c1.getString(c1
+//                            .getColumnIndex(AppSettings.KEY_VOLUME));
+//                    String previous1 = c1.getString(c1
+//                            .getColumnIndex(AppSettings.KEY_PREVIOUS));
+
+
+                    //greater_str1 = navDrawerItems11.get(position).getwhole();
+                    //  greater_not1 = Double.parseDouble(greater_str1);
+
+//                    String changes = model1.getMerketSummary().get(pos_int).getChangevalue();
+//                    double greater_not1 = Double.parseDouble(changes);
+//
+//                    String prevoius = model1.getMerketSummary().get(pos_int).getOpen();
+//                    double get_int_prevoous = Double.parseDouble(prevoius);
+//
+//                    //  get_previous_lcdp = navDrawerItems11.get(position).getprevious();
+//                    // get_int_prevoous = Double.parseDouble(get_previous_lcdp);
+//
+//
+//                    check1 = (double) (greater_not1 / get_int_prevoous);
+//
+//
+//                    //changes_format = Double.parseDouble(navDrawerItems.get(position).getwhole());
+//
+//                    string_changes_fromat = format.format(check1);
+//
+//
+//                    //  float_1.setText(string_changes_fromat);
+//
+//                    // dot_plus.setTag(position);
+//                    if (check1 < 0.0) {
+//                        string_changes = string_changes_fromat;
+//                        // dot_plus.setText(String.valueOf(string_changes_fromat));
+//
+//                        // dot_plus.setText(String.valueOf(check1).charAt(0)+String.valueOf(String.valueOf(check1).charAt(1))+String.valueOf(check1).charAt(2)+String.valueOf(check1).charAt(3));
+//
+//                    } else if (check1 >= 0.0) {
+//                        string_changes = "+" + string_changes_fromat;
+//
+//                        // dot_plus.setText(String.valueOf("+" + string_changes_fromat));
+//                        // dot_plus.setText(String.valueOf("+"+check1).charAt(0)+String.valueOf(String.valueOf(check1).charAt(1))+String.valueOf(check1).charAt(2)+String.valueOf(check1).charAt(3));
+//                    }
+//
+//                    percent_double = check1 * 100.0;
+//                    //percentage.setTag(position);
+//                    string_percent_fromat = format.format(percent_double);
+//                    if (percent_double < 0.0) {
+//
+//                        percantage_string = string_percent_fromat + "%";
+//                        // percentage.setText(String.valueOf(string_percent_fromat + "%"));
+//                    } else {
+//                        percantage_string = "+" + string_percent_fromat + "%";
+//
+//                        //  percentage.setText(String.valueOf("+" + string_percent_fromat + "%"));
+//                    }
+
+
+//                    if (Double.valueOf(percantage1) < 0.0) {
+//                        img_drawable = R.drawable.red_trangle;
+//                        //  imgIcon.setImageResource(R.drawable.red_trangle);
+//                    } else if (check1 >= 0.0) {
+//                        img_drawable = R.drawable.green_trangle;
+//
+//                        // imgIcon.setImageResource(R.drawable.green_trangle);
+//                    }
+
+                    img_drawable = R.drawable.red_trangle;
+
+                    //watch_item.add(new watchlist_model(id_stock1, model1.getMerketSummary().get(pos_int).getCompany(), model1.getMerketSummary().get(pos_int).getChangevalue(), string_changes, img_drawable, percantage_string, model1.getMerketSummary().get(pos_int).getHigh(), model1.getMerketSummary().get(pos_int).getLow(), model1.getMerketSummary().get(pos_int).getVol(), model1.getMerketSummary().get(pos_int).getOpen()));
+
+                    watch_item.add(new watchlist_model(id_stock1, name1, changes1, ratio1, img_drawable, percantage1, high1, low1, volume1, previous1));
+
+
+                    //   Toast.makeText(getActivity(), "[LOW:" + low1 + "], [name: " + name1 + "], [high: "
+                    //         + high1 + "]", Toast.LENGTH_LONG).show();
+                    //  }
+                } while (c1.moveToPrevious());
+            }
+
+        } finally {
+            c1.close();
+        }
+
+        watchAdapter = new watclist_adapter(getContext(), watch_item);
+        watch_list_data.setAdapter(watchAdapter);
+
+    }
 
 //    public void hitWebservice_kse2() {
 //
@@ -409,16 +581,16 @@ public class watchlist extends Fragment {
 //                    }
 
                     //list.add(0);
-                   // Collections.sort(list , Collections.reverseOrder());
+                    // Collections.sort(list , Collections.reverseOrder());
                     try {
                         if (c1 != null && c1.moveToLast()) {
                             do {
                                 // int id = c.getInt(c.getColumnIndex(AppSettings.KEY_ICON));
                                 String POS = c1.getString(c1
                                         .getColumnIndex(AppSettings.KEY_POSITION));
-                              //  String name1 = c1.getString(c1.getColumnIndex(AppSettings.KEY_NAME));
+                                //  String name1 = c1.getString(c1.getColumnIndex(AppSettings.KEY_NAME));
                                 int pos_int = Integer.parseInt(POS);
-                             //   String company_name = model1.getMarket().get(pos_int).getSymbol();
+                                //   String company_name = model1.getMarket().get(pos_int).getSymbol();
 
                                 //if (company_name == name1) {
 
@@ -436,11 +608,11 @@ public class watchlist extends Fragment {
 //                    String changes1 = c1.getString(c1
 //                            .getColumnIndex(AppSettings.KEY_CHANGES));
 
-                              //  String ratio1 = c1.getString(c1
-                               //         .getColumnIndex(AppSettings.KEY_RATIO));
-                               // int icon1 = c1.getInt(c1.getColumnIndex(AppSettings.KEY_ICON));
+                                //  String ratio1 = c1.getString(c1
+                                //         .getColumnIndex(AppSettings.KEY_RATIO));
+                                // int icon1 = c1.getInt(c1.getColumnIndex(AppSettings.KEY_ICON));
                                 //String percantage1 = c1.getString(c1
-                                  //      .getColumnIndex(AppSettings.KEY_PERCANTAGE));
+                                //      .getColumnIndex(AppSettings.KEY_PERCANTAGE));
 //
 //                    String volume1 = c1.getString(c1
 //                            .getColumnIndex(AppSettings.KEY_VOLUME));

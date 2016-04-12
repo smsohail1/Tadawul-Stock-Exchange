@@ -73,7 +73,7 @@ public class GamesFragment extends Fragment {
     SharedPreferences.Editor editor;
     SharedPreferences sharedpreferences;
 
-int posn;
+    int posn;
 
 
     SharedPreferences pref_stocks;
@@ -85,16 +85,17 @@ int posn;
 
     SharedPreferences pref1;
     SharedPreferences.Editor edit1;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         pref_stocks = getActivity().getSharedPreferences("drawer_pos", getActivity().MODE_PRIVATE);
-       // edit_stocks = pref_stocks.edit();
+        // edit_stocks = pref_stocks.edit();
 
 //       String position= pref_stocks.getString("position", "0");
 
-      posn=  pref_stocks.getInt("position",0);
+        posn = pref_stocks.getInt("position", 0);
 
 
         rootView = inflater.inflate(R.layout.fragment_games, container, false);
@@ -145,19 +146,23 @@ int posn;
 
         stockList = (ListView) rootView.findViewById(R.id.list_stock);
         stockItems = new ArrayList<stocklistitem>();
-        openOrNot = (TextView) rootView.findViewById(R.id.open_value);
+
+        // openOrNot = (TextView) rootView.findViewById(R.id.open_value);
+
         dateTime = (TextView) rootView.findViewById(R.id.date_Time);
-        status = (TextView) rootView.findViewById(R.id.status);
+
+        //  status = (TextView) rootView.findViewById(R.id.status);
+
         last_updated = (TextView) rootView.findViewById(R.id.Last_update);
 
         Typeface tf = Typeface.createFromAsset(getActivity().getAssets(), "fonts/AvenirLTStd-Roman.otf");
-        openOrNot.setTypeface(tf);
+        //  openOrNot.setTypeface(tf);
+
         dateTime.setTypeface(tf);
-        status.setTypeface(tf);
+        //status.setTypeface(tf);
         last_updated.setTypeface(tf);
 
         adapter = new stock_list(getContext(), stockItems);
-
 
 
 //        stockItems.add(new stocklistitem("BOP1","8.72","+0.33","+2.17%",R.drawable.green_trangle,"32,397.71",
@@ -233,22 +238,20 @@ int posn;
 //        if (cacheKeys == null)
 //            cacheKeys = new ArrayList<>();
         DualCacheContextUtils.setContext(getActivity());
-       if(isConnectingToInternet()){
+        if (isConnectingToInternet()) {
 
 
-           hitWebservice_kse2();
-          setCacheContact();
+            hitWebservice_kse2();
+            setCacheContact();
 
-           setStatusUpdate();
-       //    hitWebservice_kse2();
+            setStatusUpdate();
+            //    hitWebservice_kse2();
+        } else {
+
+            setCacheContact();
+
+            setStatusUpdate();
         }
-        else
-       {
-
-           setCacheContact();
-
-           setStatusUpdate();
-       }
 
 
 //        stockList = (ListView) rootView.findViewById(R.id.list_stock);
@@ -256,36 +259,30 @@ int posn;
 //        stockList.setAdapter(adapter);
 
 
-
 ////        editor.putBoolean(key, value);
 ////
 
-     //   Map<String,?> keys = sharedPreferences.getAll();
+        //   Map<String,?> keys = sharedPreferences.getAll();
 
 //        editor.commit();
-
-
-
-
 
 
 //
 //
 //        Map.Entry<String, ?> entry: sharedPreferences.getAll();
-    return rootView;
+        return rootView;
     }
 
-public  void setStatusUpdate()
-{
-  //  pref = getActivity().getSharedPreferences("pref_SoundDown", getActivity().MODE_PRIVATE);
-   String json_data= pref.getString("status", "");
-String loop_inc="";
-    for (int loop_format12 = 1; loop_format12 < json_data.length()-1; loop_format12++) {
-        loop_inc+=json_data.charAt(loop_format12);
-        //openOrNot.setText(String.valueOf(json_last.charAt(loop_format1)));
+    public void setStatusUpdate() {
+        //  pref = getActivity().getSharedPreferences("pref_SoundDown", getActivity().MODE_PRIVATE);
+        String json_data = pref.getString("status", "");
+        String loop_inc = "";
+        for (int loop_format12 = 1; loop_format12 < json_data.length() - 1; loop_format12++) {
+            loop_inc += json_data.charAt(loop_format12);
+            //openOrNot.setText(String.valueOf(json_last.charAt(loop_format1)));
 
-    }
-    dateTime.setText(loop_inc.toString());
+        }
+        dateTime.setText(loop_inc.toString());
 
 
 //    String json_last= pref.getString("last", "");
@@ -298,7 +295,8 @@ String loop_inc="";
 //    openOrNot.setText(che.toString());
 
 
-}
+    }
+
     public static int getVersionNumber(Context context) {
         int versionName = 0;
         try {
@@ -310,41 +308,38 @@ String loop_inc="";
         return versionName;
     }
 
-    public static int getMaxMemorySize(Context context){
+    public static int getMaxMemorySize(Context context) {
         ActivityManager manager =
                 (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
 
         int max = manager.getLargeMemoryClass() * 1024;
 
-        return max/16;
+        return max / 16;
     }
 
     String s = "";
 
     public void
     addCacheContact(stocklistitem item) {
-        item.setTitle(item.getTitle().trim().toLowerCase().replace(" ", "").replace("-","").replace("-","").replace(".","").replace("(","").replace(")","").replace("&",""));
+        item.setTitle(item.getTitle().trim().toLowerCase().replace(" ", "").replace("-", "").replace("-", "").replace(".", "").replace("(", "").replace(")", "").replace("&", ""));
         if (cacheKeys.contains(item.getTitle())) {
             cache.delete(item.getTitle());
             cache.put(item.getTitle(), item);
         } else {
             cacheKeys.add(item.getTitle());
-            cache.put(item.getTitle(),item);
+            cache.put(item.getTitle(), item);
         }
 
 //            for (String key : cacheKeys) {
-                s = s.equals("") ? item.getTitle() : s +  ","+ item.getTitle();
+        s = s.equals("") ? item.getTitle() : s + "," + item.getTitle();
 //            }
-         //   Log.e("data",s);
-            editor.putString("stocks", s).apply();
+        //   Log.e("data",s);
+        editor.putString("stocks", s).apply();
 
-            //storage.putKey("Stocks", item.getTitle());
-            //cache.put(item.getTitle(), item);
+        //storage.putKey("Stocks", item.getTitle());
+        //cache.put(item.getTitle(), item);
 
     }
-
-
-
 
 
     public void setCacheContact() {
@@ -373,10 +368,11 @@ String loop_inc="";
 ////                }
 ////            });
 //        }
-        Type type = new TypeToken<ArrayList<stocklistitem>>(){}.getType();
-        String json = sharedpreferences.getString("stocks","");
+        Type type = new TypeToken<ArrayList<stocklistitem>>() {
+        }.getType();
+        String json = sharedpreferences.getString("stocks", "");
         list = new Gson().fromJson(json, type);
-        if (list!=null) {
+        if (list != null) {
             if (!list.isEmpty()) {
                 this.stockItems.clear();
                 this.stockItems.addAll(list);
@@ -385,9 +381,6 @@ String loop_inc="";
             }
         }
     }
-
-
-
 
 
     public boolean isConnectingToInternet() {
@@ -403,6 +396,7 @@ String loop_inc="";
         }
         return false;
     }
+
     public void hitWebservice_kse2() {
 
         final ProgressDialog dialog;
@@ -427,7 +421,7 @@ String loop_inc="";
 
                 dialog.dismiss();
 
-              Log.e("url", response.getUrl().toString());
+                Log.e("url", response.getUrl().toString());
                 stockItems.clear();
 
 //                cache = new DualCacheBuilder<>(StorageUtils.CHAT, num, stocklistitem.class)
@@ -438,17 +432,17 @@ String loop_inc="";
                 if (model1.getStatus().equalsIgnoreCase("true")) {
                     for (int i = 0; i < model1.getMerketSummary().size(); i++) {
 
-                        stockItems.add(new stocklistitem(model1.getMerketSummary().get(i).getCompany(), model1.getMerketSummary().get(i).getChangevalue(), model1.getMerketSummary().get(i).getHigh(), model1.getMerketSummary().get(i).getLow(), model1.getMerketSummary().get(i).getVol(), model1.getMerketSummary().get(i).getOpen(),i+""));
+                        stockItems.add(new stocklistitem(model1.getMerketSummary().get(i).getCompany(), model1.getMerketSummary().get(i).getChangevalue(), model1.getMerketSummary().get(i).getHigh(), model1.getMerketSummary().get(i).getLow(), model1.getMerketSummary().get(i).getVol(), model1.getMerketSummary().get(i).getOpen(), i + ""));
                         Log.i("correct", "correct");
 
                     }
 
                     date_time1 = model1.getTime();
 
-                   // close_not1 = model1.getStoke().get(1).getValue();
+                    // close_not1 = model1.getStoke().get(1).getValue();
 
                     SimpleDateFormat srcDf = new SimpleDateFormat(
-                            "yyyy-MM-dd hh:mm:ss");
+                            "MM/dd/yyyy hh:mm:ss aa");
 
                     try {
                         Date date = srcDf.parse(date_time1);
@@ -469,10 +463,11 @@ String loop_inc="";
 //                    }
 //                    openOrNot.setText(gg);
 
-                    SharedPreferences sharedpreferences = getActivity().getSharedPreferences("dateTime", Context.MODE_PRIVATE);
-                    SharedPreferences.Editor editor = sharedpreferences.edit();
-                    editor.putString("lastUpdate",mydate);
-                    editor.commit();
+
+//                    SharedPreferences sharedpreferences = getActivity().getSharedPreferences("dateTime", Context.MODE_PRIVATE);
+//                    SharedPreferences.Editor editor = sharedpreferences.edit();
+//                    editor.putString("lastUpdate", mydate);
+//                    editor.commit();
 
 
                     // openOrNot.setText(close_not1);
@@ -522,26 +517,18 @@ String loop_inc="";
                     // openOrNot.setText(open_value);
 
 
-
                     adapter = new stock_list(getContext(), stockItems);
                     stockList.setAdapter(adapter);
 
 
                     String json = new Gson().toJson(stockItems);
-                    editor.putString("stocks",json).apply();
+                    editor.putString("stocks", json).apply();
 
                     String json_last_update = new Gson().toJson(mydate);
-                    edit.putString("status",json_last_update).apply();
+                    edit.putString("status", json_last_update).apply();
 
 //                    String json_status = new Gson().toJson(close_not1);
 //                    edit.putString("last",json_status).apply();
-
-
-
-
-
-
-
 
 
 //                   String query = "SELECT * FROM '" + AppSettings.DATABASE_TABLE + "'";

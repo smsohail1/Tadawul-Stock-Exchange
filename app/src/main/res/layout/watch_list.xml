@@ -6,27 +6,24 @@
     android:background="#ffffff">
 
     <!--<ListView-->
-        <!--android:id="@+id/list_watchlist"-->
-        <!--android:layout_width="fill_parent"-->
-        <!--android:layout_height="fill_parent"-->
-        <!--android:layout_gravity="left|top"-->
-        <!--android:choiceMode="singleChoice"-->
-        <!--android:divider="#c0392b"-->
-        <!--android:dividerHeight="1dp" />-->
-
+    <!--android:id="@+id/list_watchlist"-->
+    <!--android:layout_width="fill_parent"-->
+    <!--android:layout_height="fill_parent"-->
+    <!--android:layout_gravity="left|top"-->
+    <!--android:choiceMode="singleChoice"-->
+    <!--android:divider="#c0392b"-->
+    <!--android:dividerHeight="1dp" />-->
 
 
     <com.baoyz.swipemenulistview.SwipeMenuListView
-        android:layout_above="@+id/adLayout"
         android:id="@+id/list_watchlist"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
+        android:layout_above="@+id/adLayout"
         android:layout_gravity="left|top"
         android:choiceMode="singleChoice"
-        android:divider="#c0392b"
-        android:dividerHeight="1dp"/>
-
-
+        android:divider="#1992ce"
+        android:dividerHeight="0.5dp" />
 
 
     <LinearLayout
