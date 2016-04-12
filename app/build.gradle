@@ -42,7 +42,7 @@ dependencies {
     compile 'com.google.code.gson:gson:2.4'
 
     compile 'com.baoyz.swipemenulistview:library:1.3.0'
-    compile ('com.vincentbrison.openlibraries.android:dualcache:2.2.2@jar') {
+    compile('com.vincentbrison.openlibraries.android:dualcache:2.2.2@jar') {
         transitive = true
     }
 }

@@ -673,7 +673,7 @@ public class MainActivity extends ActionBarActivity {
 
                 Intent share_data_drawer = new Intent(Intent.ACTION_SEND);
                 share_data_drawer.setType("text/plain");
-                share_data_drawer.putExtra(Intent.EXTRA_TEXT, "I am using this app.\n https://play.google.com/store/apps/details?id=com.appinhand.tadawulstockexchange");
+                share_data_drawer.putExtra(Intent.EXTRA_TEXT, "I am using this app.\n https://play.google.com/store/apps/details?id=com.appinhand.saudistockexchange");
                 Intent share_via = Intent.createChooser(share_data_drawer, "Share Via");
                 startActivity(share_via);
                 break;

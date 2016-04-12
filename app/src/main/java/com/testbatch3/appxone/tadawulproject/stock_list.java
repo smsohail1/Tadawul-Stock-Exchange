@@ -997,13 +997,13 @@ public class stock_list extends BaseAdapter {
 
 
                     share_data.putExtra(Intent.EXTRA_TEXT, "Company Name : " + navDrawerItems11.get(position).getTitle() + "\n"
-                                    + "Change : " + navDrawerItems11.get(position).getwhole() + "\n" + "Ratio : " + String.valueOf(string_changes_fromat) + "\n" + "Percentage : " + String.valueOf(string_percent_fromat + "%") + "\n" + "High : " + navDrawerItems11.get(position).gethigh() + "\n" + "Low : " + navDrawerItems11.get(position).getlow() + "\n" + "Volume : " + navDrawerItems11.get(position).getvolume() + "\n" + "Previous : " + navDrawerItems11.get(position).getprevious() + "\n" + "Last Update : " + lastUpdate + "\n\n" + "Download app : " + "https://play.google.com/store/apps/details?id=com.appinhand.tadawulstockexchange"
+                                    + "Change : " + navDrawerItems11.get(position).getwhole() + "\n" + "Ratio : " + String.valueOf(string_changes_fromat) + "\n" + "Percentage : " + String.valueOf(string_percent_fromat + "%") + "\n" + "High : " + navDrawerItems11.get(position).gethigh() + "\n" + "Low : " + navDrawerItems11.get(position).getlow() + "\n" + "Volume : " + navDrawerItems11.get(position).getvolume() + "\n" + "Previous : " + navDrawerItems11.get(position).getprevious() + "\n" + "Last Update : " + lastUpdate + "\n\n" + "Download app : " + "https://play.google.com/store/apps/details?id=com.appinhand.saudistockexchange"
 
                     );
                 } else if (check1 >= 0.0) {
 
                     share_data.putExtra(Intent.EXTRA_TEXT, "Company Name : " + navDrawerItems11.get(position).getTitle() + "\n"
-                                    + "Change : " + navDrawerItems11.get(position).getwhole() + "\n" + "Ratio : " + String.valueOf("+" + string_changes_fromat) + "\n" + "Percentage : " + String.valueOf("+" + string_percent_fromat + "%") + "\n" + "High : " + navDrawerItems11.get(position).gethigh() + "\n" + "Low : " + navDrawerItems11.get(position).getlow() + "\n" + "Volume : " + navDrawerItems11.get(position).getvolume() + "\n" + "Previous : " + navDrawerItems11.get(position).getprevious() + "\n" + "Last Update : " + lastUpdate + "\n\n" + "Download app : " + "https://play.google.com/store/apps/details?id=com.appinhand.tadawulstockexchange"
+                                    + "Change : " + navDrawerItems11.get(position).getwhole() + "\n" + "Ratio : " + String.valueOf("+" + string_changes_fromat) + "\n" + "Percentage : " + String.valueOf("+" + string_percent_fromat + "%") + "\n" + "High : " + navDrawerItems11.get(position).gethigh() + "\n" + "Low : " + navDrawerItems11.get(position).getlow() + "\n" + "Volume : " + navDrawerItems11.get(position).getvolume() + "\n" + "Previous : " + navDrawerItems11.get(position).getprevious() + "\n" + "Last Update : " + lastUpdate + "\n\n" + "Download app : " + "https://play.google.com/store/apps/details?id=com.appinhand.saudistockexchange"
 
                     );
                 }

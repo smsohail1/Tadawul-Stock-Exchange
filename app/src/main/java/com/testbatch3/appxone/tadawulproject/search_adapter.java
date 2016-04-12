@@ -20,22 +20,19 @@ import java.util.Locale;
 /**
  * Created by APPXONE on 1/18/2016.
  */
-public class search_adapter extends BaseAdapter  {
+public class search_adapter extends BaseAdapter {
 
     ArrayList<search_model> mStringFilterList;
 
     private Context context;
 
-   // ValueFilter valueFilter;
+    // ValueFilter valueFilter;
     private ArrayList<search_model> navDrawerItemssa;
     private String current_value1 = "", chge_vle = "", hign_vl = "", low_vle1 = "";
     String current_vle, change_vle, hign_vle = "", low_vle;
 
 
     private ArrayList<search_model> arraylist;
-
-
-
 
 
     public Context cc;
@@ -55,12 +52,12 @@ public class search_adapter extends BaseAdapter  {
 //    public static DataBaseManager dbManager;
 
 
-    String symbol = "", change = "", high = "", low = "", prevous = "", volume = "",postion="";
+    String symbol = "", change = "", high = "", low = "", prevous = "", volume = "", postion = "";
     int icon_updown;
     public static String query;
     boolean check_unchecked = true;
     public ImageView watchlist_btn;
-    public  int drawableId4;
+    public int drawableId4;
 
     GamesFragment gmm;
     DataBaseManager lk;
@@ -68,8 +65,6 @@ public class search_adapter extends BaseAdapter  {
     boolean type_check;
     ArrayList<String> fav_list;
     Cursor c;
-
-
 
 
     public search_adapter(Context context, ArrayList<search_model> navDrawerItemsa) {
@@ -80,7 +75,7 @@ public class search_adapter extends BaseAdapter  {
 
         fav_list = new ArrayList<String>();
         Log.e("cunstructor", "cunstructor");
-      //  mStringFilterList = navDrawerItemsa;
+        //  mStringFilterList = navDrawerItemsa;
     }
 
     @Override
@@ -107,8 +102,8 @@ public class search_adapter extends BaseAdapter  {
     public View getView(final int position, View convertView, ViewGroup parent) {
         ViewHolder viewHolder = null;
         if (convertView == null) {
-            gmm=new GamesFragment();
-            lk=new DataBaseManager(this.context);
+            gmm = new GamesFragment();
+            lk = new DataBaseManager(this.context);
             LayoutInflater mInflater = (LayoutInflater)
                     context.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
             convertView = mInflater.inflate(R.layout.search_listvew, null);
@@ -127,8 +122,7 @@ public class search_adapter extends BaseAdapter  {
 //
 //            }
 
-        }
-        else {
+        } else {
 //            for(int iii=0;iii<navDrawerItems11.size();iii++)
 //            {
 //                ind[iii]="1";
@@ -141,24 +135,20 @@ public class search_adapter extends BaseAdapter  {
         }
 
 
-
         symbol = navDrawerItemssa.get(position).getTitle();
         change = navDrawerItemssa.get(position).getwhole();
         high = navDrawerItemssa.get(position).gethigh1();
         low = navDrawerItemssa.get(position).getlow();
         volume = navDrawerItemssa.get(position).getvolume();
         prevous = navDrawerItemssa.get(position).getprevious();
-        postion=  navDrawerItemssa.get(position).getpositon();
-        viewHolder.im.setTag(symbol+"!"+change+"!"+high+"!"+low+"!"+volume+"!"+prevous+ "!" + postion);
-        Log.d("Tag", "getView " + symbol + "," + change + "," + high + "," + low + "," + volume + "," + prevous+ "!" + postion);
-
-
+        postion = navDrawerItemssa.get(position).getpositon();
+        viewHolder.im.setTag(symbol + "!" + change + "!" + high + "!" + low + "!" + volume + "!" + prevous + "!" + postion);
+        Log.d("Tag", "getView " + symbol + "," + change + "," + high + "," + low + "," + volume + "," + prevous + "!" + postion);
 
 
         symbol = navDrawerItemssa.get(position).getTitle();
 
         Log.e("arr", symbol + "");
-
 
 
         viewHolder.im.setImageResource(R.drawable.watch_button_stocks);
@@ -170,19 +160,18 @@ public class search_adapter extends BaseAdapter  {
 
         // for traversing
         try {
-        if (c.getCount() > 0) {
-            if (c.moveToFirst()) {
-                do {
-                    // int i = c33.getInt(0);
+            if (c.getCount() > 0) {
+                if (c.moveToFirst()) {
+                    do {
+                        // int i = c33.getInt(0);
 
-                    String it = c.getString(c.getColumnIndex(AppSettings.KEY_NAME));
-                    fav_list.add(it);
+                        String it = c.getString(c.getColumnIndex(AppSettings.KEY_NAME));
+                        fav_list.add(it);
 
-                } while (c.moveToNext());
+                    } while (c.moveToNext());
+                }
             }
-        }
-        }
-        finally {
+        } finally {
             c.close();
         }
 //        lk.insert_update(query);
@@ -202,15 +191,12 @@ public class search_adapter extends BaseAdapter  {
         }
 
 
-
-
-
         viewHolder.im.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
 
-                if (! gmm.isErrorOccured) {
+                if (!gmm.isErrorOccured) {
                     Log.e("error ocore true", "sds1");
 //                    int position = (int) v.getTag();
 
@@ -227,14 +213,14 @@ public class search_adapter extends BaseAdapter  {
                     low = as[3];
                     volume = as[4];
                     prevous = as[5];
-                    postion=as[6];
+                    postion = as[6];
                     //   int selection=  (int)  v.getTag();
 
 
                     query = "SELECT * FROM '" + AppSettings.DATABASE_TABLE + "'";
                     Log.e("SELECT QUERY", query);
 
-                    c =   lk.selectQuery(query);
+                    c = lk.selectQuery(query);
                     if (c != null && c.moveToFirst()) {
                         try {
                             do {
@@ -259,7 +245,7 @@ public class search_adapter extends BaseAdapter  {
 //                                    finalViewHolder.im.setImageResource(R.drawable.watch_button_status);
 //                                    navDrawerItems11.remove((Integer) v.getTag());
 
-                                    ((ImageView) v).setImageResource(R.drawable.watch_button_status);
+                                    ((ImageView) v).setImageResource(R.drawable.watch_button_stocks);
 
                                     // pos = watclist_adapter.navDrawerItems111.get(ir).get_id();
 
@@ -275,8 +261,7 @@ public class search_adapter extends BaseAdapter  {
 
 
                             } while (c.moveToNext());
-                        }
-                        finally {
+                        } finally {
                             c.close();
                         }
 //                        String name1 = c1.getString(c1
@@ -304,7 +289,7 @@ public class search_adapter extends BaseAdapter  {
 
                             query = "INSERT INTO \"" + AppSettings.DATABASE_TABLE
                                     + "\" ( '" + AppSettings.KEY_NAME + "','" + AppSettings.KEY_CHANGES + "','" + AppSettings.KEY_RATIO + "','"
-                                    + AppSettings.KEY_ICON + "','" + AppSettings.KEY_PERCANTAGE + "','" + AppSettings.KEY_HIGH + "','" + AppSettings.KEY_LOW + "','" + AppSettings.KEY_VOLUME + "','" + AppSettings.KEY_PREVIOUS + "','" + AppSettings.KEY_bookmark + "','" + AppSettings.KEY_POSITION+ "') VALUES (" + "'" + symbol + "'" + "," + "'" + change + "'" + "," + "'" + "ratio" + "'" + "," + R.drawable.icon_menu + "," + "'" + "56.4%" + "'" + "," + "'" + high + "'" + "," + "'" + low + "'" + "," + "'" + volume + "'" + "," + "'" + prevous + "'" + "," + "'" + rrr + "'" +  "," + "'" + postion + "'"+")";
+                                    + AppSettings.KEY_ICON + "','" + AppSettings.KEY_PERCANTAGE + "','" + AppSettings.KEY_HIGH + "','" + AppSettings.KEY_LOW + "','" + AppSettings.KEY_VOLUME + "','" + AppSettings.KEY_PREVIOUS + "','" + AppSettings.KEY_bookmark + "','" + AppSettings.KEY_POSITION + "') VALUES (" + "'" + symbol + "'" + "," + "'" + change + "'" + "," + "'" + "ratio" + "'" + "," + R.drawable.icon_menu + "," + "'" + "56.4%" + "'" + "," + "'" + high + "'" + "," + "'" + low + "'" + "," + "'" + volume + "'" + "," + "'" + prevous + "'" + "," + "'" + rrr + "'" + "," + "'" + postion + "'" + ")";
 
 
 // VALUES ('Nadeem Iqbal','dddd',1,'42104646546565465')"
@@ -326,7 +311,7 @@ public class search_adapter extends BaseAdapter  {
                         ((ImageView) v).setImageResource(R.drawable.watching_button);
                         query = "INSERT INTO \"" + AppSettings.DATABASE_TABLE
                                 + "\" ( '" + AppSettings.KEY_NAME + "','" + AppSettings.KEY_CHANGES + "','" + AppSettings.KEY_RATIO + "','"
-                                + AppSettings.KEY_ICON + "','" + AppSettings.KEY_PERCANTAGE + "','" + AppSettings.KEY_HIGH + "','" + AppSettings.KEY_LOW + "','" + AppSettings.KEY_VOLUME + "','" + AppSettings.KEY_PREVIOUS + "','" + AppSettings.KEY_bookmark +  "','" + AppSettings.KEY_POSITION+"') VALUES (" + "'" + symbol + "'" + "," + "'" + change + "'" + "," + "'" + "ratio" + "'" + "," + R.drawable.icon_menu + "," + "'" + "56.4%" + "'" + "," + "'" + high + "'" + "," + "'" + low + "'" + "," + "'" + volume + "'" + "," + "'" + prevous + "'" + "," + "'" + rrr + "'" +  "," + "'" + postion + "'"+ ")";
+                                + AppSettings.KEY_ICON + "','" + AppSettings.KEY_PERCANTAGE + "','" + AppSettings.KEY_HIGH + "','" + AppSettings.KEY_LOW + "','" + AppSettings.KEY_VOLUME + "','" + AppSettings.KEY_PREVIOUS + "','" + AppSettings.KEY_bookmark + "','" + AppSettings.KEY_POSITION + "') VALUES (" + "'" + symbol + "'" + "," + "'" + change + "'" + "," + "'" + "ratio" + "'" + "," + R.drawable.icon_menu + "," + "'" + "56.4%" + "'" + "," + "'" + high + "'" + "," + "'" + low + "'" + "," + "'" + volume + "'" + "," + "'" + prevous + "'" + "," + "'" + rrr + "'" + "," + "'" + postion + "'" + ")";
 
 
 // VALUES ('Nadeem Iqbal','dddd',1,'42104646546565465')"
@@ -343,38 +328,6 @@ public class search_adapter extends BaseAdapter  {
         });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         cc = this.context;
 
 
@@ -383,7 +336,7 @@ public class search_adapter extends BaseAdapter  {
         ImageView imgIcon = (ImageView) convertView.findViewById(R.id.icon_updown);
         TextView txtTitleindex = (TextView) convertView.findViewById(R.id.BOP);
 
-       ImageView share_stock = (ImageView) convertView.findViewById(R.id.info1);
+        ImageView share_stock = (ImageView) convertView.findViewById(R.id.info1);
 
         TextView float_1 = (TextView) convertView.findViewById(R.id.float_value1);
         final TextView dot_plus = (TextView) convertView.findViewById(R.id.float_value);
@@ -399,8 +352,7 @@ public class search_adapter extends BaseAdapter  {
         TextView previous_value = (TextView) convertView.findViewById(R.id.previous_value_stock);
 
 
-
-        Typeface tf=Typeface.createFromAsset(this.context.getAssets(), "fonts/AvenirLTStd-Roman.otf");
+        Typeface tf = Typeface.createFromAsset(this.context.getAssets(), "fonts/AvenirLTStd-Roman.otf");
         txtTitleindex.setTypeface(tf);
         float_1.setTypeface(tf);
         dot_plus.setTypeface(tf);
@@ -410,9 +362,6 @@ public class search_adapter extends BaseAdapter  {
         low_value.setTypeface(tf);
         volume_value.setTypeface(tf);
         previous_value.setTypeface(tf);
-
-
-
 
 
         share_stock.setOnClickListener(new View.OnClickListener() {
@@ -471,13 +420,13 @@ public class search_adapter extends BaseAdapter  {
 
 
                     share_data.putExtra(Intent.EXTRA_TEXT, "Company Name : " + navDrawerItemssa.get(position).getTitle() + "\n"
-                                    + "Change : " + navDrawerItemssa.get(position).getwhole() + "\n" + "Ratio : " + String.valueOf(string_changes_fromat) + "\n" + "Percentage : " + String.valueOf(string_percent_fromat + "%") + "\n" + "High : " + navDrawerItemssa.get(position).gethigh1() + "\n" + "Low : " + navDrawerItemssa.get(position).getlow() + "\n" + "Volume : " + navDrawerItemssa.get(position).getvolume() + "\n" + "Previous : " + navDrawerItemssa.get(position).getprevious()
+                                    + "Change : " + navDrawerItemssa.get(position).getwhole() + "\n" + "Ratio : " + String.valueOf(string_changes_fromat) + "\n" + "Percentage : " + String.valueOf(string_percent_fromat + "%") + "\n" + "High : " + navDrawerItemssa.get(position).gethigh1() + "\n" + "Low : " + navDrawerItemssa.get(position).getlow() + "\n" + "Volume : " + navDrawerItemssa.get(position).getvolume() + "\n" + "Previous : " + navDrawerItemssa.get(position).getprevious() + "\n\n" + "Download app : " + "https://play.google.com/store/apps/details?id=com.appinhand.saudistockexchange"
 
                     );
                 } else if (check1 >= 0.0) {
 
                     share_data.putExtra(Intent.EXTRA_TEXT, "Company Name : " + navDrawerItemssa.get(position).getTitle() + "\n"
-                                    + "Change : " + navDrawerItemssa.get(position).getwhole() + "\n" + "Ratio" + String.valueOf("+" + string_changes_fromat) + "\n" + "Percentage : " + String.valueOf("+" + string_percent_fromat + "%") + "\n" + "High : " + navDrawerItemssa.get(position).gethigh1() + "\n" + "Low : " + navDrawerItemssa.get(position).getlow() + "\n" + "Volume : " + navDrawerItemssa.get(position).getvolume() + "\n" + "Previous : " + navDrawerItemssa.get(position).getprevious()
+                                    + "Change : " + navDrawerItemssa.get(position).getwhole() + "\n" + "Ratio" + String.valueOf("+" + string_changes_fromat) + "\n" + "Percentage : " + String.valueOf("+" + string_percent_fromat + "%") + "\n" + "High : " + navDrawerItemssa.get(position).gethigh1() + "\n" + "Low : " + navDrawerItemssa.get(position).getlow() + "\n" + "Volume : " + navDrawerItemssa.get(position).getvolume() + "\n" + "Previous : " + navDrawerItemssa.get(position).getprevious() + "\n\n" + "Download app : " + "https://play.google.com/store/apps/details?id=com.appinhand.saudistockexchange"
 
                     );
                 }
@@ -490,22 +439,8 @@ public class search_adapter extends BaseAdapter  {
         });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-       // watchlist_btn = (ImageView) convertView.findViewById(R.id.watchlist);
+        // watchlist_btn = (ImageView) convertView.findViewById(R.id.watchlist);
         // watchlist_btn.setTag(new Integer(position));
-
 
 
         //   TextView txtCount = (TextView) convertView.findViewById(R.id.counter);

@@ -50,7 +50,7 @@
 
                 android:layout_marginTop="10dp"
 
-                android:background="@drawable/logo_drawer" />
+                android:background="@drawable/menu_logo_new" />
 
             <ListView
                 android:id="@+id/list_slidermenu"

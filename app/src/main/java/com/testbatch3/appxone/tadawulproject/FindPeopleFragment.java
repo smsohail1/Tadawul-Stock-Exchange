@@ -121,7 +121,7 @@ RelativeLayout logo;
             public void onClick(View v) {
                 Intent share_data = new Intent(Intent.ACTION_SEND);
                 share_data.setType("text/plain");
-                share_data.putExtra(Intent.EXTRA_TEXT, "I am using this app.\n"+"https://play.google.com/store/apps/details?id=com.appinhand.tadawulstockexchange");
+                share_data.putExtra(Intent.EXTRA_TEXT, "I am using this app.\n"+"https://play.google.com/store/apps/details?id=com.appinhand.saudistockexchange");
                 Intent share_via = Intent.createChooser(share_data, "Share Via");
                 startActivity(share_via);
             }
