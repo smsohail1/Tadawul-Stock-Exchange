@@ -83,29 +83,29 @@ public class search_stocks extends Fragment {
         search_icon = (ImageView) rootView1.findViewById(R.id.search_icon);
 
 
-        AdView mAdView = new AdView(getActivity(), null);
-        String ad_Id = publisherId;
-        final LinearLayout linearLayout = (LinearLayout) rootView1.findViewById(R.id.adLayout1);
-        linearLayout.addView(mAdView);
-        mAdView.setAdUnitId(ad_Id);
-        mAdView.setAdSize(AdSize.SMART_BANNER);
-        com.google.android.gms.ads.AdRequest adRequest = new com.google.android.gms.ads.AdRequest.Builder()
-                .build();
-        mAdView.loadAd(adRequest);
-
-        mAdView.setAdListener(new AdListener() {
-            @Override
-            public void onAdLoaded() {
-
-                linearLayout.setVisibility(View.VISIBLE);
-                Log.e("load", "111");
-            }
-
-            @Override
-            public void onAdFailedToLoad(int errorCode) {
-                Log.e("failed", "111");
-            }
-        });
+//        AdView mAdView = new AdView(getActivity(), null);
+//        String ad_Id = publisherId;
+//        final LinearLayout linearLayout = (LinearLayout) rootView1.findViewById(R.id.adLayout1);
+//        linearLayout.addView(mAdView);
+//        mAdView.setAdUnitId(ad_Id);
+//        mAdView.setAdSize(AdSize.SMART_BANNER);
+//        com.google.android.gms.ads.AdRequest adRequest = new com.google.android.gms.ads.AdRequest.Builder()
+//                .build();
+//        mAdView.loadAd(adRequest);
+//
+//        mAdView.setAdListener(new AdListener() {
+//            @Override
+//            public void onAdLoaded() {
+//
+//                linearLayout.setVisibility(View.VISIBLE);
+//                Log.e("load", "111");
+//            }
+//
+//            @Override
+//            public void onAdFailedToLoad(int errorCode) {
+//                Log.e("failed", "111");
+//            }
+//        });
 
 
         //   search_view = (SearchView) rootView1.findViewById(R.id.search_view);

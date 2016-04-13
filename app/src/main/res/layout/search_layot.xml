@@ -137,13 +137,13 @@
         android:id="@+id/ist_market"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
+        android:layout_above="@+id/adLayout1"
         android:layout_below="@+id/market_status"
         android:layout_gravity="left|top"
         android:background="#ffffff"
-android:layout_above="@+id/adLayout1"
         android:choiceMode="singleChoice"
-        android:divider="#c0392b"
-        android:dividerHeight="1dp" />
+        android:divider="#1992ce"
+        android:dividerHeight="0.5dp" />
 
 
     <!--<LinearLayout-->
