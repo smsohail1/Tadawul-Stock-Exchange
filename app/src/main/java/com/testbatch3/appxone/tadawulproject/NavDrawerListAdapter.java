@@ -136,51 +136,59 @@ public class NavDrawerListAdapter extends BaseAdapter {
 //        final TypedArray color_unpressed = context.getResources()
 //                .obtainTypedArray(R.array.color_unpressed);
 
-        layout.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                int position = (int) v.getTag();
-
-                if (lastPos != -1) {
-                    ViewGroup lastView = (ViewGroup) v.getParent().getParent();
-                    ImageView lastImg = (ImageView) ((ViewGroup) ((ViewGroup) lastView.getChildAt(lastPos)).getChildAt(0)).getChildAt(0);
-                    TextView lastTitle = (TextView) (((ViewGroup) ((ViewGroup) lastView.getChildAt(lastPos)).getChildAt(0)).getChildAt(1));
-                    ImageView lastImgRight = (ImageView) (((ViewGroup) ((ViewGroup) lastView.getChildAt(lastPos)).getChildAt(0)).getChildAt(2));
+//layout.setOnClickListener(new View.OnClickListener() {
+//    @Override
+//    public void onClick(View v) {
+//
+//    }
+//});
 
 
-                    lastImg.setImageResource(navMenuIconsPressed.getResourceId(lastPos, -1));
-                    lastImgRight.setImageResource(navMenuIcons_right_pressed.getResourceId(lastPos, -1));
-
-
-                    //int aab=color_unpressed.getResourceId(lastPos, -1);
-                    //lastTitle.setTextColor(Color.parseColor("#a1a1a1"));
-
-                    lastTitle.setTextColor(Color.parseColor("#a1a1a1"));
-
-
-                    //txtTitle.setTextColor(Color.parseColor("#a1a1a1"));
-                }
-                if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                    // int aa=color_pressed.getResourceId(position, -1);
-
-
-                    txtTitle.setTextColor(Color.parseColor("#1992ce"));
-
-                    imgIcon.setImageResource(navMenuIcons.getResourceId(position, -1));
-                    imgIcon_right.setImageResource(navMenuIcons_right.getResourceId(position, -1));
-                } else {
-
-                    imgIcon.setImageResource(navMenuIconsPressed.getResourceId(position, -1));
-                    imgIcon_right.setImageResource(navMenuIcons_right_pressed.getResourceId(position, -1));
-
-//                    imgIcon.setImageResource(navMenuIcons.getResourceId(posn, -1));
-//                    imgIcon_right.setImageResource(navMenuIcons_right.getResourceId(posn, -1));
-                }
-                lastPos = position;
-
-                return false;
-            }
-        });
+//        layout.setOnTouchListener(new View.OnTouchListener() {
+//            @Override
+//            public boolean onTouch(View v, MotionEvent event) {
+//                int position = (int) v.getTag();
+//
+//                if (lastPos != -1) {
+//                    ViewGroup lastView = (ViewGroup) v.getParent().getParent();
+//                    ImageView lastImg = (ImageView) ((ViewGroup) ((ViewGroup) lastView.getChildAt(lastPos)).getChildAt(0)).getChildAt(0);
+//                    TextView lastTitle = (TextView) (((ViewGroup) ((ViewGroup) lastView.getChildAt(lastPos)).getChildAt(0)).getChildAt(1));
+//                    ImageView lastImgRight = (ImageView) (((ViewGroup) ((ViewGroup) lastView.getChildAt(lastPos)).getChildAt(0)).getChildAt(2));
+//
+//
+//                    lastImg.setImageResource(navMenuIconsPressed.getResourceId(lastPos, -1));
+//                    lastImgRight.setImageResource(navMenuIcons_right_pressed.getResourceId(lastPos, -1));
+//
+//
+//                    //int aab=color_unpressed.getResourceId(lastPos, -1);
+//                    //lastTitle.setTextColor(Color.parseColor("#a1a1a1"));
+//
+//                    lastTitle.setTextColor(Color.parseColor("#a1a1a1"));
+//
+//
+//                    //txtTitle.setTextColor(Color.parseColor("#a1a1a1"));
+//                }
+//                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+//                    // int aa=color_pressed.getResourceId(position, -1);
+//
+//
+//                    txtTitle.setTextColor(Color.parseColor("#1992ce"));
+//
+//                    imgIcon.setImageResource(navMenuIcons.getResourceId(position, -1));
+//                    imgIcon_right.setImageResource(navMenuIcons_right.getResourceId(position, -1));
+//                } else {
+//
+//                    imgIcon.setImageResource(navMenuIconsPressed.getResourceId(position, -1));
+//                    imgIcon_right.setImageResource(navMenuIcons_right_pressed.getResourceId(position, -1));
+//
+////                    imgIcon.setImageResource(navMenuIcons.getResourceId(posn, -1));
+////                    imgIcon_right.setImageResource(navMenuIcons_right.getResourceId(posn, -1));
+//                }
+//                lastPos = position;
+//
+//                return false;
+//            }
+//        });
 
 
         Typeface tf = Typeface.createFromAsset(this.context.getAssets(), "fonts/AvenirLTStd-Roman.otf");

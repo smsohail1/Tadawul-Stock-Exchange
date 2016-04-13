@@ -53,12 +53,13 @@
                 android:background="@drawable/menu_logo_new" />
 
             <ListView
+
                 android:id="@+id/list_slidermenu"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/image_view"
                 android:layout_gravity="left|top"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="20dp"
                 android:background="@color/list_background"
                 android:choiceMode="singleChoice"
                 android:divider="#a1a1a1"

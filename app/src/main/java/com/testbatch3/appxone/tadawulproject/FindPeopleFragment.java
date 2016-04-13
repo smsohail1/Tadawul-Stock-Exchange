@@ -41,7 +41,9 @@ RelativeLayout logo;
         View root_Views = inflater.inflate(R.layout.about_us, container, false);
 
         logo = (RelativeLayout) root_Views.findViewById(R.id.logo_appxone);
-        share_about = (ImageButton) root_Views.findViewById(R.id.share_about1);
+
+      //  share_about = (ImageButton) root_Views.findViewById(R.id.share_about1);
+
         devlopment_team = (TextView) root_Views.findViewById(R.id.Development_title);
         powered_by = (TextView) root_Views.findViewById(R.id.powered_title);
         version = (TextView) root_Views.findViewById(R.id.version_app);
@@ -60,7 +62,7 @@ RelativeLayout logo;
 
         supervisor_title = (TextView) root_Views.findViewById(R.id.supervisor_title);
 
-        rate_share = (TextView) root_Views.findViewById(R.id.rate_share);
+     //   rate_share = (TextView) root_Views.findViewById(R.id.rate_share);
 
 
         Typeface tf=Typeface.createFromAsset(getActivity().getAssets(),"fonts/AvenirLTStd-Roman.otf");
@@ -80,7 +82,7 @@ RelativeLayout logo;
 
         developer_title.setTypeface(tf);
         supervisor_title.setTypeface(tf);
-        rate_share.setTypeface(tf);
+       // rate_share.setTypeface(tf);
 
 
         AdView mAdView = new AdView(getActivity(), null);
@@ -116,16 +118,17 @@ RelativeLayout logo;
 
             }
         });
-        share_about.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent share_data = new Intent(Intent.ACTION_SEND);
-                share_data.setType("text/plain");
-                share_data.putExtra(Intent.EXTRA_TEXT, "I am using this app.\n"+"https://play.google.com/store/apps/details?id=com.appinhand.saudistockexchange");
-                Intent share_via = Intent.createChooser(share_data, "Share Via");
-                startActivity(share_via);
-            }
-        });
+
+//        share_about.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent share_data = new Intent(Intent.ACTION_SEND);
+//                share_data.setType("text/plain");
+//                share_data.putExtra(Intent.EXTRA_TEXT, "I am using this app.\n"+"https://play.google.com/store/apps/details?id=com.appinhand.saudistockexchange");
+//                Intent share_via = Intent.createChooser(share_data, "Share Via");
+//                startActivity(share_via);
+//            }
+//        });
 
         return root_Views;
 

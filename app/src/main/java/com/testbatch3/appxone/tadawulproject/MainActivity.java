@@ -41,7 +41,7 @@ public class MainActivity extends ActionBarActivity {
 
     // private String[] tabs = {"Top Rated", "Games", "Movies"};
 //
-   String publisherId = "ca-app-pub-9381472359687969/3170354534";
+    String publisherId = "ca-app-pub-9381472359687969/3170354534";
 //    String testingDeviceId = "359918043312594";
 //
 //    AdRequest request;
@@ -172,41 +172,31 @@ public class MainActivity extends ActionBarActivity {
 //
 
 
+        AdView mAdView = new AdView(getApplicationContext(), null);
+        String ad_Id = publisherId;
+        final LinearLayout linearLayout = (LinearLayout) findViewById(R.id.adLayout);
+        linearLayout.addView(mAdView);
+        mAdView.setAdUnitId(ad_Id);
+        mAdView.setAdSize(AdSize.SMART_BANNER);
+        AdRequest adRequest = new AdRequest.Builder()
+                .build();
+        mAdView.loadAd(adRequest);
+
+        mAdView.setAdListener(new AdListener() {
+            @Override
+            public void onAdLoaded() {
 
 
+                linearLayout.setVisibility(View.VISIBLE);
+                Log.e("load", "111");
+            }
 
-
-
-
-
-
-
-
-//        AdView mAdView = new AdView(getApplicationContext(),null);
-//        String ad_Id = publisherId;
-//        final LinearLayout linearLayout = (LinearLayout) findViewById(R.id.adLayout);
-//        linearLayout.addView(mAdView);
-//        mAdView.setAdUnitId(ad_Id);
-//        mAdView.setAdSize(AdSize.SMART_BANNER);
-//        AdRequest adRequest = new AdRequest.Builder()
-//                .build();
-//        mAdView.loadAd(adRequest);
-//
-//        mAdView.setAdListener(new AdListener() {
-//            @Override
-//            public void onAdLoaded() {
-//
-//
-//                linearLayout.setVisibility(View.VISIBLE);
-//Log.e("load","111");
-//            }
-//
-//            @Override
-//            public void onAdFailedToLoad(int errorCode) {
-//              //  linearLayout.setVisibility(View.GONE);
-//                Log.e("failed","111");
-//            }
-//        });
+            @Override
+            public void onAdFailedToLoad(int errorCode) {
+                //  linearLayout.setVisibility(View.GONE);
+                Log.e("failed", "111");
+            }
+        });
 
 
         mTitle = mDrawerTitle = getTitle();
@@ -323,11 +313,11 @@ public class MainActivity extends ActionBarActivity {
                         mDrawerList.setItemChecked(0, true);
                         mDrawerList.setSelection(0);
                         setTitle(navMenuTitles[0]);
-                       // mDrawerLayout.closeDrawers();
+                        // mDrawerLayout.closeDrawers();
 
                         mDrawerLayout.closeDrawer(mDrawerRelativeLayout);
 
-                     //   mDrawerLayout.closeDrawer(mDrawerList);
+                        //   mDrawerLayout.closeDrawer(mDrawerList);
                     } else {
                         // error in creating fragment
                         Log.e("MainActivity", "Error in creating fragment");
@@ -346,7 +336,7 @@ public class MainActivity extends ActionBarActivity {
                         mDrawerList.setItemChecked(2, true);
                         mDrawerList.setSelection(2);
                         setTitle(navMenuTitles[2]);
-                       // mDrawerLayout.closeDrawers();
+                        // mDrawerLayout.closeDrawers();
                         mDrawerLayout.closeDrawer(mDrawerRelativeLayout);
 
 
@@ -370,10 +360,10 @@ public class MainActivity extends ActionBarActivity {
                         mDrawerList.setItemChecked(1, true);
                         mDrawerList.setSelection(1);
                         setTitle(navMenuTitles[1]);
-                       // mDrawerLayout.closeDrawers();
+                        // mDrawerLayout.closeDrawers();
                         mDrawerLayout.closeDrawer(mDrawerRelativeLayout);
 
-                       // mDrawerLayout.closeDrawer(mDrawerList);
+                        // mDrawerLayout.closeDrawer(mDrawerList);
                     } else {
                         // error in creating fragment
                         Log.e("MainActivity", "Error in creating fragment");
@@ -526,7 +516,7 @@ public class MainActivity extends ActionBarActivity {
                     mDrawerList.setItemChecked(4, true);
                     mDrawerList.setSelection(4);
                     setTitle(navMenuTitles[4]);
-                  //  mDrawerLayout.closeDrawers();
+                    //  mDrawerLayout.closeDrawers();
                     mDrawerLayout.closeDrawer(mDrawerRelativeLayout);
                 } else {
                     // error in creating fragment
@@ -649,7 +639,7 @@ public class MainActivity extends ActionBarActivity {
                 Refresh_button.setVisibility(View.GONE);
                 rateYesNo();
                 break;
-                 // fragment = new FB_Fragment();
+            // fragment = new FB_Fragment();
 //
 //
 //                //    actionBar.setHomeButtonEnabled(false);
@@ -664,12 +654,12 @@ public class MainActivity extends ActionBarActivity {
 //                break;
 
 
-           case 5:
+            case 5:
 ////                pref = MainActivity.this.getSharedPreferences("pref_SoundDown", MainActivity.this.MODE_PRIVATE);
 ////                edit = pref.edit();
 ////                edit.putInt("position", position);
 ////                edit.apply();
-               Refresh_button.setVisibility(View.GONE);
+                Refresh_button.setVisibility(View.GONE);
 
                 Intent share_data_drawer = new Intent(Intent.ACTION_SEND);
                 share_data_drawer.setType("text/plain");
@@ -678,7 +668,7 @@ public class MainActivity extends ActionBarActivity {
                 startActivity(share_via);
                 break;
 
-           case 6:
+            case 6:
 ////                pref = MainActivity.this.getSharedPreferences("pref_SoundDown", MainActivity.this.MODE_PRIVATE);
 ////                edit = pref.edit();
 ////                edit.putInt("position", position);
@@ -693,7 +683,7 @@ public class MainActivity extends ActionBarActivity {
 //                //  actionBar.removeAllTabs();
 //                //actionBar.hide();
 //
-              break;
+                break;
 
             case 2:
 //                pref = MainActivity.this.getSharedPreferences("pref_SoundDown", MainActivity.this.MODE_PRIVATE);
@@ -732,7 +722,7 @@ public class MainActivity extends ActionBarActivity {
             mDrawerList.setItemChecked(position, true);
             mDrawerList.setSelection(position);
             setTitle(navMenuTitles[position]);
-          //  mDrawerLayout.closeDrawers();
+            //  mDrawerLayout.closeDrawers();
             mDrawerLayout.closeDrawer(mDrawerRelativeLayout);
         } else {
             // error in creating fragment

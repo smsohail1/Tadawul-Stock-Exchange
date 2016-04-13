@@ -10,10 +10,8 @@
         android:layout_above="@+id/adLayout">
 
         <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-
-            >
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
 
             <RelativeLayout
                 android:id="@+id/powered_by"
@@ -89,7 +87,7 @@
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
                     android:layout_marginRight="10dp"
-                    android:text="App for Tadawul"
+                    android:text="TADAWUL"
                     android:textColor="#000000" />
             </RelativeLayout>
 
@@ -110,9 +108,8 @@
                 android:id="@+id/whole_team"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
                 android:layout_below="@+id/Development_title"
-
-                android:layout_margin="5dp"
                 android:background="@drawable/developer"
                 android:gravity="center">
 
@@ -126,18 +123,18 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentLeft="true"
-                        android:layout_marginLeft="5dp"
+                        android:layout_marginLeft="10dp"
                         android:text="Mohammad Farooq"
                         android:textColor="#000000"
 
                         />
 
                     <TextView
-android:id="@+id/designer_title"
+                        android:id="@+id/designer_title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
-                        android:layout_marginRight="5dp"
+                        android:layout_marginRight="10dp"
                         android:text="Designer"
                         android:textColor="#000000"
 
@@ -160,7 +157,7 @@ android:id="@+id/designer_title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentLeft="true"
-                        android:layout_marginLeft="5dp"
+                        android:layout_marginLeft="10dp"
                         android:text="Syed Mohammad Sohail"
                         android:textColor="#000000"
 
@@ -171,7 +168,7 @@ android:id="@+id/designer_title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
-                        android:layout_marginRight="5dp"
+                        android:layout_marginRight="10dp"
                         android:text="Developer"
                         android:textColor="#000000"
                         android:textStyle="bold" />
@@ -193,7 +190,7 @@ android:id="@+id/designer_title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentLeft="true"
-                        android:layout_marginLeft="5dp"
+                        android:layout_marginLeft="10dp"
                         android:text="Fahad Akhtar"
                         android:textColor="#000000"
 
@@ -204,7 +201,7 @@ android:id="@+id/designer_title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
-                        android:layout_marginRight="5dp"
+                        android:layout_marginRight="10dp"
                         android:text="Supervisor"
                         android:textColor="#000000"
                         android:textStyle="bold" />
@@ -216,40 +213,40 @@ android:id="@+id/designer_title"
             </RelativeLayout>
 
 
-            <TextView
+            <!--<TextView-->
 
-                android:id="@+id/rate_share"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/whole_team"
-                android:layout_centerVertical="true"
-                android:background="@drawable/back_gr22"
-                android:padding="10dp"
-                android:text="Rate &amp; Share:"
-                android:textColor="#000000"
-                android:textStyle="bold" />
+            <!--android:id="@+id/rate_share"-->
+            <!--android:layout_width="fill_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@+id/whole_team"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:background="@drawable/back_gr22"-->
+            <!--android:padding="10dp"-->
+            <!--android:text="Rate &amp; Share:"-->
+            <!--android:textColor="#000000"-->
+            <!--android:textStyle="bold" />-->
 
-            <RelativeLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/rate_share"
-                android:background="@drawable/share_app"
-                android:gravity="center">
+            <!--<RelativeLayout-->
+            <!--android:layout_width="fill_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@+id/rate_share"-->
+            <!--android:background="@drawable/share_app"-->
+            <!--android:gravity="center">-->
 
-                <ImageButton
-                    android:id="@+id/share_about1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/share_about_scr"
+            <!--<ImageButton-->
+            <!--android:id="@+id/share_about1"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:background="@drawable/share_about_scr"-->
 
-                    />
-
-            </RelativeLayout>
+            <!--/>-->
 
         </RelativeLayout>
 
+
     </ScrollView>
 
+    <!--</RelativeLayout>-->
 
     <LinearLayout
         android:id="@+id/adLayout"

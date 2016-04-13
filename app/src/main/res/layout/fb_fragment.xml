@@ -1,7 +1,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:background="#ffffff"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#ffffff">
 
 
     <LinearLayout
@@ -9,30 +9,27 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:orientation="vertical">
+
         <EditText
 
-            android:background="@drawable/text_field_feedback2"
+            android:id="@+id/detail"
             android:layout_width="fill_parent"
             android:layout_height="200dp"
 
-            android:id="@+id/detail"
+            android:background="@drawable/text_field_feedback2"
+            android:gravity="top"
+            android:hint="Give your feedback here..."
             android:padding="10dp"
             android:textColor="#1992ce"
-            android:textColorHint="#1992ce"
-            android:hint="Give your feedback here..."
-            android:gravity="top"/>
+            android:textColorHint="#1992ce" />
 
         <ImageButton
             android:id="@+id/send_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:background="@drawable/selector"/>
+            android:background="@drawable/selector" />
     </LinearLayout>
-
-
-
-
 
 
     <LinearLayout
