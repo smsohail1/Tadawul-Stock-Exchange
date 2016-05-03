@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+
+
+    >
+
+
+    <RelativeLayout
+
+        android:id="@+id/market_status"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/search_field_bg"
+        android:padding="10dp">
+
+
+        <!--<SearchView-->
+        <!--android:id="@+id/search_view"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_centerInParent="true"-->
+        <!--android:background="@drawable/seacrh_field"-->
+        <!--android:iconifiedByDefault="false"-->
+        <!-- -->
+        <!--android:queryHint="Search by Company Name" />-->
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/seacrh_field">
+
+
+            <ImageView
+                android:id="@+id/search_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/text_watcher1"
+                android:src="@drawable/icon_magnify_glass" />
+
+
+            <EditText
+
+                android:id="@+id/text_watcher1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@null"
+                android:hint="Search by company name"
+                android:maxLength="30"
+                android:padding="10dp"
+                android:singleLine="true"
+                android:textColor="#1992ce"
+                android:textColorHint="#1992ce"
+
+                />
+        </RelativeLayout>
+        <!--<EditText-->
+        <!--android:id="@+id/text_watcher1"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:hint="enter text"-->
+        <!--android:textColorHint="#000000"-->
+        <!--/>-->
+        <!--<TextView-->
+        <!--android:id="@+id/status"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentLeft="true"-->
+        <!--android:layout_marginLeft="10dp"-->
+        <!--android:text="Market Status:"-->
+        <!--android:textColor="#000000"-->
+        <!--android:textSize="18dp" />-->
+
+        <!--<TextView-->
+        <!--android:id="@+id/open_not"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:layout_marginRight="10dp"-->
+        <!--android:text=""-->
+        <!--android:textColor="#000000"-->
+        <!--android:textSize="18dp" />-->
+
+
+        <!--<TextView-->
+        <!--android:id="@+id/Last_update"-->
+
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@+id/status"-->
+
+        <!--android:layout_marginLeft="10dp"-->
+        <!--android:layout_marginTop="3dp"-->
+        <!--android:text="Last Update:"-->
+        <!--android:textColor="#000000"-->
+        <!--android:textSize="18dp" />-->
+
+        <!--<TextView-->
+        <!--android:id="@+id/date"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@+id/status"-->
+
+        <!--android:layout_marginTop="3dp"-->
+        <!--android:layout_toLeftOf="@+id/time"-->
+        <!--android:text=""-->
+        <!--android:textColor="#000000"-->
+        <!--android:textSize="18dp" />-->
+
+
+        <!--<TextView-->
+
+        <!--android:id="@+id/time"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:layout_below="@+id/status"-->
+
+        <!--android:layout_marginRight="10dp"-->
+        <!--android:layout_marginTop="3dp"-->
+        <!--android:text=""-->
+        <!--android:textColor="#000000"-->
+        <!--android:textSize="18dp" />-->
+
+
+    </RelativeLayout>
+
+    <ListView
+
+
+        android:id="@+id/ist_market"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/adLayout1"
+        android:layout_below="@+id/market_status"
+        android:layout_gravity="left|top"
+        android:background="#ffffff"
+        android:choiceMode="singleChoice"
+        android:divider="#1992ce"
+        android:dividerHeight="0.5dp" />
+
+
+    <!--<LinearLayout-->
+    <!--android:id="@+id/adLayout"-->
+    <!--android:layout_width="fill_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:gravity="center"-->
+    <!--android:orientation="horizontal"-->
+    <!--android:visibility="gone"></LinearLayout>-->
+
+
+    <LinearLayout
+        android:id="@+id/adLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="gone"></LinearLayout>
+
+
+</RelativeLayout>

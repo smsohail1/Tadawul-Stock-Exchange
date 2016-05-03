@@ -373,20 +373,20 @@ public class search_adapter extends BaseAdapter {
                 share_data.setType("text/plain");
 
 
-                greater_str1 = navDrawerItemssa.get(position).getwhole();
-                greater_not1 = Double.parseDouble(greater_str1);
-
-
-                get_previous_lcdp = navDrawerItemssa.get(position).getprevious();
-                get_int_prevoous = Double.parseDouble(get_previous_lcdp);
-
-
-                check1 = (double) (greater_not1 / get_int_prevoous);
-
-
-                //changes_format = Double.parseDouble(navDrawerItems.get(position).getwhole());
-
-                string_changes_fromat = format.format(check1);
+//                greater_str1 = navDrawerItemssa.get(position).getwhole();
+//                greater_not1 = Double.parseDouble(greater_str1);
+//
+//
+//                get_previous_lcdp = navDrawerItemssa.get(position).getprevious();
+//                get_int_prevoous = Double.parseDouble(get_previous_lcdp);
+//
+//
+//                check1 = (double) (greater_not1 / get_int_prevoous);
+//
+//
+//                //changes_format = Double.parseDouble(navDrawerItems.get(position).getwhole());
+//
+//                string_changes_fromat = format.format(check1);
 
 
 //                if (check1 < 0.0) {
@@ -400,9 +400,9 @@ public class search_adapter extends BaseAdapter {
 //                }
 
 
-                percent_double = check1 * 100.0;
+            //    percent_double = check1 * 100.0;
                 // percentage.setTag(position);
-                string_percent_fromat = format.format(percent_double);
+              //  string_percent_fromat = format.format(percent_double);
 //                if (percent_double < 0.0) {
 //
 //
@@ -416,17 +416,17 @@ public class search_adapter extends BaseAdapter {
 //share_data.putExtra(android.content.Intent.EXTRA_TEXT,String.valueOf("+" + string_changes_fromat)+ " dd "+String.valueOf("+" + string_percent_fromat + "%") );
 
 
-                if (check1 < 0.0) {
+                if (Double.valueOf(navDrawerItemssa.get(position).getwhole()) < 0.0) {
 
 
                     share_data.putExtra(Intent.EXTRA_TEXT, "Company Name : " + navDrawerItemssa.get(position).getTitle() + "\n"
-                                    + "Change : " + navDrawerItemssa.get(position).getwhole() + "\n" + "Ratio : " + String.valueOf(string_changes_fromat) + "\n" + "Percentage : " + String.valueOf(string_percent_fromat + "%") + "\n" + "High : " + navDrawerItemssa.get(position).gethigh1() + "\n" + "Low : " + navDrawerItemssa.get(position).getlow() + "\n" + "Volume : " + navDrawerItemssa.get(position).getvolume() + "\n" + "Previous : " + navDrawerItemssa.get(position).getprevious() + "\n\n" + "Download app : " + "https://play.google.com/store/apps/details?id=com.appinhand.saudistockexchange"
+                                    + "Current : " + navDrawerItemssa.get(position).getCurrent() + "\n" + "Change : " +  navDrawerItemssa.get(position).getwhole()+ "\n" + "Percentage : " + navDrawerItemssa.get(position).getchangePercent()+ "%" + "\n" + "High : " + navDrawerItemssa.get(position).gethigh1() + "\n" + "Low : " + navDrawerItemssa.get(position).getlow() + "\n" + "Volume : " + navDrawerItemssa.get(position).getvolume() + "\n" + "Previous : " + navDrawerItemssa.get(position).getprevious() + "\n\n" + "Download app : " + "https://play.google.com/store/apps/details?id=com.appinhand.saudistockexchange"
 
                     );
-                } else if (check1 >= 0.0) {
+                } else if (Double.valueOf(navDrawerItemssa.get(position).getwhole()) >= 0.0) {
 
                     share_data.putExtra(Intent.EXTRA_TEXT, "Company Name : " + navDrawerItemssa.get(position).getTitle() + "\n"
-                                    + "Change : " + navDrawerItemssa.get(position).getwhole() + "\n" + "Ratio" + String.valueOf("+" + string_changes_fromat) + "\n" + "Percentage : " + String.valueOf("+" + string_percent_fromat + "%") + "\n" + "High : " + navDrawerItemssa.get(position).gethigh1() + "\n" + "Low : " + navDrawerItemssa.get(position).getlow() + "\n" + "Volume : " + navDrawerItemssa.get(position).getvolume() + "\n" + "Previous : " + navDrawerItemssa.get(position).getprevious() + "\n\n" + "Download app : " + "https://play.google.com/store/apps/details?id=com.appinhand.saudistockexchange"
+                                    + "Current : " + navDrawerItemssa.get(position).getCurrent() + "\n" + "Change" + navDrawerItemssa.get(position).getwhole()  + "\n" + "Percentage : " +  navDrawerItemssa.get(position).getchangePercent()+ "%" + "\n" + "High : " + navDrawerItemssa.get(position).gethigh1() + "\n" + "Low : " + navDrawerItemssa.get(position).getlow() + "\n" + "Volume : " + navDrawerItemssa.get(position).getvolume() + "\n" + "Previous : " + navDrawerItemssa.get(position).getprevious() + "\n\n" + "Download app : " + "https://play.google.com/store/apps/details?id=com.appinhand.saudistockexchange"
 
                     );
                 }
@@ -435,8 +435,8 @@ public class search_adapter extends BaseAdapter {
                 cc.startActivity(share_via);
 
 
-            }
-        });
+    }
+});
 
 
         // watchlist_btn = (ImageView) convertView.findViewById(R.id.watchlist);
@@ -445,50 +445,53 @@ public class search_adapter extends BaseAdapter {
 
         //   TextView txtCount = (TextView) convertView.findViewById(R.id.counter);
 
-        greater_str1 = navDrawerItemssa.get(position).getwhole();
-        greater_not1 = Double.parseDouble(greater_str1);
+//        greater_str1 = navDrawerItemssa.get(position).getwhole();
+//        greater_not1 = Double.parseDouble(greater_str1);
+//
+//
+//        get_previous_lcdp = navDrawerItemssa.get(position).getprevious();
+//        get_int_prevoous = Double.parseDouble(get_previous_lcdp);
 
 
-        get_previous_lcdp = navDrawerItemssa.get(position).getprevious();
-        get_int_prevoous = Double.parseDouble(get_previous_lcdp);
-
-
-        check1 = (double) (greater_not1 / get_int_prevoous);
+    //    check1 = (double) (greater_not1 / get_int_prevoous);
 
 
         //changes_format = Double.parseDouble(navDrawerItems.get(position).getwhole());
 
-        string_changes_fromat = format.format(check1);
+       // string_changes_fromat = format.format(check1);
 
 
         //  float_1.setText(string_changes_fromat);
 
         // dot_plus.setTag(position);
-        if (check1 < 0.0) {
+     //   if (check1 < 0.0) {
 
-            dot_plus.setText(String.valueOf(string_changes_fromat));
+            dot_plus.setText(navDrawerItemssa.get(position).getwhole());
             // dot_plus.setText(String.valueOf(check1).charAt(0)+String.valueOf(String.valueOf(check1).charAt(1))+String.valueOf(check1).charAt(2)+String.valueOf(check1).charAt(3));
+//
+//        } else if (check1 >= 0.0) {
+//            dot_plus.setText(String.valueOf("+" + string_changes_fromat));
+//            // dot_plus.setText(String.valueOf("+"+check1).charAt(0)+String.valueOf(String.valueOf(check1).charAt(1))+String.valueOf(check1).charAt(2)+String.valueOf(check1).charAt(3));
+//        }
 
-        } else if (check1 >= 0.0) {
-            dot_plus.setText(String.valueOf("+" + string_changes_fromat));
-            // dot_plus.setText(String.valueOf("+"+check1).charAt(0)+String.valueOf(String.valueOf(check1).charAt(1))+String.valueOf(check1).charAt(2)+String.valueOf(check1).charAt(3));
-        }
-
-        percent_double = check1 * 100.0;
+       // percent_double = check1 * 100.0;
         //percentage.setTag(position);
-        string_percent_fromat = format.format(percent_double);
-        if (percent_double < 0.0) {
+      //  string_percent_fromat = format.format(percent_double);
+                   percentage.setText(navDrawerItemssa.get(position).getchangePercent());
 
-
-            percentage.setText(String.valueOf(string_percent_fromat + "%"));
-        } else {
-
-            percentage.setText(String.valueOf("+" + string_percent_fromat + "%"));
-        }
-        if (check1 < 0.0) {
+//        if (percent_double < 0.0) {
+//
+//
+//            percentage.setText(String.valueOf(string_percent_fromat + "%"));
+//        } else {
+//
+//            percentage.setText(String.valueOf("+" + string_percent_fromat + "%"));
+//        }
+        if (Double.valueOf(navDrawerItemssa.get(position).getwhole()) < 0.0) {
 
             imgIcon.setImageResource(R.drawable.red_trangle);
-        } else if (check1 >= 0.0) {
+        }
+        else if (Double.valueOf(navDrawerItemssa.get(position).getwhole()) >= 0.0) {
 
             imgIcon.setImageResource(R.drawable.green_trangle);
         }
@@ -502,7 +505,7 @@ public class search_adapter extends BaseAdapter {
         // changes_format   = Double.parseDouble(navDrawerItems.get(position).getwhole());
 
 
-        float_1.setText(navDrawerItemssa.get(position).getwhole());
+        float_1.setText(navDrawerItemssa.get(position).getCurrent());
 
         // float_plus.setText(navDrawerItems.get(position).getpercent());
 

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/header_popup"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/header_bg_popup_paid">
+        <!--<ImageView-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:background="@drawable/header_bg_home" />-->
+
+        <TextView
+            android:id="@+id/notify_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:text="Notify me when:"
+            android:textColor="#ffffff" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/header_popup"
+        android:background="@drawable/bg_popup_paid">
+
+        <Spinner
+            android:id="@+id/greater_lesser"
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+
+
+            android:background="@drawable/dropdown_popup_paid" />
+
+        <RelativeLayout
+
+
+            android:id="@+id/textfiled_popup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/greater_lesser"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+
+            android:background="@drawable/text_field_popup_paid">
+
+            <EditText
+
+                android:id="@+id/values"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:background="@null"
+
+                android:digits="0123456789."
+                android:hint="Enter Value"
+                android:inputType="numberDecimal"
+                android:maxLength="7"
+                android:paddingBottom="5dp"
+                android:paddingRight="165dp"
+                android:paddingTop="5dp"
+                android:singleLine="true"
+                android:textColor="#c0392b"
+                android:textColorHint="#c0392b"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textfiled_popup"
+            android:layout_marginTop="20dp"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/delete_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/delete_button_popup" />
+
+            <ImageView
+                android:id="@+id/ok_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_toRightOf="@+id/delete_button"
+
+
+                android:background="@drawable/popup_ok"
+
+                />
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+</RelativeLayout>

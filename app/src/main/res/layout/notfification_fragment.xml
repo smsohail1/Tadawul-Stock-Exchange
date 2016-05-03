@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    >
+
+    <com.baoyz.swipemenulistview.SwipeMenuListView
+        android:layout_above="@+id/adLayout"
+        android:id="@+id/notify_stocks"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="left|top"
+        android:choiceMode="singleChoice"
+        android:divider="#c0392b"
+        android:dividerHeight="0.5dp"/>
+
+    <!--<ListView-->
+        <!--android:layout_above="@+id/adLayout1"-->
+        <!--android:background="#ffffff"-->
+        <!--android:id="@+id/notify_stocks"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="fill_parent"-->
+
+        <!--android:layout_gravity="left|top"-->
+
+        <!--android:choiceMode="singleChoice"-->
+        <!--android:divider="#c0392b"-->
+        <!--android:dividerHeight="0.5dp" />-->
+
+
+
+    <LinearLayout
+        android:id="@+id/adLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="gone"></LinearLayout>
+
+
+</RelativeLayout>

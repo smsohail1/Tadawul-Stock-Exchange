@@ -1,0 +1,103 @@
+<resources>
+    <string name="app_name">Tadawul</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="hello_world">Hello world!</string>
+
+    <string name="drawer_open">Slider Menu Opened</string>
+    <string name="drawer_close">Slider Menu Closed</string>
+
+    <!-- Nav Drawer Menu Items -->
+    <string-array name="nav_drawer_items">
+        <item>Home</item>
+        <item>Markets</item>
+        <item>Search</item>
+        <item>WatchList</item>
+        <item>Feedback</item>
+        <item>Share</item>
+        <item>About Us</item>
+
+
+    </string-array>
+
+    <!-- Nav Drawer List Item Icons -->
+    <!-- Keep them in order as the titles are in -->
+    <array name="nav_drawer_icons">
+
+        <item>@drawable/icon_home</item>
+        <item>@drawable/icon_market</item>
+        <item>@drawable/icon_magnify_glass</item>
+        <item>@drawable/gray_watch</item>
+        <item>@drawable/icon_feedback</item>
+        <item>@drawable/icon_share</item>
+        <item>@drawable/icon_about_us</item>
+
+    </array>
+
+    <array name="nav_drawer_icons_pressed">
+
+        <item>@drawable/icon_home_pressed</item>
+        <item>@drawable/icon_market_pressed</item>
+        <item>@drawable/icon_magnify_glass_pressed</item>
+        <item>@drawable/blue_watch</item>
+        <item>@drawable/icon_feedback_pressed</item>
+        <item>@drawable/icon_share_pressed</item>
+        <item>@drawable/icon_about_us_pressed</item>
+
+    </array>
+
+
+    <array name="nav_drawer_right">
+
+        <item>@drawable/icon_forward_gray</item>
+        <item>@drawable/icon_forward_gray</item>
+        <item>@drawable/icon_forward_gray</item>
+        <item>@drawable/icon_forward_gray</item>
+        <item>@drawable/icon_forward_gray</item>
+        <item>@drawable/icon_forward_gray</item>
+        <item>@drawable/icon_forward_gray</item>
+
+    </array>
+
+
+    <array name="nav_drawer_right_pressed">
+
+        <item>@drawable/icon_forward</item>
+        <item>@drawable/icon_forward</item>
+        <item>@drawable/icon_forward</item>
+        <item>@drawable/icon_forward</item>
+        <item>@drawable/icon_forward</item>
+        <item>@drawable/icon_forward</item>
+        <item>@drawable/icon_forward</item>
+
+    </array>
+
+
+    <!--<array name="color_pressed">-->
+
+    <!--<item>@color/red_color</item>-->
+    <!--<item>@color/red_color</item>-->
+    <!--<item>@color/red_color</item>-->
+    <!--<item>@color/red_color</item>-->
+    <!--<item>@color/red_color</item>-->
+    <!--<item>@color/red_color</item>-->
+    <!--<item>@color/red_color</item>-->
+
+    <!--</array>-->
+
+
+    <!--<array name="color_unpressed">-->
+
+    <!--<item>@color/grey_color</item>-->
+    <!--<item>@color/grey_color</item>-->
+    <!--<item>@color/grey_color</item>-->
+    <!--<item>@color/grey_color</item>-->
+    <!--<item>@color/grey_color</item>-->
+    <!--<item>@color/grey_color</item>-->
+    <!--<item>@color/grey_color</item>-->
+
+    <!--</array>-->
+
+    <!-- Content Description -->
+    <string name="desc_list_item_icon">Item Icon</string>
+</resources>

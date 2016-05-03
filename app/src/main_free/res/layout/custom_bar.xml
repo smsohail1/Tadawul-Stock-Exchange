@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/header_bg_home">
+
+
+    <ImageView
+        android:id="@+id/drawer_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:padding="15dp"
+
+        android:src="@drawable/icon_menu" />
+
+    <TextView
+        android:id="@+id/Title_action"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="Home"
+        android:textColor="#ffffff"
+        android:textSize="20sp" />
+
+    <ImageView
+        android:id="@+id/refresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:padding="13dp"
+        android:src="@drawable/icon_refresh" />
+</RelativeLayout>

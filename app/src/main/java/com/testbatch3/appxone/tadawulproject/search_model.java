@@ -11,7 +11,7 @@ public class search_model {
 
     private String float_value, plus_float, perecntage1;
 
-    private String high_stock, low_stock, volume_stock, previous_stock;
+    private String high_stock, low_stock, volume_stock, previous_stock,channgepercent,Current;
     // boolean to set visiblity of the counter
     private boolean isCounterVisible = false;
     private  String posn;
@@ -20,12 +20,15 @@ public class search_model {
     }
 
     public search_model( String index, String float_value
-            , String high_stock, String low_stock, String volume_stock, String previous_stock,String posn) {
+            , String high_stock, String low_stock, String volume_stock, String previous_stock,String posn,String channgepercent,String Current) {
 
         // this.id_stock_model = id_stock_model;
         this.index = index;
         this.float_value = float_value;
 this.posn=posn;
+        this.channgepercent=channgepercent;
+        this.Current=Current;
+
         // this.plus_float = plus_float;
         // this.perecntage1 = perecntage1;
         //this.icon = icon;
@@ -43,7 +46,7 @@ this.posn=posn;
 
 
     public search_model(String index, String float_value
-            , String high_stock, String low_stock, String volume_stock, String previous_stock,String posn,
+            , String high_stock, String low_stock, String volume_stock, String previous_stock,String posn,String channgepercent,String Current,
                          boolean isCounterVisible, String count
 
     ) {
@@ -55,7 +58,8 @@ this.posn=posn;
         // this.plus_float = plus_float;
         // this.perecntage1 = perecntage1;
         //  this.icon = icon;
-
+        this.channgepercent=channgepercent;
+        this.Current=Current;
 
         this.high_stock = high_stock;
 
@@ -73,6 +77,17 @@ this.posn=posn;
 //    public int get_id() {
 //        return this.id_stock_model;
 //    }
+public  String getCurrent()
+{
+    return  this.Current;
+}
+
+    public  String getchangePercent()
+    {
+        return this.channgepercent;
+
+    }
+
 
     public  String getpositon()
     {
