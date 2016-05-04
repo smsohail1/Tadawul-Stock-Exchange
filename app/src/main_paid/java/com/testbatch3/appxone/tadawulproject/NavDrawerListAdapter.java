@@ -211,7 +211,7 @@ public class NavDrawerListAdapter extends BaseAdapter {
         navDrawerItems.get(2).setIcon(R.drawable.icon_magnify_glass);
 
         navDrawerItems.get(3).setIcon(R.drawable.gray_watch);
-        navDrawerItems.get(4).setIcon(R.drawable.icon_feedback);
+        navDrawerItems.get(4).setIcon(R.drawable.icon_notification_gray_unpressed_paid);
         navDrawerItems.get(5).setIcon(R.drawable.icon_feedback);
 
         navDrawerItems.get(6).setIcon(R.drawable.icon_share);
@@ -235,7 +235,7 @@ public class NavDrawerListAdapter extends BaseAdapter {
         navDrawerItems.get(1).setIcon(R.drawable.icon_market_pressed);
         navDrawerItems.get(2).setIcon(R.drawable.icon_magnify_glass);
         navDrawerItems.get(3).setIcon(R.drawable.gray_watch);
-        navDrawerItems.get(4).setIcon(R.drawable.icon_feedback);
+        navDrawerItems.get(4).setIcon(R.drawable.icon_notification_gray_unpressed_paid);
         navDrawerItems.get(5).setIcon(R.drawable.icon_feedback);
         navDrawerItems.get(6).setIcon(R.drawable.icon_share);
         navDrawerItems.get(7).setIcon(R.drawable.icon_about_us);
@@ -258,7 +258,7 @@ public class NavDrawerListAdapter extends BaseAdapter {
         navDrawerItems.get(1).setIcon(R.drawable.icon_market);
         navDrawerItems.get(2).setIcon(R.drawable.icon_magnify_glass_pressed);
         navDrawerItems.get(3).setIcon(R.drawable.gray_watch);
-        navDrawerItems.get(4).setIcon(R.drawable.icon_feedback);
+        navDrawerItems.get(4).setIcon(R.drawable.icon_notification_gray_unpressed_paid);
         navDrawerItems.get(5).setIcon(R.drawable.icon_feedback);
         navDrawerItems.get(6).setIcon(R.drawable.icon_share);
         navDrawerItems.get(7).setIcon(R.drawable.icon_about_us);
@@ -280,7 +280,7 @@ public class NavDrawerListAdapter extends BaseAdapter {
         navDrawerItems.get(1).setIcon(R.drawable.icon_market);
         navDrawerItems.get(2).setIcon(R.drawable.icon_magnify_glass);
         navDrawerItems.get(3).setIcon(R.drawable.blue_watch);
-        navDrawerItems.get(4).setIcon(R.drawable.icon_feedback);
+        navDrawerItems.get(4).setIcon(R.drawable.icon_notification_gray_unpressed_paid);
         navDrawerItems.get(5).setIcon(R.drawable.icon_feedback);
         navDrawerItems.get(6).setIcon(R.drawable.icon_share);
         navDrawerItems.get(7).setIcon(R.drawable.icon_about_us);
@@ -304,7 +304,7 @@ public class NavDrawerListAdapter extends BaseAdapter {
         navDrawerItems.get(1).setIcon(R.drawable.icon_market);
         navDrawerItems.get(2).setIcon(R.drawable.icon_magnify_glass);
         navDrawerItems.get(3).setIcon(R.drawable.gray_watch);
-        navDrawerItems.get(4).setIcon(R.drawable.icon_feedback_pressed);
+        navDrawerItems.get(4).setIcon(R.drawable.icon_notification_blue_paid);
         navDrawerItems.get(5).setIcon(R.drawable.icon_feedback);
         navDrawerItems.get(6).setIcon(R.drawable.icon_share);
         navDrawerItems.get(7).setIcon(R.drawable.icon_about_us);
@@ -327,9 +327,9 @@ public class NavDrawerListAdapter extends BaseAdapter {
         navDrawerItems.get(1).setIcon(R.drawable.icon_market);
         navDrawerItems.get(2).setIcon(R.drawable.icon_magnify_glass);
         navDrawerItems.get(3).setIcon(R.drawable.gray_watch);
-        navDrawerItems.get(4).setIcon(R.drawable.icon_feedback);
+        navDrawerItems.get(4).setIcon(R.drawable.icon_notification_gray_unpressed_paid);
         navDrawerItems.get(5).setIcon(R.drawable.icon_feedback_pressed);
-        navDrawerItems.get(6).setIcon(R.drawable.icon_share_pressed);
+        navDrawerItems.get(6).setIcon(R.drawable.icon_share);
         navDrawerItems.get(7).setIcon(R.drawable.icon_about_us);
 
 
@@ -353,10 +353,10 @@ public class NavDrawerListAdapter extends BaseAdapter {
         navDrawerItems.get(1).setIcon(R.drawable.icon_market);
         navDrawerItems.get(2).setIcon(R.drawable.icon_magnify_glass);
         navDrawerItems.get(3).setIcon(R.drawable.gray_watch);
-        navDrawerItems.get(4).setIcon(R.drawable.icon_feedback);
-        navDrawerItems.get(5).setIcon(R.drawable.icon_share);
-        navDrawerItems.get(6).setIcon(R.drawable.icon_about_us_pressed);
-        navDrawerItems.get(7).setIcon(R.drawable.icon_feedback);
+        navDrawerItems.get(4).setIcon(R.drawable.icon_notification_gray_unpressed_paid);
+        navDrawerItems.get(5).setIcon(R.drawable.icon_feedback);
+        navDrawerItems.get(6).setIcon(R.drawable.icon_share_pressed);
+        navDrawerItems.get(7).setIcon(R.drawable.icon_about_us);
 
 
 
@@ -381,10 +381,10 @@ public class NavDrawerListAdapter extends BaseAdapter {
         navDrawerItems.get(1).setIcon(R.drawable.icon_market);
         navDrawerItems.get(2).setIcon(R.drawable.icon_magnify_glass);
         navDrawerItems.get(3).setIcon(R.drawable.gray_watch);
-        navDrawerItems.get(4).setIcon(R.drawable.icon_feedback);
-        navDrawerItems.get(5).setIcon(R.drawable.icon_share);
-        navDrawerItems.get(6).setIcon(R.drawable.icon_about_us);
-        navDrawerItems.get(7).setIcon(R.drawable.icon_feedback_pressed);
+        navDrawerItems.get(4).setIcon(R.drawable.icon_notification_gray_unpressed_paid);
+        navDrawerItems.get(5).setIcon(R.drawable.icon_feedback);
+        navDrawerItems.get(6).setIcon(R.drawable.icon_share);
+        navDrawerItems.get(7).setIcon(R.drawable.icon_about_us_pressed);
 
 
 

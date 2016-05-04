@@ -4,15 +4,19 @@ import android.app.ActivityManager;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -62,8 +66,9 @@ public class TopRatedFragment extends Fragment {
     public market_list adapter;
     public ListView marketList;
 
+    public Animation animation_market;
     String mydate = "";
-
+     ProgressDialog dialog;
 
     DualCache<stocklistitem> cache;
     ArrayList<String> cacheKeys;
@@ -77,13 +82,14 @@ public class TopRatedFragment extends Fragment {
     SharedPreferences pref1;
     SharedPreferences.Editor edit1;
 
+    ArrayList<marketlistitem> list;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         rootView = inflater.inflate(R.layout.fragment_top_rated, container, false);
 
-
+        animation_market = AnimationUtils.loadAnimation(getActivity(), R.anim.rotate_img);
 //        AdView mAdView = new AdView(getActivity(), null);
 //        String ad_Id = publisherId;
 //        final LinearLayout linearLayout = (LinearLayout) rootView.findViewById(R.id.adLayout);
@@ -152,14 +158,17 @@ public class TopRatedFragment extends Fragment {
 
         DualCacheContextUtils.setContext(getActivity());
         if (isConnectingToInternet()) {
-
-
-            hitWebservice_kse1();
             setCacheContact();
             setStatusUpdate();
+            MainActivity.Refresh_button.setEnabled(false);
+            hitWebservice_kse1();
+
         } else {
 
-
+            Snackbar.make(getActivity().findViewById(android.R.id.content), "No Internet Connection", Snackbar.LENGTH_LONG)
+                    // .setAction("Undo", mOnClickListener)
+                    .setActionTextColor(Color.RED)
+                    .show();
             setCacheContact();
             setStatusUpdate();
 
@@ -289,7 +298,7 @@ public class TopRatedFragment extends Fragment {
 
 
     public void setCacheContact() {
-        ArrayList<marketlistitem> list = new ArrayList<>();
+        list = new ArrayList<>();
         String pref_list = sharedpreferences.getString("markets", "");
 //        String [] pref_list_arr = new String[pref_list.length()];
 //        if (!pref_list.equals(""))
@@ -346,17 +355,19 @@ public class TopRatedFragment extends Fragment {
 
     public void hitWebservice_kse1() {
 
-        final ProgressDialog dialog;
-        dialog = new ProgressDialog(getActivity());
-        dialog.setMessage("Please wait for few seconds...");
-        dialog.setCanceledOnTouchOutside(false);
-        try {
-            dialog.show();
-        } catch (Exception e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
+        MainActivity.Refresh_button.startAnimation(animation_market);
 
+        if (list == null) {
+            dialog = new ProgressDialog(getActivity());
+            dialog.setMessage("Please wait for few seconds...");
+            dialog.setCanceledOnTouchOutside(false);
+            try {
+                dialog.show();
+            } catch (Exception e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }
 
         RestAdapter restAdapter = new RestAdapter.Builder()
                 .setEndpoint("http://appinhand.net/LiveApplications/tadawul").build();
@@ -366,7 +377,14 @@ public class TopRatedFragment extends Fragment {
             @Override
             public void success(kse1_fetch model, Response response) {
 
-                dialog.dismiss();
+                MainActivity.Refresh_button.setEnabled(true);
+                MainActivity.Refresh_button.clearAnimation();
+                if (list == null) {
+
+                    dialog.dismiss();
+
+                }
+
                 Log.e("url", response.getUrl());
 
                 marketItems.clear();
@@ -426,7 +444,9 @@ public class TopRatedFragment extends Fragment {
 
             @Override
             public void failure(RetrofitError error) {
-                dialog.dismiss();
+                if (list == null) {
+                    dialog.dismiss();
+                }
             }
         });
     }

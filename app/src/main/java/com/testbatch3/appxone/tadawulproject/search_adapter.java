@@ -420,13 +420,13 @@ public class search_adapter extends BaseAdapter {
 
 
                     share_data.putExtra(Intent.EXTRA_TEXT, "Company Name : " + navDrawerItemssa.get(position).getTitle() + "\n"
-                                    + "Current : " + navDrawerItemssa.get(position).getCurrent() + "\n" + "Change : " +  navDrawerItemssa.get(position).getwhole()+ "\n" + "Percentage : " + navDrawerItemssa.get(position).getchangePercent()+ "%" + "\n" + "High : " + navDrawerItemssa.get(position).gethigh1() + "\n" + "Low : " + navDrawerItemssa.get(position).getlow() + "\n" + "Volume : " + navDrawerItemssa.get(position).getvolume() + "\n" + "Previous : " + navDrawerItemssa.get(position).getprevious() + "\n\n" + "Download app : " + "https://play.google.com/store/apps/details?id=com.appinhand.saudistockexchange"
+                                    + "Current : " + navDrawerItemssa.get(position).getCurrent() + "\n" + "Change : " +  navDrawerItemssa.get(position).getwhole()+ "\n" + "Percentage : " + navDrawerItemssa.get(position).getchangePercent()+ "%" + "\n" + "High : " + navDrawerItemssa.get(position).gethigh1() + "\n" + "Low : " + navDrawerItemssa.get(position).getlow() + "\n" + "Volume : " + navDrawerItemssa.get(position).getvolume() + "\n" + "Previous : " + navDrawerItemssa.get(position).getprevious() + "\n\n" + "Download app : " + "https://play.google.com/store/apps/details?id=com.appinhand.saudistockexchangepaid"
 
                     );
                 } else if (Double.valueOf(navDrawerItemssa.get(position).getwhole()) >= 0.0) {
 
                     share_data.putExtra(Intent.EXTRA_TEXT, "Company Name : " + navDrawerItemssa.get(position).getTitle() + "\n"
-                                    + "Current : " + navDrawerItemssa.get(position).getCurrent() + "\n" + "Change" + navDrawerItemssa.get(position).getwhole()  + "\n" + "Percentage : " +  navDrawerItemssa.get(position).getchangePercent()+ "%" + "\n" + "High : " + navDrawerItemssa.get(position).gethigh1() + "\n" + "Low : " + navDrawerItemssa.get(position).getlow() + "\n" + "Volume : " + navDrawerItemssa.get(position).getvolume() + "\n" + "Previous : " + navDrawerItemssa.get(position).getprevious() + "\n\n" + "Download app : " + "https://play.google.com/store/apps/details?id=com.appinhand.saudistockexchange"
+                                    + "Current : " + navDrawerItemssa.get(position).getCurrent() + "\n" + "Change : +" + navDrawerItemssa.get(position).getwhole()  + "\n" + "Percentage : +" +  navDrawerItemssa.get(position).getchangePercent()+ "%" + "\n" + "High : " + navDrawerItemssa.get(position).gethigh1() + "\n" + "Low : " + navDrawerItemssa.get(position).getlow() + "\n" + "Volume : " + navDrawerItemssa.get(position).getvolume() + "\n" + "Previous : " + navDrawerItemssa.get(position).getprevious() + "\n\n" + "Download app : " + "https://play.google.com/store/apps/details?id=com.appinhand.saudistockexchangepaid"
 
                     );
                 }

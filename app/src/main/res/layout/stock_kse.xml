@@ -427,11 +427,20 @@ android:layout_marginLeft="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/info"
-        android:src="@drawable/watch_button_stocks"
+        android:src="@drawable/icon_watch_plus_normal_paid"
 
             />
 
 
+
+        <ImageView
+            android:id="@+id/notifyme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/notify_normal_paid"
+
+            />
 
 
     </RelativeLayout>

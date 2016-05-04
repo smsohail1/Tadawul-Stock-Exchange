@@ -93,48 +93,60 @@ public class watclist_adapter extends BaseAdapter {
 
 
 
-
-        greater_str = navDrawerItems111.get(position).getwhole();
-        greater_not = Double.parseDouble(greater_str);
-
-
-        get_previous_lcdp = navDrawerItems111.get(position).getprevious();
-        get_int_prevoous = Double.parseDouble(get_previous_lcdp);
-
-        check1 = (double) (greater_not / get_int_prevoous);
-
-
-        //changes_format = Double.parseDouble(navDrawerItems.get(position).getwhole());
-
-        string_changes_fromat = format.format(check1);
+//
+//        greater_str = navDrawerItems111.get(position).getwhole();
+//        greater_not = Double.parseDouble(greater_str);
+//
+//
+//        get_previous_lcdp = navDrawerItems111.get(position).getprevious();
+//        get_int_prevoous = Double.parseDouble(get_previous_lcdp);
+//
+//        check1 = (double) (greater_not / get_int_prevoous);
+//
+//
+//        //changes_format = Double.parseDouble(navDrawerItems.get(position).getwhole());
+//
+//        string_changes_fromat = format.format(check1);
 
 
         //  float_1.setText(string_changes_fromat);
 
 
-        if (check1 < 0.0) {
-
-            dot1.setText(String.valueOf(string_changes_fromat));
+//        if (check1 < 0.0) {
+       if (Double.valueOf(navDrawerItems111.get(position).getplusgloat())>=0.0)
+        {
+            dot1.setText("+"+navDrawerItems111.get(position).getplusgloat());
+        }
+        else if(Double.valueOf(navDrawerItems111.get(position).getplusgloat())<0.0){
+           dot1.setText(navDrawerItems111.get(position).getplusgloat());
+        }
             // dot_plus.setText(String.valueOf(check1).charAt(0)+String.valueOf(String.valueOf(check1).charAt(1))+String.valueOf(check1).charAt(2)+String.valueOf(check1).charAt(3));
 
-        } else if (check1 >= 0.0) {
-            dot1.setText(String.valueOf("+" + string_changes_fromat));
-            // dot_plus.setText(String.valueOf("+"+check1).charAt(0)+String.valueOf(String.valueOf(check1).charAt(1))+String.valueOf(check1).charAt(2)+String.valueOf(check1).charAt(3));
+//        } else if (check1 >= 0.0) {
+//            dot1.setText(String.valueOf("+" + string_changes_fromat));
+//            // dot_plus.setText(String.valueOf("+"+check1).charAt(0)+String.valueOf(String.valueOf(check1).charAt(1))+String.valueOf(check1).charAt(2)+String.valueOf(check1).charAt(3));
+//        }
+
+//        percent_double = check1 * 100.0;
+//        string_percent_fromat = format.format(percent_double);
+//        if (percent_double < 0.0) {
+
+        if (Double.valueOf(navDrawerItems111.get(position).getpercent())>=0.0) {
+            percentage1.setText("+"+navDrawerItems111.get(position).getpercent());
+        }
+        else if(Double.valueOf(navDrawerItems111.get(position).getpercent())<0.0)
+        {
+            percentage1.setText(navDrawerItems111.get(position).getpercent());
         }
 
-        percent_double = check1 * 100.0;
-        string_percent_fromat = format.format(percent_double);
-        if (percent_double < 0.0) {
-
-            percentage1.setText(String.valueOf(string_percent_fromat + "%"));
-        } else {
-
-            percentage1.setText(String.valueOf("+" + string_percent_fromat + "%"));
-        }
-        if (check1 < 0.0) {
+// } else {
+//
+//            percentage1.setText(String.valueOf("+" + string_percent_fromat + "%"));
+//        }
+        if (Double.valueOf(navDrawerItems111.get(position).getplusgloat()) < 0.0) {
 
             imgIcon.setImageResource(R.drawable.red_trangle);
-        } else if (check1 >= 0.0) {
+        } else if (Double.valueOf(navDrawerItems111.get(position).getplusgloat()) >= 0.0) {
 
             imgIcon.setImageResource(R.drawable.green_trangle);
         }

@@ -76,7 +76,7 @@
                 android:paddingTop="5dp"
                 android:singleLine="true"
                 android:textColor="#c0392b"
-                android:textColorHint="#c0392b"
+                android:textColorHint="#1992ce"
                 android:textSize="16sp" />
 
         </RelativeLayout>

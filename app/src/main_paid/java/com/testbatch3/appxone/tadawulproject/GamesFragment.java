@@ -4,10 +4,12 @@ import android.app.ActivityManager;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
@@ -16,6 +18,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -75,16 +79,19 @@ public class GamesFragment extends Fragment {
 
     int posn;
 
-
+    ArrayList<stocklistitem> list;
     SharedPreferences pref_stocks;
     SharedPreferences.Editor edit_stocks;
+    public Animation animation_home;
 
+   ProgressDialog dialog;
 
     SharedPreferences pref;
     SharedPreferences.Editor edit;
 
     SharedPreferences pref1;
     SharedPreferences.Editor edit1;
+    Context ctx;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -94,12 +101,13 @@ public class GamesFragment extends Fragment {
         // edit_stocks = pref_stocks.edit();
 
 //       String position= pref_stocks.getString("position", "0");
-
+        ctx = getActivity();
         posn = pref_stocks.getInt("position", 0);
 
 
         rootView = inflater.inflate(R.layout.fragment_games, container, false);
 
+        animation_home = AnimationUtils.loadAnimation(getActivity(), R.anim.rotate_img);
 
         dbManager = new DataBaseManager(getActivity());
 
@@ -240,14 +248,19 @@ public class GamesFragment extends Fragment {
         DualCacheContextUtils.setContext(getActivity());
         if (isConnectingToInternet()) {
 
-
-            hitWebservice_kse2();
+            MainActivity.Refresh_button.setEnabled(false);
             setCacheContact();
 
             setStatusUpdate();
+            hitWebservice_kse2();
+
             //    hitWebservice_kse2();
         } else {
 
+            Snackbar.make(getActivity().findViewById(android.R.id.content), "No Internet Connection", Snackbar.LENGTH_LONG)
+                    // .setAction("Undo", mOnClickListener)
+                    .setActionTextColor(Color.RED)
+                    .show();
             setCacheContact();
 
             setStatusUpdate();
@@ -343,7 +356,7 @@ public class GamesFragment extends Fragment {
 
 
     public void setCacheContact() {
-        ArrayList<stocklistitem> list = new ArrayList<>();
+        list = new ArrayList<>();
         String pref_list = sharedpreferences.getString("stocks", "");
 //        String [] pref_list_arr = new String[pref_list.length()];
 //        if (!pref_list.equals(""))
@@ -399,17 +412,20 @@ public class GamesFragment extends Fragment {
 
     public void hitWebservice_kse2() {
 
-        final ProgressDialog dialog;
-        dialog = new ProgressDialog(getActivity());
-        dialog.setMessage("Please wait for few seconds...");
-        dialog.setCanceledOnTouchOutside(false);
-        try {
-            dialog.show();
-        } catch (Exception e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
+        MainActivity.Refresh_button.startAnimation(animation_home);
 
+
+        if (list == null) {
+            dialog = new ProgressDialog(getActivity());
+            dialog.setMessage("Please wait for few seconds...");
+            dialog.setCanceledOnTouchOutside(false);
+            try {
+                dialog.show();
+            } catch (Exception e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }
 
         RestAdapter restAdapter = new RestAdapter.Builder()
                 .setEndpoint("http://appinhand.net/LiveApplications/tadawul").build();
@@ -419,8 +435,15 @@ public class GamesFragment extends Fragment {
             @Override
             public void success(kse2_fatch model1, Response response) {
 
-                dialog.dismiss();
 
+                MainActivity.Refresh_button.setEnabled(true);
+                MainActivity.Refresh_button.clearAnimation();
+
+                   if (list == null) {
+                    //if (dialog.isShowing()) {
+                    dialog.dismiss();
+                    // }
+                }
                 Log.e("url", response.getUrl().toString());
                 stockItems.clear();
 
@@ -464,10 +487,10 @@ public class GamesFragment extends Fragment {
 //                    openOrNot.setText(gg);
 
 
-//                    SharedPreferences sharedpreferences = getActivity().getSharedPreferences("dateTime", Context.MODE_PRIVATE);
-//                    SharedPreferences.Editor editor = sharedpreferences.edit();
-//                    editor.putString("lastUpdate", mydate);
-//                    editor.commit();
+                    SharedPreferences sharedpreferences = ctx.getSharedPreferences("dateTime", Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sharedpreferences.edit();
+                    editor.putString("lastUpdate", mydate);
+                    editor.commit();
 
 
                     // openOrNot.setText(close_not1);
@@ -561,7 +584,9 @@ public class GamesFragment extends Fragment {
 
             @Override
             public void failure(RetrofitError error) {
-                dialog.dismiss();
+                if (list == null) {
+                    dialog.dismiss();
+                }
             }
         });
     }

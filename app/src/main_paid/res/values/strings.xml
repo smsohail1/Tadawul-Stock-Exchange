@@ -34,6 +34,7 @@
         <item>@drawable/icon_market</item>
         <item>@drawable/icon_magnify_glass</item>
         <item>@drawable/gray_watch</item>
+        <item>@drawable/icon_notification_gray_unpressed_paid</item>
         <item>@drawable/icon_feedback</item>
         <item>@drawable/icon_share</item>
         <item>@drawable/icon_about_us</item>
@@ -46,6 +47,7 @@
         <item>@drawable/icon_market_pressed</item>
         <item>@drawable/icon_magnify_glass_pressed</item>
         <item>@drawable/blue_watch</item>
+        <item>@drawable/icon_notification_blue_paid</item>
         <item>@drawable/icon_feedback_pressed</item>
         <item>@drawable/icon_share_pressed</item>
         <item>@drawable/icon_about_us_pressed</item>

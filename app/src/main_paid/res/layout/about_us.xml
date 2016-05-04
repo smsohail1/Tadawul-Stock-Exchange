@@ -76,7 +76,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="10dp"
                     android:layout_toRightOf="@+id/version_logo1"
-                    android:text="1.0"
+                    android:text="1.0.2"
                     android:textColor="#000000" />
 
                 <TextView

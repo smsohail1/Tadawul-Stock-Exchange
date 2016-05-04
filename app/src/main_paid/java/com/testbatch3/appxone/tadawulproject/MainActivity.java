@@ -251,7 +251,7 @@ public class MainActivity extends ActionBarActivity {
 
 
         navDrawerItems.add(new NavDrawerItem(navMenuTitles[3], navMenuIcons.getResourceId(3, -1), navMenuIcons_right.getResourceId(2, -1)));
-        navDrawerItems.add(new NavDrawerItem(navMenuTitles[4], navMenuIcons.getResourceId(0, -1), navMenuIcons_right.getResourceId(0, -1)));
+        navDrawerItems.add(new NavDrawerItem(navMenuTitles[4], navMenuIcons.getResourceId(4, -1), navMenuIcons_right.getResourceId(0, -1)));
 
 
         navDrawerItems.add(new NavDrawerItem(navMenuTitles[5], navMenuIcons.getResourceId(4, -1), navMenuIcons_right.getResourceId(2, -1)));
@@ -702,7 +702,7 @@ public class MainActivity extends ActionBarActivity {
 
                 Intent share_data_drawer = new Intent(Intent.ACTION_SEND);
                 share_data_drawer.setType("text/plain");
-                share_data_drawer.putExtra(Intent.EXTRA_TEXT, "I am using this app.\n https://play.google.com/store/apps/details?id=com.appinhand.saudistockexchange");
+                share_data_drawer.putExtra(Intent.EXTRA_TEXT, "I am using this app.\n https://play.google.com/store/apps/details?id=com.appinhand.saudistockexchangepaid");
                 Intent share_via = Intent.createChooser(share_data_drawer, "Share Via");
                 startActivity(share_via);
                 break;

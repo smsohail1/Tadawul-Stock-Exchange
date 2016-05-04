@@ -3,9 +3,11 @@ package com.testbatch3.appxone.tadawulproject;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.database.Cursor;
+import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBar;
 import android.util.Log;
@@ -97,6 +99,11 @@ public class watchlist extends Fragment {
         if (isConnectingToInternet()) {
             load_database();
         } else {
+            Snackbar.make(getActivity().findViewById(android.R.id.content), "No Internet Connection", Snackbar.LENGTH_LONG)
+                    // .setAction("Undo", mOnClickListener)
+                    .setActionTextColor(Color.RED)
+                    .show();
+
             load_database_internet_error();
         }
 
@@ -622,63 +629,64 @@ public class watchlist extends Fragment {
 
                                 //greater_str1 = navDrawerItems11.get(position).getwhole();
                                 //  greater_not1 = Double.parseDouble(greater_str1);
-                                String changes = model1.getMerketSummary().get(pos_int).getChangevalue();
-                                double greater_not1 = Double.parseDouble(changes);
+//                                String changes = model1.getMerketSummary().get(pos_int).getChangevalue();
+//                                double greater_not1 = Double.parseDouble(changes);
+//
+//                                String prevoius = model1.getMerketSummary().get(pos_int).getOpen();
+//                                double get_int_prevoous = Double.parseDouble(prevoius);
+//
+//                                //  get_previous_lcdp = navDrawerItems11.get(position).getprevious();
+//                                // get_int_prevoous = Double.parseDouble(get_previous_lcdp);
+//
+//
+//                                check1 = (double) (greater_not1 / get_int_prevoous);
+//
+//
+//                                //changes_format = Double.parseDouble(navDrawerItems.get(position).getwhole());
+//
+//                                string_changes_fromat = format.format(check1);
+//
+//
+//                                //  float_1.setText(string_changes_fromat);
+//
+//                                // dot_plus.setTag(position);
+//                                if (check1 < 0.0) {
+//                                    string_changes = string_changes_fromat;
+//                                    // dot_plus.setText(String.valueOf(string_changes_fromat));
+//
+//                                    // dot_plus.setText(String.valueOf(check1).charAt(0)+String.valueOf(String.valueOf(check1).charAt(1))+String.valueOf(check1).charAt(2)+String.valueOf(check1).charAt(3));
+//
+//                                } else if (check1 >= 0.0) {
+//                                    string_changes = "+" + string_changes_fromat;
+//
+//                                    // dot_plus.setText(String.valueOf("+" + string_changes_fromat));
+//                                    // dot_plus.setText(String.valueOf("+"+check1).charAt(0)+String.valueOf(String.valueOf(check1).charAt(1))+String.valueOf(check1).charAt(2)+String.valueOf(check1).charAt(3));
+//                                }
+//
+//                                percent_double = check1 * 100.0;
+//                                //percentage.setTag(position);
+//                                string_percent_fromat = format.format(percent_double);
+//                                if (percent_double < 0.0) {
+//
+//                                    percantage_string = string_percent_fromat + "%";
+//                                    // percentage.setText(String.valueOf(string_percent_fromat + "%"));
+//                                } else {
+//                                    percantage_string = "+" + string_percent_fromat + "%";
+//
+//                                    //  percentage.setText(String.valueOf("+" + string_percent_fromat + "%"));
+//                                }
 
-                                String prevoius = model1.getMerketSummary().get(pos_int).getOpen();
-                                double get_int_prevoous = Double.parseDouble(prevoius);
-
-                                //  get_previous_lcdp = navDrawerItems11.get(position).getprevious();
-                                // get_int_prevoous = Double.parseDouble(get_previous_lcdp);
-
-
-                                check1 = (double) (greater_not1 / get_int_prevoous);
-
-
-                                //changes_format = Double.parseDouble(navDrawerItems.get(position).getwhole());
-
-                                string_changes_fromat = format.format(check1);
-
-
-                                //  float_1.setText(string_changes_fromat);
-
-                                // dot_plus.setTag(position);
-                                if (check1 < 0.0) {
-                                    string_changes = string_changes_fromat;
-                                    // dot_plus.setText(String.valueOf(string_changes_fromat));
-
-                                    // dot_plus.setText(String.valueOf(check1).charAt(0)+String.valueOf(String.valueOf(check1).charAt(1))+String.valueOf(check1).charAt(2)+String.valueOf(check1).charAt(3));
-
-                                } else if (check1 >= 0.0) {
-                                    string_changes = "+" + string_changes_fromat;
-
-                                    // dot_plus.setText(String.valueOf("+" + string_changes_fromat));
-                                    // dot_plus.setText(String.valueOf("+"+check1).charAt(0)+String.valueOf(String.valueOf(check1).charAt(1))+String.valueOf(check1).charAt(2)+String.valueOf(check1).charAt(3));
-                                }
-
-                                percent_double = check1 * 100.0;
-                                //percentage.setTag(position);
-                                string_percent_fromat = format.format(percent_double);
-                                if (percent_double < 0.0) {
-
-                                    percantage_string = string_percent_fromat + "%";
-                                    // percentage.setText(String.valueOf(string_percent_fromat + "%"));
-                                } else {
-                                    percantage_string = "+" + string_percent_fromat + "%";
-
-                                    //  percentage.setText(String.valueOf("+" + string_percent_fromat + "%"));
-                                }
-                                if (check1 < 0.0) {
+                                if (Double.valueOf(model1.getMerketSummary().get(pos_int).getChangevalue()) < 0.0) {
                                     img_drawable = R.drawable.red_trangle;
                                     //  imgIcon.setImageResource(R.drawable.red_trangle);
-                                } else if (check1 >= 0.0) {
+                                } else if (Double.valueOf(model1.getMerketSummary().get(pos_int).getChangevalue()) >= 0.0) {
                                     img_drawable = R.drawable.green_trangle;
 
                                     // imgIcon.setImageResource(R.drawable.green_trangle);
                                 }
 
 
-                                watch_item.add(new watchlist_model(id_stock1, model1.getMerketSummary().get(pos_int).getCompany(), model1.getMerketSummary().get(pos_int).getChangevalue(), string_changes, img_drawable, percantage_string, model1.getMerketSummary().get(pos_int).getHigh(), model1.getMerketSummary().get(pos_int).getLow(), model1.getMerketSummary().get(pos_int).getVol(), model1.getMerketSummary().get(pos_int).getOpen()));
+                                watch_item.add(new watchlist_model(id_stock1, model1.getMerketSummary().get(pos_int).getCompany(), model1.getMerketSummary().get(pos_int).getPrice(), model1.getMerketSummary().get(pos_int).getChangevalue(), img_drawable, model1.getMerketSummary().get(pos_int).getChangePercent(), model1.getMerketSummary().get(pos_int).getHigh(), model1.getMerketSummary().get(pos_int).getLow(), model1.getMerketSummary().get(pos_int).getVol(), model1.getMerketSummary().get(pos_int).getOpen()));
 
                                 //  watch_item.add(new watchlist_model(id_stock1, name1, changes1, ratio1, icon1, percantage1, high1, low1, volume1, previous1));
 
