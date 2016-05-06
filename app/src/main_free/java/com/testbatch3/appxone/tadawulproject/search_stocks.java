@@ -1,11 +1,15 @@
 package com.testbatch3.appxone.tadawulproject;
 
+import android.app.ActivityManager;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -23,7 +27,13 @@ import android.widget.Toast;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import com.vincentbrison.openlibraries.android.dualcache.lib.DualCache;
+import com.vincentbrison.openlibraries.android.dualcache.lib.DualCacheBuilder;
+import com.vincentbrison.openlibraries.android.dualcache.lib.DualCacheContextUtils;
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Locale;
 
@@ -56,12 +66,25 @@ public class search_stocks extends Fragment {
 
     public DataBaseManager dbManager;
 
+
+   // public DataBaseManager dbManager;
+    SharedPreferences sharedpreferences;
+    SharedPreferences.Editor editor;
+    ArrayList<search_model> list;
+    DualCache<search_model> cache;
+
+
+    ArrayList<String> cacheKeys;
+    ProgressDialog dialog;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         rootView1 = inflater.inflate(R.layout.search_layot, container, false);
+        marketList1 = (ListView) rootView1.findViewById(R.id.ist_market);
         dbManager = new DataBaseManager(getActivity());
+
 
 
 //        Log.e("before", "sds1aaa");
@@ -127,20 +150,29 @@ public class search_stocks extends Fragment {
 
 
                 if (isConnectingToInternet()) {
+
                     String text = editText_watcher.getText().toString().toLowerCase(Locale.getDefault());
-                    if (text.equalsIgnoreCase("")) {
-                        search_icon.setImageResource(R.drawable.icon_magnify_glass);
-                    }
-                    if (!isConnectingToInternet() && marketItems1.size() >= 0) {
-                        editText_watcher.setEnabled(false);
-                        check_status = 0;
-
-                        //     Log.e("aa","aa");
+                    if(list==null)
+                    {
 
                     }
-                    if (check_status == 1) {
-                        adapter.filter(text);
+                    else if(list!=null){
+                        check_status=1;
+                        if (text.equalsIgnoreCase("")) {
+                            search_icon.setImageResource(R.drawable.icon_magnify_glass);
+                        }
+//                        if (!isConnectingToInternet() && marketItems1.size() >= 0) {
+//                            editText_watcher.setEnabled(false);
+//                            check_status = 0;
+//
+//                            //     Log.e("aa","aa");
+//
+//                        }
+                        if (check_status == 1) {
+                            adapter.filter(text);
+                        }
                     }
+
 //if(isConnectingToInternet() && adapter.isEmpty()) {
 //    adapter.filter(text);
 //}
@@ -172,6 +204,23 @@ public class search_stocks extends Fragment {
 //                    adapter.filter(text);
 //                }
                 }
+
+                else if(!isConnectingToInternet())
+                {
+                    check_status=1;
+                    String text = editText_watcher.getText().toString().toLowerCase(Locale.getDefault());
+                    if(list==null)
+                    {
+
+                    }
+                    else if(list!=null) {
+
+                        if (check_status == 1) {
+                            adapter.filter(text);
+                        }
+                    }
+                }
+
             }
 
             @Override
@@ -280,11 +329,95 @@ public class search_stocks extends Fragment {
 //            }
 //        });
 
+        sharedpreferences = getActivity().getSharedPreferences("search_stocks_piad",
+                Context.MODE_PRIVATE);
+        editor = sharedpreferences.edit();
+        DualCacheContextUtils.setContext(getActivity());
+        cacheKeys = new ArrayList<>();
+        cache = new DualCacheBuilder<search_model>("search_stocks_piad", getVersionNumber(getActivity()), search_model.class)
+                .useDefaultSerializerInRam(getMaxMemorySize(getActivity()))
+                .useDefaultSerializerInDisk(getMaxMemorySize(getActivity()), true);
+        DualCacheContextUtils.setContext(getActivity());
 
         marketItems1 = new ArrayList<search_model>();
-        hitWebservice_kse2();
+        if (isConnectingToInternet()) {
+            setCacheContact();
+            hitWebservice_kse2();
+        }
+        else {
+
+            Snackbar.make(getActivity().findViewById(android.R.id.content), "No Internet Connection", Snackbar.LENGTH_LONG)
+                    // .setAction("Undo", mOnClickListener)
+                    .setActionTextColor(Color.RED)
+                    .show();
+            setCacheContact();
+
+            // setStatusUpdate();
+        }
+
         //search_view.setOnQueryTextListener(this);
         return rootView1;
+    }
+
+
+    public void setCacheContact() {
+        list = new ArrayList<>();
+        String pref_list = sharedpreferences.getString("search_stocks_piad", "");
+//        String [] pref_list_arr = new String[pref_list.length()];
+//        if (!pref_list.equals(""))
+//            pref_list_arr = pref_list.split(",");
+//
+//        Collections.addAll(cacheKeys,pref_list_arr);
+//        //cacheKeys  = (ArrayList<String>) Arrays.asList(pref_list_arr);
+//        if (cacheKeys == null)
+//            cacheKeys = new ArrayList<>();
+//        if (cacheKeys == null) {
+//            return;
+//        }
+//        if (!cacheKeys.isEmpty()) {
+//            for (String key : cacheKeys) {
+//                stocklistitem item = cache.get(key);
+//                list.add(item);
+//            }
+////            Collections.sort(list, new Comparator<stocklistitem>() {
+////                @Override
+////                public int compare(stocklistitem chatMessage, stocklistitem t1) {
+////                    return chatMessage.getTitle().compareTo(t1.getTitle());
+////                }
+////            });
+//        }
+        Type type = new TypeToken<ArrayList<search_model>>() {
+        }.getType();
+        String json = sharedpreferences.getString("search_stocks_piad", "");
+        list = new Gson().fromJson(json, type);
+        if (list != null) {
+            if (!list.isEmpty()) {
+                this.marketItems1.clear();
+                this.marketItems1.addAll(list);
+                adapter = new search_adapter(getActivity(), marketItems1);
+                marketList1.setAdapter(adapter);
+            }
+        }
+    }
+
+    public static int getVersionNumber(Context context) {
+        int versionName = 0;
+        try {
+            versionName = context.getPackageManager()
+                    .getPackageInfo(context.getPackageName(), 0).versionCode;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return versionName;
+    }
+
+    public static int getMaxMemorySize(Context context) {
+        ActivityManager manager =
+                (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
+
+        int max = manager.getLargeMemoryClass() * 1024;
+
+        return max / 16;
     }
 
 //    @Override
@@ -315,6 +448,12 @@ public class search_stocks extends Fragment {
 
 
     public void hitWebservice_kse2() {
+
+
+        if (list == null) {
+            editText_watcher.setEnabled(false);
+            check_status = 0;
+        }
 
         final ProgressDialog dialog;
         dialog = new ProgressDialog(getActivity());
@@ -356,10 +495,11 @@ public class search_stocks extends Fragment {
                     // openOrNot.setText(open_value);
 
 
-                    marketList1 = (ListView) rootView1.findViewById(R.id.ist_market);
                     adapter = new search_adapter(getContext(), marketItems1);
                     marketList1.setAdapter(adapter);
 
+                    String json = new Gson().toJson(marketItems1);
+                    editor.putString("search_stocks_piad", json).apply();
 
                     if (isConnectingToInternet() && marketItems1.size() >= 0) {
                         editText_watcher.setEnabled(true);

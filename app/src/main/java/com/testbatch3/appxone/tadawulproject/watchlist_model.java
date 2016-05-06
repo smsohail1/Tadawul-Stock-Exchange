@@ -68,7 +68,9 @@ public class watchlist_model {
         this.count = count;
     }
 
-
+public  String getPrice(){
+    return this.float_value;
+}
     public int get_id() {
         return this.id_watchlist;
     }

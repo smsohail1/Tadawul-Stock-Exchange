@@ -809,7 +809,12 @@ public class stock_list extends BaseAdapter {
         // dot_plus.setTag(position);
        // if (Double.valueOf(navDrawerItems11.get(position).getwhole()) < 0.0) {
 
+        if (Double.valueOf(navDrawerItems11.get(position).getwhole())>=0.0) {
+            dot_plus.setText("+"+navDrawerItems11.get(position).getwhole());
+        }
+        else  if (Double.valueOf(navDrawerItems11.get(position).getwhole())<0.0) {
             dot_plus.setText(navDrawerItems11.get(position).getwhole());
+        }
             // dot_plus.setText(String.valueOf(check1).charAt(0)+String.valueOf(String.valueOf(check1).charAt(1))+String.valueOf(check1).charAt(2)+String.valueOf(check1).charAt(3));
 
        // } else if (check1 >= 0.0) {
@@ -822,8 +827,14 @@ public class stock_list extends BaseAdapter {
        // string_percent_fromat = format.format(percent_double);
        // if (percent_double < 0.0) {
 
+        if (Double.valueOf(navDrawerItems11.get(position).getchangePercent())>=0.0) {
+            percentage.setText("+"+navDrawerItems11.get(position).getchangePercent()+"%");
+        }
+        else if(Double.valueOf(navDrawerItems11.get(position).getchangePercent())<0.0)
+        {
+            percentage.setText(navDrawerItems11.get(position).getchangePercent()+"%");
 
-            percentage.setText(navDrawerItems11.get(position).getchangePercent());
+        }
       //  } else {
 
           //  percentage.setText(navDrawerItems11.get(position).getchangePercent());
@@ -951,20 +962,20 @@ public class stock_list extends BaseAdapter {
                 //  share_data.putExtra(Intent.EXTRA_SUBJECT, "PSX App - "+navDrawerItems11.get(position).getTitle());
                 SharedPreferences sharedpreferences1 = context1.getSharedPreferences("dateTime", Context.MODE_PRIVATE);
                 String lastUpdate = sharedpreferences1.getString("lastUpdate", "N/A");
-                greater_str1 = navDrawerItems11.get(position).getwhole();
-                greater_not1 = Double.parseDouble(greater_str1);
-
-
-                get_previous_lcdp = navDrawerItems11.get(position).getprevious();
-                get_int_prevoous = Double.parseDouble(get_previous_lcdp);
-
-
-                check1 = (double) (greater_not1 / get_int_prevoous);
-
-
-                //changes_format = Double.parseDouble(navDrawerItems.get(position).getwhole());
-
-                string_changes_fromat = format.format(check1);
+//                greater_str1 = navDrawerItems11.get(position).getwhole();
+//                greater_not1 = Double.parseDouble(greater_str1);
+//
+//
+//                get_previous_lcdp = navDrawerItems11.get(position).getprevious();
+//                get_int_prevoous = Double.parseDouble(get_previous_lcdp);
+//
+//
+//                check1 = (double) (greater_not1 / get_int_prevoous);
+//
+//
+//                //changes_format = Double.parseDouble(navDrawerItems.get(position).getwhole());
+//
+//                string_changes_fromat = format.format(check1);
 
 
 //                if (check1 < 0.0) {
@@ -978,9 +989,9 @@ public class stock_list extends BaseAdapter {
 //                }
 
 
-                percent_double = check1 * 100.0;
+               // percent_double = check1 * 100.0;
                 // percentage.setTag(position);
-                string_percent_fromat = format.format(percent_double);
+              //  string_percent_fromat = format.format(percent_double);
 //                if (percent_double < 0.0) {
 //
 //
@@ -998,13 +1009,13 @@ public class stock_list extends BaseAdapter {
 
 
                     share_data.putExtra(Intent.EXTRA_TEXT, "Company Name : " + navDrawerItems11.get(position).getTitle() + "\n"
-                                    + "Current : " + navDrawerItems11.get(position).getCurrent() + "\n" + "Change : " +navDrawerItems11.get(position).getwhole() + "\n" + "Percentage : " + Double.valueOf(navDrawerItems11.get(position).getchangePercent()+ "%") + "\n" + "High : " + navDrawerItems11.get(position).gethigh() + "\n" + "Low : " + navDrawerItems11.get(position).getlow() + "\n" + "Volume : " + navDrawerItems11.get(position).getvolume() + "\n" + "Previous : " + navDrawerItems11.get(position).getprevious() + "\n" + "Last Update : " + lastUpdate + "\n\n" + "Download app : " + "https://play.google.com/store/apps/details?id=com.appinhand.saudistockexchange"
+                                    + "Current : " + navDrawerItems11.get(position).getCurrent() + "\n" + "Change : " +navDrawerItems11.get(position).getwhole() + "\n" + "Percentage : " + navDrawerItems11.get(position).getchangePercent()+ "%" + "\n" + "High : " + navDrawerItems11.get(position).gethigh() + "\n" + "Low : " + navDrawerItems11.get(position).getlow() + "\n" + "Volume : " + navDrawerItems11.get(position).getvolume() + "\n" + "Previous : " + navDrawerItems11.get(position).getprevious() + "\n" + "Last Update : " + lastUpdate + "\n\n" + "Download app : " + "https://play.google.com/store/apps/details?id=com.appinhand.saudistockexchange"
 
                     );
                 } else if (Double.valueOf(navDrawerItems11.get(position).getwhole()) >= 0.00) {
 
                     share_data.putExtra(Intent.EXTRA_TEXT, "Company Name : " + navDrawerItems11.get(position).getTitle() + "\n"
-                                    + "Current : " + navDrawerItems11.get(position).getCurrent() + "\n" + "Change : " + navDrawerItems11.get(position).getwhole() + "\n" + "Percentage : " + Double.valueOf(navDrawerItems11.get(position).getchangePercent() + "%") + "\n" + "High : " + navDrawerItems11.get(position).gethigh() + "\n" + "Low : " + navDrawerItems11.get(position).getlow() + "\n" + "Volume : " + navDrawerItems11.get(position).getvolume() + "\n" + "Previous : " + navDrawerItems11.get(position).getprevious() + "\n" + "Last Update : " + lastUpdate + "\n\n" + "Download app : " + "https://play.google.com/store/apps/details?id=com.appinhand.saudistockexchange"
+                                    + "Current : " + navDrawerItems11.get(position).getCurrent() + "\n" + "Change : +" + navDrawerItems11.get(position).getwhole() + "\n" + "Percentage : +" + navDrawerItems11.get(position).getchangePercent() + "%" + "\n" + "High : " + navDrawerItems11.get(position).gethigh() + "\n" + "Low : " + navDrawerItems11.get(position).getlow() + "\n" + "Volume : " + navDrawerItems11.get(position).getvolume() + "\n" + "Previous : " + navDrawerItems11.get(position).getprevious() + "\n" + "Last Update : " + lastUpdate + "\n\n" + "Download app : " + "https://play.google.com/store/apps/details?id=com.appinhand.saudistockexchange"
 
                     );
                 }

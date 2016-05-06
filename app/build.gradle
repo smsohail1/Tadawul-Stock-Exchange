@@ -44,8 +44,8 @@ android {
         main_free {
             applicationId = "com.appinhand.saudistockexchange"
 //            versionName "1.0-demo"
-            versionCode 3
-            versionName "1.0.2"
+            versionCode 4
+            versionName "1.0.3"
         }
     }
 //    packagingOptions {

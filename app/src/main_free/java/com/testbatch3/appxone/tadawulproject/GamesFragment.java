@@ -4,10 +4,12 @@ import android.app.ActivityManager;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
@@ -241,13 +243,18 @@ public class GamesFragment extends Fragment {
         if (isConnectingToInternet()) {
 
 
-            hitWebservice_kse2();
+
             setCacheContact();
 
             setStatusUpdate();
+            hitWebservice_kse2();
             //    hitWebservice_kse2();
         } else {
 
+            Snackbar.make(getActivity().findViewById(android.R.id.content), "No Internet Connection", Snackbar.LENGTH_LONG)
+                    // .setAction("Undo", mOnClickListener)
+                    .setActionTextColor(Color.RED)
+                    .show();
             setCacheContact();
 
             setStatusUpdate();

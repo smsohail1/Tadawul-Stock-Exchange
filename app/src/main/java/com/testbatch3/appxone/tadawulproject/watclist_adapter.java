@@ -31,7 +31,7 @@ public class watclist_adapter extends BaseAdapter {
     public double check1;
     public double percent_double;
     private String string_changes_fromat = "", string_percent_fromat = "";
-
+    String collectionPercentage="";
     public watclist_adapter(Context context, ArrayList<watchlist_model> navDrawerItems11){
         this.context = context;
         this.navDrawerItems111 = navDrawerItems11;
@@ -131,13 +131,20 @@ public class watclist_adapter extends BaseAdapter {
 //        string_percent_fromat = format.format(percent_double);
 //        if (percent_double < 0.0) {
 
+       // Double.valueOf(navDrawerItems111.get(position).getpercent());
+//        for(int i=0;i<navDrawerItems111.get(position).getpercent().toString().length();i++)
+//        {
+//            collectionPercentage +=navDrawerItems111.get(position).getpercent().charAt(i);
+//        }
+
         if (Double.valueOf(navDrawerItems111.get(position).getpercent())>=0.0) {
-            percentage1.setText("+"+navDrawerItems111.get(position).getpercent());
+            percentage1.setText("+"+navDrawerItems111.get(position).getpercent()+"%");
         }
         else if(Double.valueOf(navDrawerItems111.get(position).getpercent())<0.0)
         {
-            percentage1.setText(navDrawerItems111.get(position).getpercent());
+            percentage1.setText(navDrawerItems111.get(position).getpercent()+"%");
         }
+       // collectionPercentage="";
 
 // } else {
 //
@@ -161,7 +168,7 @@ public class watclist_adapter extends BaseAdapter {
         // changes_format   = Double.parseDouble(navDrawerItems.get(position).getwhole());
 
 
-        whole1.setText(navDrawerItems111.get(position).getwhole());
+                whole1.setText(navDrawerItems111.get(position).getwhole());
 
         // float_plus.setText(navDrawerItems.get(position).getpercent());
 
